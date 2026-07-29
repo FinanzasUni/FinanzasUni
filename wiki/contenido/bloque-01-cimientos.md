@@ -29,10 +29,4 @@ diseño anterior, ya superada — no usar para publicar.
 **Caption del Post 0** está lista y archivada en `branding/perfil-instagram.txt`
 (incluye hashtags de lanzamiento).
 
-⚠️ **Contradicción de handle**: `branding/perfil-instagram.txt` indica el handle
-`@arquitecturafinanciera`, pero las imágenes finales en `posts-instagram/` tienen
-grabado `@arquitectura_financieralife`. Esto afecta a las imágenes ya publicadas de los
-posts 00-03 — comprobar cuál es el handle real de la cuenta activa y corregir la
-página `branding/perfil-instagram.txt` o regenerar imágenes según corresponda.
-
 Ver plan de fases en [[../estrategia/plan-2026]] (objetivo 01 de Fase 1).

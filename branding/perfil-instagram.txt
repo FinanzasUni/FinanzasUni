@@ -4,7 +4,7 @@
 
 NOMBRE DE USUARIO (handle)
 ──────────────────────────
-@arquitecturafinanciera
+@arquitectura_financieralife
 
 NOMBRE A MOSTRAR
 ─────────────────
@@ -46,7 +46,7 @@ CONFIGURACIÓN RECOMENDADA
 ═══════════════════════════════════════════════
   PRIMER DÍA EN INSTAGRAM — CHECKLIST
 ═══════════════════════════════════════════════
-□ Crear cuenta con @arquitecturafinanciera
+□ Crear cuenta con @arquitectura_financieralife
 □ Subir foto de perfil (logo-af-avatar.png)
 □ Escribir la bio (copiar de arriba)
 □ Activar cuenta de creador

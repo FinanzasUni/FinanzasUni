@@ -38,13 +38,11 @@ Se confirmó que sí existen imágenes finales para los 10 posts del Bloque 02 e
 "copy listo, imágenes pendientes" era un error de esta wiki, no un hueco real. Ver
 [[../contenido/bloque-02-ahorro-real]].
 
-## ⚠️ Contradicción abierta — handle de Instagram
+## Resuelto — handle de Instagram (2026-07-29)
 
-`branding/perfil-instagram.txt` especifica `@arquitecturafinanciera` como handle, pero
-todas las imágenes finales en `posts-instagram/` tienen grabado
-`@arquitectura_financieralife`. No resuelta — pendiente de que Diego confirme cuál es
-el handle real/definitivo de la cuenta antes de publicar más contenido o corregir el
-archivo de perfil.
+El handle oficial confirmado por Diego es `@arquitectura_financieralife` (coincide con
+lo grabado en las imágenes de `posts-instagram/`). `branding/perfil-instagram.txt` tenía
+`@arquitecturafinanciera` por error — corregido directamente en el archivo.
 
 ## Pendiente de ingerir en detalle
 

@@ -42,6 +42,12 @@ contradicción real y sin resolver: el handle grabado en las imágenes
 ([[conceptos/dinero-muerto]], [[conceptos/plan-de-ahorro]]) que faltaban.
 → [[contenido/bloque-01-cimientos]], [[contenido/bloque-02-ahorro-real]], [[fuentes/registro]]
 
+## [2026-07-29] resolucion | Handle de Instagram confirmado
+Diego confirmó que el handle oficial de la cuenta es `@arquitectura_financieralife`.
+Se corrigió `branding/perfil-instagram.txt` (tenía `@arquitecturafinanciera` por error)
+y se actualizaron todas las páginas del wiki que señalaban la contradicción.
+→ [[marca/arquitectura-financiera]], [[fuentes/registro]]
+
 ## [2026-07-29] entrega | Post 04 — La regla 50/30/20 (siguiente a publicar)
 Empaquetado para publicar: 5 slides de `posts-instagram/post-04-regla-502030/`, caption
 y hashtags de `files/arquitectura-financiera-5posts.html`. Es el siguiente post en la

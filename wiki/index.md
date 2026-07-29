@@ -52,6 +52,3 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - No existe todavía página de "competencia" ni de "ideas de post pendientes" — crear
   cuando se empiece a hacer benchmark de otras cuentas del nicho.
 - `files/post-cero-corregido.html` no se ha leído en detalle todavía.
-- ⚠️ Handle de Instagram sin resolver: `@arquitecturafinanciera` (perfil-instagram.txt)
-  vs `@arquitectura_financieralife` (grabado en las imágenes ya publicadas). Ver
-  [[fuentes/registro]].
