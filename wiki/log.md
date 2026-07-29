@@ -66,3 +66,14 @@ descartó explícitamente el tramo publicitario de la entrevista (fondo de priva
 equity Crescenta, ticket 10.000€) por no encajar con la audiencia ni con el principio
 de "sin promesas de rentabilidad". → [[conceptos/por-que-no-funciona-el-day-trading]],
 [[conceptos/mercado-privado-vs-bolsa]], [[fuentes/registro]]
+
+## [2026-07-29] ingesta | Entrevista a economista "Joan" sobre dinero e inversión
+Segunda fuente externa. Se extrajeron 5 conceptos reutilizables: "fuck you money"
+(utilidad inversa del dinero), los tres escalones de ahorro 1.000/10.000/100.000€
+(candidato fuerte como puente entre Bloque 02 y Bloque 03), deuda buena vs. mala (tema
+nuevo, sin cubrir todavía), tipos de interés explicados, y cartera 60/40 con
+indexación (ETFs, MSCI World, Bogle/Vanguard — muy directo para Bloque 03). Se descartó
+el tramo publicitario de la app "Imagine" por la misma razón que con Crescenta.
+→ [[conceptos/fuck-you-money]], [[conceptos/los-tres-escalones-de-ahorro]],
+[[conceptos/deuda-buena-vs-deuda-mala]], [[conceptos/tipos-de-interes-explicados]],
+[[conceptos/cartera-60-40-e-indexacion]], [[fuentes/registro]]

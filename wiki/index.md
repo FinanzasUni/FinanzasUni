@@ -30,6 +30,11 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[conceptos/plan-de-ahorro|Plan de ahorro: de 0€ a 3 meses]] — Post 10
 - [[conceptos/por-que-no-funciona-el-day-trading|Por qué no funciona el day trading]] — de fuente externa, candidato Bloque 03
 - [[conceptos/mercado-privado-vs-bolsa|Mercado privado vs. bolsa]] — de fuente externa, candidato Bloque 03
+- [[conceptos/fuck-you-money|"Fuck you money": la utilidad inversa del dinero]] — de fuente externa, post reflexivo
+- [[conceptos/los-tres-escalones-de-ahorro|Los tres escalones de ahorro (1.000/10.000/100.000€)]] — de fuente externa, candidato fuerte, puente Bloque 02→03
+- [[conceptos/deuda-buena-vs-deuda-mala|Deuda buena vs. deuda mala]] — de fuente externa, tema nuevo sin cubrir
+- [[conceptos/tipos-de-interes-explicados|Tipos de interés explicados]] — de fuente externa, cultura financiera básica
+- [[conceptos/cartera-60-40-e-indexacion|Cartera 60/40 e indexación]] — de fuente externa, candidato fuerte Bloque 03
 
 ## Contenido (estado de bloques y posts)
 

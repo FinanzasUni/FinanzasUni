@@ -22,6 +22,7 @@ original.
 | Imágenes finales de posts | `posts/`, `posts-instagram/` | Slides finales renderizados por post | [[../contenido/bloque-01-cimientos]] |
 | Plantillas de slide | `slides/*.html` | Diseño HTML individual de cada slide | [[../contenido/formato-carrusel]] |
 | Entrevista a Ramiro (ex-Wall Street, Crescenta) | YouTube: https://www.youtube.com/watch?v=vU7kzKIcpgo | Historia personal sobre por qué el day trading no funciona; explicación de cómo funciona el ciclo privado→bolsa de una empresa (ejemplo SpaceX) | [[../conceptos/por-que-no-funciona-el-day-trading]], [[../conceptos/mercado-privado-vs-bolsa]] |
+| Entrevista a economista "Joan" sobre dinero/inversión | Transcripción pegada por Diego, sin URL de referencia (pendiente de conseguir el enlace para citarla mejor) | Psicología del dinero (fuck you money), escalones de ahorro 1.000/10.000/100.000€, deuda buena vs mala, tipos de interés, cartera 60/40 e indexación | [[../conceptos/fuck-you-money]], [[../conceptos/los-tres-escalones-de-ahorro]], [[../conceptos/deuda-buena-vs-deuda-mala]], [[../conceptos/tipos-de-interes-explicados]], [[../conceptos/cartera-60-40-e-indexacion]] |
 
 ## Resuelto — `posts/` vs `posts-instagram/` (2026-07-29)
 
@@ -56,6 +57,14 @@ anunciante rompe el principio de "sin promesas de rentabilidad" (ver
 [[../marca/voz-y-tono]]). Se extrajeron únicamente dos ideas de valor general,
 independientes del producto: [[../conceptos/por-que-no-funciona-el-day-trading]] y
 [[../conceptos/mercado-privado-vs-bolsa]].
+
+## Nota sobre la entrevista al economista "Joan" (2026-07-29)
+
+También incluye un tramo de publicidad integrada (app "Imagine"/Imagine Academy, con
+código promocional). Misma regla que con Crescenta: **no reutilizar la mención al
+producto ni el código promocional** en contenido de la cuenta — las cinco páginas de
+concepto creadas a partir de esta fuente son solo la parte educativa, independiente del
+patrocinio.
 
 ## Pendiente de ingerir en detalle
 
