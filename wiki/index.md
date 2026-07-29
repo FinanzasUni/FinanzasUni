@@ -28,6 +28,8 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[conceptos/cuentas-remuneradas-espana|Cuentas remuneradas en España]] — Post 08
 - [[conceptos/dinero-muerto|Dinero muerto (ahorrar sin objetivo)]] — Post 09
 - [[conceptos/plan-de-ahorro|Plan de ahorro: de 0€ a 3 meses]] — Post 10
+- [[conceptos/por-que-no-funciona-el-day-trading|Por qué no funciona el day trading]] — de fuente externa, candidato Bloque 03
+- [[conceptos/mercado-privado-vs-bolsa|Mercado privado vs. bolsa]] — de fuente externa, candidato Bloque 03
 
 ## Contenido (estado de bloques y posts)
 

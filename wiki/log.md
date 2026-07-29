@@ -57,3 +57,12 @@ cola tras "Ingresos vs Gastos" (Post 03). → [[contenido/bloque-01-cimientos]],
 ## [2026-07-29] publicacion | Post 04 — La regla 50/30/20
 Confirmado publicado en Instagram por Diego. Siguiente en cola: Post 05 (gastos
 hormiga). → [[contenido/bloque-01-cimientos]]
+
+## [2026-07-29] ingesta | Entrevista a Ramiro (ex-Wall Street, Crescenta) — YouTube
+Primera fuente externa (no producida por Diego) ingerida en el wiki. Se extrajeron dos
+ideas reutilizables: por qué el day trading no funciona a largo plazo (testimonio
+personal) y cómo funciona el ciclo privado→bolsa de una empresa (ejemplo SpaceX). Se
+descartó explícitamente el tramo publicitario de la entrevista (fondo de private
+equity Crescenta, ticket 10.000€) por no encajar con la audiencia ni con el principio
+de "sin promesas de rentabilidad". → [[conceptos/por-que-no-funciona-el-day-trading]],
+[[conceptos/mercado-privado-vs-bolsa]], [[fuentes/registro]]

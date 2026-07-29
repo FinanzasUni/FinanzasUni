@@ -21,6 +21,7 @@ original.
 | Assets de marca | `branding/logo-af-*.png` | Logo, avatar, versión horizontal | [[../marca/arquitectura-financiera]] |
 | Imágenes finales de posts | `posts/`, `posts-instagram/` | Slides finales renderizados por post | [[../contenido/bloque-01-cimientos]] |
 | Plantillas de slide | `slides/*.html` | Diseño HTML individual de cada slide | [[../contenido/formato-carrusel]] |
+| Entrevista a Ramiro (ex-Wall Street, Crescenta) | YouTube: https://www.youtube.com/watch?v=vU7kzKIcpgo | Historia personal sobre por qué el day trading no funciona; explicación de cómo funciona el ciclo privado→bolsa de una empresa (ejemplo SpaceX) | [[../conceptos/por-que-no-funciona-el-day-trading]], [[../conceptos/mercado-privado-vs-bolsa]] |
 
 ## Resuelto — `posts/` vs `posts-instagram/` (2026-07-29)
 
@@ -43,6 +44,18 @@ Se confirmó que sí existen imágenes finales para los 10 posts del Bloque 02 e
 El handle oficial confirmado por Diego es `@arquitectura_financieralife` (coincide con
 lo grabado en las imágenes de `posts-instagram/`). `branding/perfil-instagram.txt` tenía
 `@arquitecturafinanciera` por error — corregido directamente en el archivo.
+
+## Nota sobre la entrevista a Ramiro/Crescenta (2026-07-29)
+
+La entrevista incluye un tramo de publicidad integrada de Crescenta (fondos de private
+equity, ticket mínimo 10.000€, liquidez bloqueada 5 años, con cifras de rentabilidad
+que son marketing propio de la empresa, no dato independiente). **No usar ese producto
+ni esas cifras de rentabilidad como referencia en contenido de la cuenta** — no encaja
+con el público de 18-35 años empezando desde cero, y citar rentabilidades de un
+anunciante rompe el principio de "sin promesas de rentabilidad" (ver
+[[../marca/voz-y-tono]]). Se extrajeron únicamente dos ideas de valor general,
+independientes del producto: [[../conceptos/por-que-no-funciona-el-day-trading]] y
+[[../conceptos/mercado-privado-vs-bolsa]].
 
 ## Pendiente de ingerir en detalle
 
