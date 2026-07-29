@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agente IA — Arquitectura Financiera</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0f; --navy:#1c2333; --navy2:#232e42; --navy3:#1a2030;
+  --gold:#c9a84c; --gold-dim:rgba(201,168,76,0.12); --gold-hover:rgba(201,168,76,0.2);
+  --cream:#f4efe6; --concrete:#6b7280; --rust:#b54a2f;
+  --green:#4caf82; --green-dim:rgba(76,175,130,0.12);
+  --line:rgba(201,168,76,0.18); --line2:rgba(255,255,255,0.06);
+  --red-dim:rgba(181,74,47,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{height:100%;}
+body{
+  background:var(--ink);color:var(--cream);
+  font-family:'DM Mono',monospace;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+
+/* SIDEBAR */
+.sidebar{
+  position:fixed;left:0;top:0;bottom:0;width:240px;
+  background:var(--navy3);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;z-index:50;
+}
+.sidebar-brand{
+  padding:24px 20px 20px;border-bottom:1px solid var(--line);
+}
+.sb-logo{
+  font-family:'Playfair Display',serif;font-size:13px;
+  color:var(--gold);line-height:1.3;margin-bottom:4px;
+}
+.sb-sub{font-size:9px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;}
+.sb-status{
+  display:flex;align-items:center;gap:6px;margin-top:10px;
+  font-size:9px;color:var(--green);letter-spacing:1px;
+}
+.sb-status::before{
+  content:'';width:6px;height:6px;background:var(--green);
+  border-radius:50%;display:block;animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.nav-items{flex:1;padding:12px 8px;overflow-y:auto;}
+.nav-section{
+  font-size:8px;letter-spacing:3px;color:var(--concrete);
+  text-transform:uppercase;padding:12px 12px 6px;
+}
+.nav-btn{
+  width:100%;display:flex;align-items:center;gap:10px;
+  padding:10px 12px;background:none;border:none;
+  color:var(--concrete);font-family:'DM Mono',monospace;font-size:11px;
+  cursor:pointer;border-radius:4px;text-align:left;
+  transition:all .15s;margin-bottom:1px;
+}
+.nav-btn:hover{background:var(--gold-dim);color:var(--cream);}
+.nav-btn.active{background:var(--gold-dim);color:var(--gold);border-left:2px solid var(--gold);}
+.nav-btn .nav-icon{font-size:14px;flex-shrink:0;width:18px;text-align:center;}
+.nav-badge{
+  margin-left:auto;font-size:8px;padding:2px 6px;
+  background:var(--gold-dim);color:var(--gold);border-radius:2px;
+}
+
+.sidebar-footer{
+  padding:16px;border-top:1px solid var(--line);
+  font-size:10px;color:var(--concrete);line-height:1.6;
+}
+
+/* MAIN */
+.main{
+  margin-left:240px;min-height:100vh;
+  display:flex;flex-direction:column;
+}
+
+/* TOP BAR */
+.topbar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(10,10,15,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  padding:14px 32px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.tb-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--cream);}
+.tb-meta{font-size:10px;color:var(--concrete);letter-spacing:1px;}
+
+/* CONTENT AREA */
+.content{flex:1;padding:32px;max-width:900px;}
+
+/* TOOL PANELS */
+.tool-panel{display:none;}
+.tool-panel.active{display:block;}
+
+/* FORM ELEMENTS */
+.form-group{margin-bottom:20px;}
+.form-label{
+  display:block;font-size:10px;letter-spacing:2px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:8px;
+}
+.form-input,.form-select,.form-textarea{
+  width:100%;background:var(--navy);border:1px solid var(--line);
+  color:var(--cream);font-family:'DM Mono',monospace;font-size:12px;
+  padding:12px 14px;transition:border-color .2s;outline:none;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);}
+.form-textarea{resize:vertical;min-height:100px;line-height:1.8;}
+.form-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c9a84c' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;}
+.form-select option{background:var(--navy);}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;
+  cursor:pointer;border:none;transition:all .15s;letter-spacing:.5px;
+}
+.btn-primary{background:var(--gold);color:var(--ink);}
+.btn-primary:hover{background:#e0bc5c;}
+.btn-primary:disabled{background:var(--concrete);cursor:not-allowed;}
+.btn-secondary{background:var(--navy2);color:var(--cream);border:1px solid var(--line);}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+.btn-sm{padding:7px 14px;font-size:11px;}
+.btn-ghost{background:none;color:var(--concrete);border:1px solid var(--line);}
+.btn-ghost:hover{color:var(--cream);border-color:var(--cream);}
+
+/* OUTPUT AREA */
+.output-wrap{margin-top:24px;}
+.output-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 16px;background:var(--navy);border:1px solid var(--line);
+  border-bottom:none;
+}
+.output-label{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+.output-actions{display:flex;gap:8px;}
+.output-body{
+  background:var(--navy2);border:1px solid var(--line);
+  padding:24px;min-height:120px;max-height:600px;overflow-y:auto;
+  font-size:12px;line-height:2;color:#d1d5db;white-space:pre-wrap;
+  word-break:break-word;
+}
+.output-body.streaming::after{
+  content:'▊';animation:blink .7s step-end infinite;color:var(--gold);
+}
+@keyframes blink{50%{opacity:0}}
+.output-empty{color:var(--concrete);font-style:italic;text-align:center;padding:40px 0;}
+
+/* LOADING */
+.loading{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 16px;background:var(--gold-dim);
+  border:1px solid rgba(201,168,76,.3);margin-top:12px;
+  font-size:11px;color:var(--gold);
+}
+.loading-dots::after{content:'';animation:dots 1.5s step-end infinite;}
+@keyframes dots{0%{content:''} 33%{content:'.'} 66%{content:'..'} 100%{content:'...'}}
+
+/* CARDS */
+.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px;}
+.stat-card{
+  background:var(--navy);border:1px solid var(--line);
+  padding:20px;display:flex;align-items:center;gap:14px;
+}
+.sc-icon{font-size:24px;flex-shrink:0;}
+.sc-val{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);line-height:1;}
+.sc-label{font-size:10px;color:var(--concrete);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+
+/* QUICK ACTIONS */
+.quick-actions{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;background:var(--line);margin-bottom:32px;
+}
+.qa{
+  background:var(--ink);padding:20px 16px;
+  cursor:pointer;transition:background .15s;
+  display:flex;flex-direction:column;gap:6px;
+}
+.qa:hover{background:var(--gold-dim);}
+.qa-icon{font-size:20px;}
+.qa-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--cream);}
+.qa-desc{font-size:10px;color:var(--concrete);line-height:1.5;}
+
+/* HISTORY */
+.history-list{display:flex;flex-direction:column;gap:2px;}
+.history-item{
+  display:grid;grid-template-columns:auto 1fr auto;
+  align-items:center;gap:16px;
+  padding:14px 16px;background:var(--navy);
+  border:1px solid var(--line2);cursor:pointer;transition:border-color .15s;
+}
+.history-item:hover{border-color:var(--line);}
+.hi-type{font-size:16px;}
+.hi-body{}
+.hi-title{font-size:12px;color:var(--cream);margin-bottom:2px;}
+.hi-time{font-size:10px;color:var(--concrete);}
+.hi-chip{font-size:9px;padding:2px 8px;background:var(--gold-dim);color:var(--gold);letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+
+/* TOAST */
+.toast{
+  position:fixed;bottom:24px;right:24px;
+  background:var(--navy);border:1px solid var(--line);
+  padding:12px 20px;font-size:12px;color:var(--cream);
+  z-index:200;transform:translateY(80px);opacity:0;
+  transition:all .3s;display:flex;align-items:center;gap:10px;
+}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast.success{border-color:rgba(76,175,130,.4);color:var(--green);}
+
+/* SECTION HEADERS */
+.panel-title{
+  font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);
+  font-weight:700;line-height:1.1;margin-bottom:6px;
+}
+.panel-title em{font-style:italic;color:var(--gold);}
+.panel-desc{font-size:12px;color:var(--concrete);line-height:1.8;margin-bottom:28px;}
+
+.divider{height:1px;background:var(--line);margin:24px 0;}
+
+/* HASHTAG DISPLAY */
+.hashtag-cloud{display:flex;flex-wrap:wrap;gap:8px;padding:16px;}
+.htag{
+  background:var(--navy);border:1px solid var(--line);
+  padding:5px 12px;font-size:11px;color:var(--gold);cursor:pointer;
+  transition:all .15s;
+}
+.htag:hover{background:var(--gold-dim);border-color:var(--gold);}
+
+/* SCORE BARS */
+.score-row{display:flex;flex-direction:column;gap:12px;padding:16px;}
+.sr{display:grid;grid-template-columns:100px 1fr 30px;gap:12px;align-items:center;}
+.sr-label{font-size:10px;color:var(--concrete);}
+.sr-bar{background:var(--line2);height:4px;}
+.sr-fill{height:100%;background:linear-gradient(90deg,var(--rust),var(--gold));transition:width 1s ease;}
+.sr-val{font-size:11px;color:var(--gold);text-align:right;}
+
+/* CALENDAR VIEW */
+.cal-week{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:16px;}
+.cal-day{background:var(--navy);padding:12px 8px;text-align:center;}
+.cal-day.has-post{border-top:2px solid var(--gold);}
+.cal-day.today{background:var(--navy2);}
+.cd-name{font-size:8px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:6px;}
+.cd-content-list{display:flex;flex-direction:column;gap:4px;}
+.cd-pill{font-size:8px;padding:2px 6px;text-align:center;}
+.cd-pill.reel{background:rgba(181,74,47,.2);color:#e07055;}
+.cd-pill.carrusel{background:var(--gold-dim);color:var(--gold);}
+.cd-pill.nl{background:var(--green-dim);color:var(--green);}
+.cd-pill.story{background:rgba(136,153,187,.1);color:#8899bb;}
+
+/* POST GRID */
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px;}
+.post-card{background:var(--navy);border:1px solid var(--line2);cursor:pointer;transition:border-color .15s;overflow:hidden;}
+.post-card:hover,.post-card.selected{border-color:var(--gold);}
+.pc-thumb{width:100%;aspect-ratio:1;position:relative;background:var(--navy2);overflow:hidden;}
+.pc-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.pc-type-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;}
+.pc-meta{padding:10px;}
+.pc-caption{font-size:10px;color:var(--concrete);line-height:1.5;margin-bottom:6px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.pc-stats{display:flex;gap:12px;font-size:10px;color:var(--cream);margin-bottom:4px;}
+.pc-date{font-size:9px;color:var(--concrete);letter-spacing:1px;}
+
+/* COMMENTS */
+.comment-item{background:var(--navy);border:1px solid var(--line2);padding:16px;margin-bottom:8px;transition:border-color .15s;}
+.comment-item:hover{border-color:var(--line);}
+.ci-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.ci-user{font-size:12px;color:var(--gold);}
+.ci-time{font-size:9px;color:var(--concrete);letter-spacing:1px;}
+.ci-text{font-size:12px;color:var(--cream);line-height:1.7;margin-bottom:10px;}
+.ci-actions{display:flex;gap:8px;}
+
+/* IG STATUS */
+.ig-status-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;}
+.ig-status-badge.connected{background:var(--green-dim);color:var(--green);border:1px solid rgba(76,175,130,.3);}
+.ig-status-badge.disconnected{background:var(--red-dim);color:var(--rust);border:1px solid rgba(181,74,47,.3);}
+
+/* IG PROFILE CARD */
+.ig-profile-card{display:flex;gap:24px;align-items:flex-start;background:var(--navy);border:1px solid var(--line);padding:24px;margin-bottom:24px;}
+.ig-avatar{width:72px;height:72px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;flex-shrink:0;}
+.ig-avatar-placeholder{width:72px;height:72px;border-radius:50%;border:2px solid var(--line);background:var(--navy2);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;}
+.ig-profile-meta{flex:1;}
+.ig-username-big{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.ig-bio-text{font-size:11px;color:var(--concrete);line-height:1.7;margin-bottom:12px;}
+.ig-counts{display:flex;gap:24px;}
+
+/* SETUP BOX */
+.setup-box{background:var(--navy);border:1px solid var(--line);padding:32px;}
+.setup-step{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line2);font-size:11px;color:var(--concrete);line-height:1.7;}
+.setup-num{color:var(--gold);font-family:'Syne',sans-serif;font-weight:700;flex-shrink:0;}
+.setup-code{background:var(--navy2);border:1px solid var(--line);padding:8px 12px;font-size:11px;color:var(--gold);margin-top:8px;display:block;}
+
+@media(max-width:768px){.post-grid{grid-template-columns:repeat(2,1fr);}}
+  .sidebar{width:60px;}
+  .sb-logo,.sb-sub,.sb-status,.nav-section,.nav-btn span:not(.nav-icon),.sidebar-footer,.nav-badge{display:none;}
+  .main{margin-left:60px;}
+  .content{padding:20px;}
+  .form-row{grid-template-columns:1fr;}
+  .cards-grid{grid-template-columns:1fr;}
+  .quick-actions{grid-template-columns:1fr 1fr;}
+  .cal-week{grid-template-columns:repeat(4,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sb-logo">Arquitectura<br>Financiera</div>
+    <div class="sb-sub">Agente IA · v1.0</div>
+    <div class="sb-status">Online</div>
+  </div>
+  <nav class="nav-items">
+    <div class="nav-section">Principal</div>
+    <button class="nav-btn active" onclick="showPanel('dashboard')">
+      <span class="nav-icon">🏠</span>
+      <span>Dashboard</span>
+    </button>
+    <div class="nav-section">Contenido</div>
+    <button class="nav-btn" onclick="showPanel('generar-post')">
+      <span class="nav-icon">✍️</span>
+      <span>Generar Post</span>
+      <span class="nav-badge">IA</span>
+    </button>
+    <button class="nav-btn" onclick="showPanel('caption')">
+      <span class="nav-icon">📝</span>
+      <span>Caption</span>
+      <span class="nav-badge">IA</span>
+    </button>
+    <button class="nav-btn" onclick="showPanel('ideas')">
+      <span class="nav-icon">💡</span>
+      <span>Ideas semanales</span>
+      <span class="nav-badge">IA</span>
+    </button>
+    <button class="nav-btn" onclick="showPanel('analizar')">
+      <span class="nav-icon">🔍</span>
+      <span>Analizar borrador</span>
+      <span class="nav-badge">IA</span>
+    </button>
+    <div class="nav-section">Comunidad</div>
+    <button class="nav-btn" onclick="showPanel('comentarios')">
+      <span class="nav-icon">💬</span>
+      <span>Responder comentario</span>
+      <span class="nav-badge">IA</span>
+    </button>
+    <button class="nav-btn" onclick="showPanel('hashtags')">
+      <span class="nav-icon">#️⃣</span>
+      <span>Hashtags</span>
+    </button>
+    <div class="nav-section">Newsletter</div>
+    <button class="nav-btn" onclick="showPanel('newsletter')">
+      <span class="nav-icon">📧</span>
+      <span>Newsletter semanal</span>
+      <span class="nav-badge">IA</span>
+    </button>
+    <div class="nav-section">Planificación</div>
+    <button class="nav-btn" onclick="showPanel('calendario')">
+      <span class="nav-icon">📅</span>
+      <span>Calendario</span>
+    </button>
+    <div class="nav-section">Instagram</div>
+    <button class="nav-btn" onclick="showPanel('ig-stats');cargarPerfilIG()">
+      <span class="nav-icon">📊</span>
+      <span>Estadísticas</span>
+      <span class="nav-badge">API</span>
+    </button>
+    <button class="nav-btn" onclick="showPanel('mis-posts');cargarMisPosts()">
+      <span class="nav-icon">🖼️</span>
+      <span>Mis Posts</span>
+      <span class="nav-badge">API</span>
+    </button>
+    <button class="nav-btn" onclick="showPanel('comentarios-ig')">
+      <span class="nav-icon">💬</span>
+      <span>Comentarios IG</span>
+      <span class="nav-badge">API</span>
+    </button>
+    <div class="nav-section">Historial</div>
+    <button class="nav-btn" onclick="showPanel('historial');cargarHistorial()">
+      <span class="nav-icon">📁</span>
+      <span>Historial</span>
+    </button>
+  </nav>
+  <div class="sidebar-footer">
+    @arquitecturafinanciera<br>
+    Claude claude-sonnet-4-20250514
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+  <div class="topbar">
+    <div class="tb-title" id="topbar-title">Dashboard</div>
+    <div class="tb-meta" id="topbar-meta">Arquitectura Financiera · Agente IA</div>
+  </div>
+
+  <div class="content">
+
+    <!-- ══════════ DASHBOARD ══════════ -->
+    <div class="tool-panel active" id="panel-dashboard">
+      <div class="panel-title">Bienvenido,<br><em>Diego</em></div>
+      <p class="panel-desc">Tu agente de IA para gestionar todo el contenido de Arquitectura Financiera. Genera posts, responde comentarios, planifica la semana y escribe la newsletter desde aquí.</p>
+
+      <div class="cards-grid">
+        <div class="stat-card">
+          <div class="sc-icon">📱</div>
+          <div><div class="sc-val">6</div><div class="sc-label">Posts creados</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-icon">📧</div>
+          <div><div class="sc-val">0</div><div class="sc-label">Newsletters enviadas</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-icon">💬</div>
+          <div><div class="sc-val">0</div><div class="sc-label">Comentarios respondidos</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-icon">💡</div>
+          <div><div class="sc-val">78</div><div class="sc-label">Ideas pendientes</div></div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="panel-title" style="font-size:18px;margin-bottom:16px;">Acciones rápidas</div>
+      <div class="quick-actions">
+        <div class="qa" onclick="showPanel('generar-post')">
+          <div class="qa-icon">✍️</div>
+          <div class="qa-title">Nuevo post</div>
+          <div class="qa-desc">Genera el carrusel o reel completo con un tema</div>
+        </div>
+        <div class="qa" onclick="showPanel('caption')">
+          <div class="qa-icon">📝</div>
+          <div class="qa-title">Solo la caption</div>
+          <div class="qa-desc">Caption lista para copiar en Instagram</div>
+        </div>
+        <div class="qa" onclick="showPanel('comentarios')">
+          <div class="qa-icon">💬</div>
+          <div class="qa-title">Responder</div>
+          <div class="qa-desc">Respuesta a comentario de un seguidor</div>
+        </div>
+        <div class="qa" onclick="showPanel('ideas')">
+          <div class="qa-icon">💡</div>
+          <div class="qa-title">Ideas semana</div>
+          <div class="qa-desc">5 ideas de posts para la próxima semana</div>
+        </div>
+        <div class="qa" onclick="showPanel('newsletter')">
+          <div class="qa-icon">📧</div>
+          <div class="qa-title">Newsletter</div>
+          <div class="qa-desc">Borrador completo de la edición semanal</div>
+        </div>
+        <div class="qa" onclick="showPanel('analizar')">
+          <div class="qa-icon">🔍</div>
+          <div class="qa-title">Revisar borrador</div>
+          <div class="qa-desc">Feedback del agente sobre tu contenido</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="panel-title" style="font-size:18px;margin-bottom:16px;">Esta semana</div>
+      <div class="cal-week">
+        <div class="cal-day"><div class="cd-name">Lun</div><div class="cd-content-list"><div class="cd-pill carrusel">Carrusel</div></div></div>
+        <div class="cal-day"><div class="cd-name">Mar</div><div class="cd-content-list"><div class="cd-pill story">Story</div></div></div>
+        <div class="cal-day has-post today"><div class="cd-name">Mié</div><div class="cd-content-list"><div class="cd-pill reel">Reel</div></div></div>
+        <div class="cal-day"><div class="cd-name">Jue</div><div class="cd-content-list"><div class="cd-pill nl">Newsletter</div><div class="cd-pill carrusel">Carrusel</div></div></div>
+        <div class="cal-day"><div class="cd-name">Vie</div><div class="cd-content-list"><div class="cd-pill story">Story</div></div></div>
+        <div class="cal-day"><div class="cd-name">Sáb</div></div>
+        <div class="cal-day"><div class="cd-name">Dom</div><div class="cd-content-list"><div class="cd-pill story">Story</div></div></div>
+      </div>
+    </div>
+
+    <!-- ══════════ GENERAR POST ══════════ -->
+    <div class="tool-panel" id="panel-generar-post">
+      <div class="panel-title">Generar <em>post</em> completo</div>
+      <p class="panel-desc">Escribe el tema y el agente genera el contenido slide a slide, listo para montar en Canva.</p>
+      <div class="form-group">
+        <label class="form-label">Tema del post</label>
+        <input type="text" class="form-input" id="post-tema" placeholder="Ej: El interés compuesto explicado con €100/mes durante 30 años">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Formato</label>
+          <select class="form-select" id="post-formato">
+            <option value="Carrusel">Carrusel (5-7 slides)</option>
+            <option value="Reel">Reel (guión 60s)</option>
+            <option value="Post único">Post único</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Bloque temático</label>
+          <select class="form-select" id="post-bloque">
+            <option value="Cimientos — finanzas personales básicas">🧱 Cimientos — Básico</option>
+            <option value="El Despertar — ahorro e inversión">💡 El Despertar — Ahorro</option>
+            <option value="Estructura — bolsa e índices">🏗️ Estructura — Bolsa</option>
+            <option value="ETFs y fondos indexados">🪟 ETFs y Fondos</option>
+            <option value="Inversión inmobiliaria">🏠 Inmobiliaria</option>
+            <option value="Cripto y activos digitales">⚡ Cripto</option>
+            <option value="Psicología financiera">🧠 Psicología</option>
+            <option value="Fiscalidad española">📋 Fiscalidad</option>
+            <option value="Patrimonio y libertad financiera">🎯 Patrimonio</option>
+            <option value="Herramientas y recursos">🛠️ Herramientas</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nivel de audiencia</label>
+        <select class="form-select" id="post-nivel">
+          <option value="Base — para alguien que no sabe nada">Base (sin conocimientos)</option>
+          <option value="Medio — conoce los básicos">Medio (conoce los básicos)</option>
+          <option value="Avanzado — ya invierte y quiere profundizar">Avanzado (ya invierte)</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="generarPost()">
+        ✍️ Generar contenido completo
+      </button>
+      <div class="output-wrap" id="post-output-wrap" style="display:none;">
+        <div class="output-header">
+          <span class="output-label">Contenido generado</span>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-ghost" onclick="copiarOutput('post-output')">📋 Copiar todo</button>
+            <button class="btn btn-sm btn-ghost" onclick="guardarEnHistorial('post-output','post-tema','post-formato')">💾 Guardar</button>
+            <button class="btn btn-sm btn-ghost" onclick="limpiarOutput('post-output','post-output-wrap')">🗑️ Limpiar</button>
+          </div>
+        </div>
+        <div class="output-body" id="post-output"><span class="output-empty">El contenido aparecerá aquí...</span></div>
+      </div>
+    </div>
+
+    <!-- ══════════ CAPTION ══════════ -->
+    <div class="tool-panel" id="panel-caption">
+      <div class="panel-title">Generar <em>caption</em></div>
+      <p class="panel-desc">Solo la caption de Instagram, lista para copiar y pegar. Sin slides — para cuando ya tienes el diseño hecho.</p>
+      <div class="form-group">
+        <label class="form-label">Tema o descripción del post</label>
+        <textarea class="form-textarea" id="caption-tema" placeholder="Ej: Un carrusel sobre la regla 50/30/20 aplicada a sueldos españoles de 1.500€"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Tono</label>
+          <select class="form-select" id="caption-tono">
+            <option value="educativo y directo">Educativo y directo</option>
+            <option value="cercano y personal">Cercano y personal</option>
+            <option value="provocador con datos">Provocador con datos</option>
+            <option value="reflexivo y filosófico">Reflexivo</option>
+            <option value="urgente y llamativo">Urgente</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Formato del post</label>
+          <select class="form-select" id="caption-formato">
+            <option value="Carrusel">Carrusel</option>
+            <option value="Reel">Reel</option>
+            <option value="Post único">Post único</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="generarCaption()">
+        📝 Generar caption
+      </button>
+      <div class="output-wrap" id="caption-output-wrap" style="display:none;">
+        <div class="output-header">
+          <span class="output-label">Caption lista</span>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-ghost" onclick="copiarOutput('caption-output')">📋 Copiar</button>
+            <button class="btn btn-sm btn-ghost" onclick="limpiarOutput('caption-output','caption-output-wrap')">🗑️</button>
+          </div>
+        </div>
+        <div class="output-body" id="caption-output"><span class="output-empty">La caption aparecerá aquí...</span></div>
+      </div>
+    </div>
+
+    <!-- ══════════ COMENTARIOS ══════════ -->
+    <div class="tool-panel" id="panel-comentarios">
+      <div class="panel-title">Responder <em>comentarios</em></div>
+      <p class="panel-desc">Pega el comentario de un seguidor y el agente genera una respuesta auténtica como Diego.</p>
+      <div class="form-group">
+        <label class="form-label">Comentario recibido</label>
+        <textarea class="form-textarea" id="comentario-texto" placeholder='Ej: "¿Y si no tienes dinero para invertir? Con lo que gano yo no llega para nada"'></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Contexto del post (opcional)</label>
+        <input type="text" class="form-input" id="comentario-contexto" placeholder="Ej: Post sobre la regla 50/30/20 y el ahorro mensual">
+      </div>
+      <button class="btn btn-primary" onclick="responderComentario()">
+        💬 Generar respuesta
+      </button>
+      <div class="output-wrap" id="comentario-output-wrap" style="display:none;">
+        <div class="output-header">
+          <span class="output-label">Respuesta sugerida</span>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-ghost" onclick="copiarOutput('comentario-output')">📋 Copiar</button>
+            <button class="btn btn-sm btn-ghost" onclick="limpiarOutput('comentario-output','comentario-output-wrap')">🗑️</button>
+          </div>
+        </div>
+        <div class="output-body" id="comentario-output"><span class="output-empty">La respuesta aparecerá aquí...</span></div>
+      </div>
+    </div>
+
+    <!-- ══════════ IDEAS ══════════ -->
+    <div class="tool-panel" id="panel-ideas">
+      <div class="panel-title">Ideas para la <em>semana</em></div>
+      <p class="panel-desc">El agente genera 5 ideas de posts para la próxima semana, con formato, hook y día óptimo de publicación.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Bloque actual</label>
+          <select class="form-select" id="ideas-bloque">
+            <option value="Cimientos — finanzas personales básicas">🧱 Cimientos</option>
+            <option value="El Despertar — ahorro e inversión">💡 El Despertar</option>
+            <option value="Estructura — bolsa e índices">🏗️ Bolsa e índices</option>
+            <option value="ETFs y fondos indexados">🪟 ETFs</option>
+            <option value="Inversión inmobiliaria">🏠 Inmobiliaria</option>
+            <option value="Cripto y activos digitales">⚡ Cripto</option>
+            <option value="Psicología financiera">🧠 Psicología</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Número de semana</label>
+          <input type="number" class="form-input" id="ideas-semana" placeholder="Ej: 3" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Posts ya publicados (para no repetir)</label>
+        <textarea class="form-textarea" id="ideas-publicados" style="min-height:70px;" placeholder="Ej: Post Cero, Por qué nadie te enseñó, Finanzas personales, Ingresos vs Gastos"></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="generarIdeas()">
+        💡 Generar 5 ideas
+      </button>
+      <div class="output-wrap" id="ideas-output-wrap" style="display:none;">
+        <div class="output-header">
+          <span class="output-label">Ideas de contenido</span>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-ghost" onclick="copiarOutput('ideas-output')">📋 Copiar</button>
+            <button class="btn btn-sm btn-ghost" onclick="limpiarOutput('ideas-output','ideas-output-wrap')">🗑️</button>
+          </div>
+        </div>
+        <div class="output-body" id="ideas-output"><span class="output-empty">Las ideas aparecerán aquí...</span></div>
+      </div>
+    </div>
+
+    <!-- ══════════ HASHTAGS ══════════ -->
+    <div class="tool-panel" id="panel-hashtags">
+      <div class="panel-title">Generador de <em>hashtags</em></div>
+      <p class="panel-desc">Set optimizado de hashtags para cada tipo de post. Haz clic en cualquiera para copiarlo.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Tema del post</label>
+          <input type="text" class="form-input" id="ht-tema" placeholder="Ej: ETFs, interés compuesto, Bitcoin, regla 50/30/20">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Formato</label>
+          <select class="form-select" id="ht-formato">
+            <option value="Carrusel">Carrusel</option>
+            <option value="Reel">Reel</option>
+            <option value="Post único">Post único</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="generarHashtags()">
+        #️⃣ Generar hashtags
+      </button>
+      <div class="output-wrap" id="ht-output-wrap" style="display:none;">
+        <div class="output-header">
+          <span class="output-label">Hashtags optimizados</span>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-ghost" onclick="copiarHashtags()">📋 Copiar todos</button>
+          </div>
+        </div>
+        <div class="hashtag-cloud" id="ht-cloud"></div>
+      </div>
+    </div>
+
+    <!-- ══════════ ANALIZAR ══════════ -->
+    <div class="tool-panel" id="panel-analizar">
+      <div class="panel-title">Analizar <em>borrador</em></div>
+      <p class="panel-desc">Pega tu borrador de post y el agente lo puntúa del 1-10 en 5 dimensiones con feedback accionable.</p>
+      <div class="form-group">
+        <label class="form-label">Pega aquí tu borrador (caption, slides o guión)</label>
+        <textarea class="form-textarea" id="analizar-contenido" style="min-height:160px;" placeholder="Pega aquí el contenido que quieres que el agente analice..."></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="analizarPost()">
+        🔍 Analizar y dar feedback
+      </button>
+      <div class="output-wrap" id="analizar-output-wrap" style="display:none;">
+        <div class="output-header">
+          <span class="output-label">Análisis del agente</span>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-ghost" onclick="copiarOutput('analizar-output')">📋 Copiar</button>
+            <button class="btn btn-sm btn-ghost" onclick="limpiarOutput('analizar-output','analizar-output-wrap')">🗑️</button>
+          </div>
+        </div>
+        <div class="output-body" id="analizar-output"><span class="output-empty">El análisis aparecerá aquí...</span></div>
+      </div>
+    </div>
+
+    <!-- ══════════ NEWSLETTER ══════════ -->
+    <div class="tool-panel" id="panel-newsletter">
+      <div class="panel-title">Newsletter <em>semanal</em></div>
+      <p class="panel-desc">Genera el borrador completo de la newsletter de la semana. Estructura fija de Arquitectura Financiera: apertura, concepto, dato, herramienta, pregunta y cierre.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Tema principal</label>
+          <input type="text" class="form-input" id="nl-tema" placeholder="Ej: Cómo empezar a invertir con 200€/mes">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Número de edición</label>
+          <input type="number" class="form-input" id="nl-numero" placeholder="Ej: 3" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Posts de Instagram de esta semana (para enlazar)</label>
+        <input type="text" class="form-input" id="nl-posts" placeholder="Ej: Regla 50/30/20, Gastos hormiga, Interés compuesto">
+      </div>
+      <button class="btn btn-primary" onclick="generarNewsletter()">
+        📧 Generar newsletter completa
+      </button>
+      <div class="output-wrap" id="nl-output-wrap" style="display:none;">
+        <div class="output-header">
+          <span class="output-label">Newsletter generada</span>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-ghost" onclick="copiarOutput('nl-output')">📋 Copiar todo</button>
+            <button class="btn btn-sm btn-ghost" onclick="limpiarOutput('nl-output','nl-output-wrap')">🗑️</button>
+          </div>
+        </div>
+        <div class="output-body" id="nl-output"><span class="output-empty">La newsletter aparecerá aquí...</span></div>
+      </div>
+    </div>
+
+    <!-- ══════════ CALENDARIO ══════════ -->
+    <div class="tool-panel" id="panel-calendario">
+      <div class="panel-title">Calendario de <em>publicación</em></div>
+      <p class="panel-desc">El plan semanal fijo de Arquitectura Financiera. Referencia rápida de qué publicar cada día y a qué hora.</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;min-width:600px;">
+          <thead>
+            <tr>
+              <th style="font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--navy);">Día</th>
+              <th style="font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--navy);">Hora</th>
+              <th style="font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--navy);">Formato</th>
+              <th style="font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--navy);">Contenido</th>
+              <th style="font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--navy);">Prioridad</th>
+            </tr>
+          </thead>
+          <tbody id="cal-table-body"></tbody>
+        </table>
+      </div>
+      <div class="divider"></div>
+      <div style="padding:16px;background:var(--navy);border:1px solid var(--line);font-size:11px;color:var(--concrete);line-height:2;">
+        <strong style="color:var(--cream);display:block;margin-bottom:8px;">Reglas del algoritmo a recordar:</strong>
+        ◆ Responde todos los comentarios en la primera hora después de publicar<br>
+        ◆ Los guardados son la señal más poderosa para el algoritmo de Instagram<br>
+        ◆ Nunca más de 5 días seguidos sin publicar nada (aunque sea una Story)<br>
+        ◆ Los Reels tienen 3x más alcance orgánico que los carruseles<br>
+        ◆ Comparte cada post en Stories inmediatamente después de publicarlo
+      </div>
+    </div>
+
+    <!-- ══════════ IG STATS ══════════ -->
+    <div class="tool-panel" id="panel-ig-stats">
+      <div class="panel-title">Estadísticas <em>Instagram</em></div>
+      <p class="panel-desc">Métricas en tiempo real de @arquitecturafinanciera via Instagram Graph API.</p>
+
+      <div id="ig-loading" class="loading" style="display:none;"><span class="loading-dots">Conectando con Instagram</span></div>
+
+      <div id="ig-no-conectado" style="display:none;">
+        <div class="setup-box">
+          <div style="text-align:center;margin-bottom:24px;">
+            <div style="font-size:40px;margin-bottom:12px;">🔗</div>
+            <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--cream);margin-bottom:6px;">Instagram no conectado</div>
+            <div style="font-size:11px;color:var(--concrete);">Sigue estos pasos para conectar tu cuenta de Instagram Business/Creator</div>
+          </div>
+          <div class="setup-step"><span class="setup-num">1</span><span>Ve a <strong style="color:var(--cream)">developers.facebook.com</strong> → Mis Apps → Nueva App → Empresa</span></div>
+          <div class="setup-step"><span class="setup-num">2</span><span>Añade el producto <strong style="color:var(--cream)">Instagram Graph API</strong> y conecta tu cuenta Business/Creator</span></div>
+          <div class="setup-step"><span class="setup-num">3</span><span>En "Explorador de la API Graph" genera un token con permisos:<br><code style="color:var(--gold)">instagram_basic · instagram_manage_comments · instagram_manage_insights</code></span></div>
+          <div class="setup-step"><span class="setup-num">4</span><span>Edita el archivo <strong style="color:var(--cream)">.env</strong> y añade:<code class="setup-code">IG_ACCESS_TOKEN=tu_token_aqui<br>IG_USER_ID=tu_id_numerico_aqui</code></span></div>
+          <div class="setup-step" style="border:none"><span class="setup-num">5</span><span>Reinicia el servidor con <code style="color:var(--gold)">npm run dev</code> y vuelve a esta página</span></div>
+        </div>
+      </div>
+
+      <div id="ig-perfil-data" style="display:none;">
+        <div class="ig-profile-card">
+          <div id="ig-avatar-wrap" class="ig-avatar-placeholder">📷</div>
+          <div class="ig-profile-meta">
+            <div class="ig-username-big" id="ig-username">@arquitecturafinanciera</div>
+            <div class="ig-bio-text" id="ig-bio"></div>
+            <div class="ig-counts">
+              <div><div class="sc-val" id="ig-followers">—</div><div class="sc-label">Seguidores</div></div>
+              <div><div class="sc-val" id="ig-following">—</div><div class="sc-label">Siguiendo</div></div>
+              <div><div class="sc-val" id="ig-posts-count">—</div><div class="sc-label">Posts</div></div>
+            </div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="cargarPerfilIG()" style="flex-shrink:0;">↻ Actualizar</button>
+        </div>
+        <div class="cards-grid">
+          <div class="stat-card"><div class="sc-icon">👥</div><div><div class="sc-val" id="ig-s-followers">—</div><div class="sc-label">Seguidores totales</div></div></div>
+          <div class="stat-card"><div class="sc-icon">📱</div><div><div class="sc-val" id="ig-s-posts">—</div><div class="sc-label">Posts publicados</div></div></div>
+        </div>
+        <div style="padding:16px;background:var(--navy);border:1px solid var(--line);font-size:11px;color:var(--concrete);line-height:2;">
+          <strong style="color:var(--cream);display:block;margin-bottom:8px;">Para ver métricas avanzadas (alcance, impresiones, guardados):</strong>
+          Solicita los permisos <code style="color:var(--gold)">instagram_manage_insights</code> y <code style="color:var(--gold)">pages_read_engagement</code> en tu App de Meta para desarrolladores.
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ MIS POSTS ══════════ -->
+    <div class="tool-panel" id="panel-mis-posts">
+      <div class="panel-title">Mis <em>posts</em></div>
+      <p class="panel-desc">Los últimos 12 posts publicados en @arquitecturafinanciera con sus métricas. Haz clic en uno para ver sus comentarios.</p>
+      <div id="posts-grid" class="post-grid">
+        <div class="loading"><span class="loading-dots">Cargando posts</span></div>
+      </div>
+      <div style="text-align:right;margin-top:8px;">
+        <button class="btn btn-secondary btn-sm" onclick="cargarMisPosts()">↻ Actualizar</button>
+      </div>
+    </div>
+
+    <!-- ══════════ COMENTARIOS IG ══════════ -->
+    <div class="tool-panel" id="panel-comentarios-ig">
+      <div class="panel-title">Comentarios <em>reales</em></div>
+      <p class="panel-desc">Lee los comentarios de cualquier post y genera respuestas con IA. Puedes enviarlos directamente a Instagram desde aquí.</p>
+      <div class="form-group">
+        <label class="form-label">ID del post de Instagram</label>
+        <div style="display:flex;gap:8px;">
+          <input type="text" class="form-input" id="ig-post-id-input" placeholder="Pega el ID del post (ej: 17846368219941196) o selecciona desde Mis Posts">
+          <button class="btn btn-primary" style="flex-shrink:0;" onclick="cargarComentariosPost(document.getElementById('ig-post-id-input').value.trim())">Cargar</button>
+        </div>
+        <div style="font-size:10px;color:var(--concrete);margin-top:6px;">Puedes obtener el ID yendo a <strong style="color:var(--gold)">Mis Posts</strong> y haciendo clic en cualquier post</div>
+      </div>
+      <div id="comentarios-lista">
+        <div class="output-empty">Selecciona un post para ver sus comentarios.</div>
+      </div>
+    </div>
+
+    <!-- ══════════ HISTORIAL ══════════ -->
+    <div class="tool-panel" id="panel-historial">
+      <div class="panel-title">Historial de <em>contenido</em></div>
+      <p class="panel-desc">Todo el contenido generado por el agente, guardado localmente. Hasta 50 entradas.</p>
+      <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+        <button class="btn btn-secondary btn-sm" onclick="cargarHistorial()">↻ Actualizar</button>
+      </div>
+      <div id="historial-lista" class="history-list">
+        <div class="loading"><span class="loading-dots">Cargando</span></div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</main>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── NAVIGATION ───────────────────────────────────────────────────────────
+const panelTitles = {
+  'dashboard':'Dashboard',
+  'generar-post':'Generar Post Completo',
+  'caption':'Generar Caption',
+  'comentarios':'Responder Comentarios',
+  'ideas':'Ideas Semanales',
+  'hashtags':'Generador de Hashtags',
+  'analizar':'Analizar Borrador',
+  'newsletter':'Newsletter Semanal',
+  'calendario':'Calendario de Publicación',
+  'ig-stats':'Estadísticas Instagram',
+  'mis-posts':'Mis Posts',
+  'comentarios-ig':'Comentarios Instagram',
+  'historial':'Historial de Contenido'
+};
+
+function showPanel(id){
+  document.querySelectorAll('.tool-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>{
+    if(b.getAttribute('onclick')===`showPanel('${id}')`){b.classList.add('active');}
+  });
+  document.getElementById('topbar-title').textContent = panelTitles[id]||id;
+}
+
+// ─── STREAMING HELPER ─────────────────────────────────────────────────────
+async function streamToElement(endpoint, body, outputId, wrapId){
+  const output = document.getElementById(outputId);
+  const wrap = document.getElementById(wrapId);
+  wrap.style.display='block';
+  output.textContent='';
+  output.classList.add('streaming');
+
+  try {
+    const res = await fetch(endpoint, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    });
+
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+
+    while(true){
+      const {done, value} = await reader.read();
+      if(done) break;
+      buffer += decoder.decode(value, {stream:true});
+      const lines = buffer.split('\n');
+      buffer = lines.pop();
+      for(const line of lines){
+        if(line.startsWith('data: ')){
+          try{
+            const data = JSON.parse(line.slice(6));
+            if(data.text){ output.textContent += data.text; output.scrollTop=output.scrollHeight; }
+            if(data.done){ output.classList.remove('streaming'); }
+          }catch(e){}
+        }
+      }
+    }
+  } catch(err){
+    output.classList.remove('streaming');
+    output.textContent = `Error: ${err.message}\n\nAsegúrate de que el servidor está corriendo y tu API key de Anthropic está configurada en el archivo .env`;
+    showToast('Error al conectar con el agente','error');
+  }
+}
+
+// ─── ACTIONS ──────────────────────────────────────────────────────────────
+function generarPost(){
+  const tema = document.getElementById('post-tema').value.trim();
+  if(!tema){ showToast('Escribe un tema primero','error'); return; }
+  streamToElement('/api/generar-post',{
+    tema,
+    formato: document.getElementById('post-formato').value,
+    bloque: document.getElementById('post-bloque').value,
+    nivel: document.getElementById('post-nivel').value
+  },'post-output','post-output-wrap');
+}
+
+function generarCaption(){
+  const tema = document.getElementById('caption-tema').value.trim();
+  if(!tema){ showToast('Describe el tema del post','error'); return; }
+  streamToElement('/api/generar-caption',{
+    tema,
+    tono: document.getElementById('caption-tono').value,
+    formato: document.getElementById('caption-formato').value
+  },'caption-output','caption-output-wrap');
+}
+
+function responderComentario(){
+  const comentario = document.getElementById('comentario-texto').value.trim();
+  if(!comentario){ showToast('Pega el comentario primero','error'); return; }
+  streamToElement('/api/responder-comentario',{
+    comentario,
+    contextoPost: document.getElementById('comentario-contexto').value
+  },'comentario-output','comentario-output-wrap');
+}
+
+function generarIdeas(){
+  streamToElement('/api/ideas-contenido',{
+    bloque: document.getElementById('ideas-bloque').value,
+    semana: document.getElementById('ideas-semana').value||'próxima',
+    postsPublicados: document.getElementById('ideas-publicados').value
+  },'ideas-output','ideas-output-wrap');
+}
+
+function analizarPost(){
+  const contenido = document.getElementById('analizar-contenido').value.trim();
+  if(!contenido){ showToast('Pega el borrador primero','error'); return; }
+  streamToElement('/api/analizar-post',{contenido},'analizar-output','analizar-output-wrap');
+}
+
+function generarNewsletter(){
+  const tema = document.getElementById('nl-tema').value.trim();
+  if(!tema){ showToast('Escribe el tema principal','error'); return; }
+  streamToElement('/api/generar-newsletter',{
+    tema,
+    numero: document.getElementById('nl-numero').value||'1',
+    postsRelacionados: document.getElementById('nl-posts').value
+  },'nl-output','nl-output-wrap');
+}
+
+async function generarHashtags(){
+  const tema = document.getElementById('ht-tema').value.trim();
+  if(!tema){ showToast('Escribe el tema primero','error'); return; }
+  const cloud = document.getElementById('ht-cloud');
+  const wrap = document.getElementById('ht-output-wrap');
+  cloud.innerHTML = '<span style="color:var(--concrete);font-size:11px;">Generando hashtags...</span>';
+  wrap.style.display='block';
+  try{
+    const res = await fetch('/api/hashtags',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({tema, formato:document.getElementById('ht-formato').value})
+    });
+    const data = await res.json();
+    const tags = data.hashtags.match(/#\w+/g)||data.hashtags.split(/\s+/).filter(t=>t);
+    cloud.innerHTML = tags.map(t=>`<span class="htag" onclick="copiarTag('${t}')">${t.startsWith('#')?t:'#'+t}</span>`).join('');
+  }catch(e){
+    cloud.innerHTML = '<span style="color:var(--rust)">Error al generar hashtags</span>';
+  }
+}
+
+function copiarTag(tag){ navigator.clipboard.writeText(tag); showToast(`${tag} copiado`,'success'); }
+
+function copiarHashtags(){
+  const tags = [...document.querySelectorAll('#ht-cloud .htag')].map(t=>t.textContent).join(' ');
+  navigator.clipboard.writeText(tags);
+  showToast('Todos los hashtags copiados','success');
+}
+
+function copiarOutput(id){
+  const text = document.getElementById(id).textContent;
+  if(text.trim()){ navigator.clipboard.writeText(text); showToast('Copiado al portapapeles','success'); }
+}
+
+function limpiarOutput(outputId, wrapId){
+  document.getElementById(outputId).innerHTML='<span class="output-empty">El contenido aparecerá aquí...</span>';
+  document.getElementById(wrapId).style.display='none';
+}
+
+// ─── TOAST ────────────────────────────────────────────────────────────────
+function showToast(msg, type='success'){
+  const t = document.getElementById('toast');
+  t.textContent = type==='success'?'✓  '+msg:'✕  '+msg;
+  t.className = 'toast show '+(type==='success'?'success':'');
+  setTimeout(()=>t.className='toast',3000);
+}
+
+// ─── UTILS ────────────────────────────────────────────────────────────────
+function formatNum(n){
+  if(n==null||n===undefined) return '—';
+  if(n>=1000000) return (n/1000000).toFixed(1)+'M';
+  if(n>=1000) return (n/1000).toFixed(1)+'K';
+  return n.toString();
+}
+function getMediaIcon(type){
+  return {IMAGE:'🖼️',VIDEO:'🎬',CAROUSEL_ALBUM:'📑',REEL:'🎞️'}[type]||'📷';
+}
+function escapeHTML(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escapeAttr(s){ return s.replace(/'/g,'&#39;').replace(/"/g,'&quot;').replace(/\n/g,' '); }
+
+// ─── INSTAGRAM: CARGAR PERFIL ─────────────────────────────────────────────
+async function cargarPerfilIG(){
+  const loading=document.getElementById('ig-loading');
+  const noConn=document.getElementById('ig-no-conectado');
+  const perfil=document.getElementById('ig-perfil-data');
+  loading.style.display='flex'; noConn.style.display='none'; perfil.style.display='none';
+  try{
+    const res=await fetch('/api/ig/perfil');
+    const data=await res.json();
+    loading.style.display='none';
+    if(!data.conectado){ noConn.style.display='block'; return; }
+
+    document.getElementById('ig-username').textContent='@'+(data.username||'arquitecturafinanciera');
+    document.getElementById('ig-bio').textContent=data.biography||'';
+    document.getElementById('ig-followers').textContent=formatNum(data.followers_count);
+    document.getElementById('ig-following').textContent=formatNum(data.follows_count);
+    document.getElementById('ig-posts-count').textContent=formatNum(data.media_count);
+    document.getElementById('ig-s-followers').textContent=formatNum(data.followers_count);
+    document.getElementById('ig-s-posts').textContent=formatNum(data.media_count);
+
+    const avatarWrap=document.getElementById('ig-avatar-wrap');
+    if(data.profile_picture_url){
+      avatarWrap.outerHTML=`<img class="ig-avatar" id="ig-avatar-wrap" src="${data.profile_picture_url}" alt="" onerror="this.outerHTML='<div class=ig-avatar-placeholder id=ig-avatar-wrap>📷</div>'">`;
+    }
+
+    // Update dashboard stats
+    const dashF=document.querySelector('.stat-card .sc-val');
+    if(dashF) dashF.textContent=formatNum(data.followers_count);
+
+    perfil.style.display='block';
+  }catch(e){
+    loading.style.display='none';
+    noConn.style.display='block';
+    console.error('IG perfil error:',e);
+  }
+}
+
+// ─── INSTAGRAM: CARGAR MIS POSTS ──────────────────────────────────────────
+async function cargarMisPosts(){
+  const grid=document.getElementById('posts-grid');
+  grid.innerHTML='<div class="loading" style="grid-column:1/-1"><span class="loading-dots">Cargando posts</span></div>';
+  try{
+    const res=await fetch('/api/ig/media');
+    const data=await res.json();
+    if(!data.conectado||!data.data?.length){
+      grid.innerHTML='<div class="output-empty" style="grid-column:1/-1">'+
+        (data.conectado?'Aún no hay posts publicados.':'Instagram no conectado. Ve a Estadísticas para configurarlo.')+'</div>';
+      return;
+    }
+    grid.innerHTML=data.data.map(p=>{
+      const thumb=p.thumbnail_url||p.media_url;
+      const thumbHTML=thumb?
+        `<img src="${thumb}" alt="" onerror="this.parentElement.innerHTML='<span class=pc-type-icon>${getMediaIcon(p.media_type)}</span>'" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">`
+        :`<span class="pc-type-icon">${getMediaIcon(p.media_type)}</span>`;
+      return `<div class="post-card" onclick="seleccionarPost('${p.id}',this)" title="Ver comentarios">
+        <div class="pc-thumb" style="position:relative;padding-top:100%;">${thumbHTML}</div>
+        <div class="pc-meta">
+          <div class="pc-caption">${escapeHTML((p.caption||'').slice(0,90))}${p.caption?.length>90?'...':''}</div>
+          <div class="pc-stats"><span>❤️ ${formatNum(p.like_count)}</span><span>💬 ${formatNum(p.comments_count)}</span></div>
+          <div class="pc-date">${new Date(p.timestamp).toLocaleDateString('es-ES',{day:'2-digit',month:'short',year:'2-digit'})}</div>
+        </div>
+      </div>`;
+    }).join('');
+  }catch(e){
+    grid.innerHTML=`<div style="color:var(--rust);padding:16px;grid-column:1/-1">Error: ${e.message}</div>`;
+  }
+}
+
+function seleccionarPost(mediaId, card){
+  document.querySelectorAll('.post-card').forEach(c=>c.classList.remove('selected'));
+  card.classList.add('selected');
+  showPanel('comentarios-ig');
+  document.getElementById('ig-post-id-input').value=mediaId;
+  cargarComentariosPost(mediaId);
+}
+
+// ─── INSTAGRAM: COMENTARIOS ───────────────────────────────────────────────
+async function cargarComentariosPost(mediaId){
+  if(!mediaId){ showToast('Introduce o selecciona un ID de post','error'); return; }
+  const container=document.getElementById('comentarios-lista');
+  container.innerHTML='<div class="loading"><span class="loading-dots">Cargando comentarios</span></div>';
+  try{
+    const res=await fetch(`/api/ig/comentarios/${mediaId}`);
+    const data=await res.json();
+    if(!data.conectado){ container.innerHTML='<div class="output-empty">Instagram no conectado. Configura el token en .env</div>'; return; }
+    if(!data.data?.length){ container.innerHTML='<div class="output-empty">Este post aún no tiene comentarios.</div>'; return; }
+    container.innerHTML=data.data.map(c=>`
+      <div class="comment-item" id="ci-${c.id}">
+        <div class="ci-header">
+          <strong class="ci-user">@${escapeHTML(c.username)}</strong>
+          <span class="ci-time">${new Date(c.timestamp).toLocaleString('es-ES',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</span>
+        </div>
+        <div class="ci-text">${escapeHTML(c.text)}</div>
+        <div class="ci-actions">
+          <button class="btn btn-sm btn-secondary" onclick="generarRespuestaIG('${c.id}','${escapeAttr(c.text)}')">✨ Respuesta con IA</button>
+        </div>
+        <div id="cr-${c.id}" style="display:none;margin-top:12px;">
+          <div class="output-header">
+            <span class="output-label">Respuesta sugerida — editable</span>
+            <button class="btn btn-sm btn-ghost" onclick="enviarRespuestaIG('${c.id}')">📤 Enviar en Instagram</button>
+          </div>
+          <textarea class="form-textarea" id="rt-${c.id}" style="min-height:70px;margin-top:0;border-top:none;border-radius:0;"></textarea>
+        </div>
+      </div>
+    `).join('');
+  }catch(e){
+    container.innerHTML=`<div style="color:var(--rust);padding:16px;">Error: ${e.message}</div>`;
+  }
+}
+
+async function generarRespuestaIG(commentId, texto){
+  const respEl=document.getElementById(`cr-${commentId}`);
+  const textEl=document.getElementById(`rt-${commentId}`);
+  respEl.style.display='block'; textEl.value=''; textEl.classList.add('streaming');
+  try{
+    const res=await fetch('/api/responder-comentario',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({comentario:texto,contextoPost:'post educativo sobre finanzas personales de @arquitecturafinanciera'})
+    });
+    const reader=res.body.getReader(); const decoder=new TextDecoder(); let buf='';
+    while(true){
+      const{done,value}=await reader.read(); if(done) break;
+      buf+=decoder.decode(value,{stream:true});
+      const lines=buf.split('\n'); buf=lines.pop();
+      for(const line of lines){
+        if(line.startsWith('data: ')){
+          try{
+            const d=JSON.parse(line.slice(6));
+            if(d.text) textEl.value+=d.text;
+            if(d.done) textEl.classList.remove('streaming');
+          }catch(e){}
+        }
+      }
+    }
+  }catch(e){ textEl.value='Error al generar respuesta'; textEl.classList.remove('streaming'); }
+}
+
+async function enviarRespuestaIG(commentId){
+  const mensaje=document.getElementById(`rt-${commentId}`).value.trim();
+  if(!mensaje){ showToast('La respuesta está vacía','error'); return; }
+  try{
+    const res=await fetch('/api/ig/responder',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({commentId,mensaje})
+    });
+    const data=await res.json();
+    if(data.ok){
+      showToast('Respuesta enviada en Instagram ✓','success');
+      const ci=document.getElementById(`ci-${commentId}`);
+      ci.style.opacity='0.5';
+      ci.querySelector('.ci-actions').innerHTML='<span style="font-size:10px;color:var(--green);">✓ Respondido</span>';
+    }else{ showToast(data.error||'Error al enviar','error'); }
+  }catch(e){ showToast('Error de conexión','error'); }
+}
+
+// ─── HISTORIAL ────────────────────────────────────────────────────────────
+async function cargarHistorial(){
+  const container=document.getElementById('historial-lista');
+  container.innerHTML='<div class="loading"><span class="loading-dots">Cargando</span></div>';
+  try{
+    const res=await fetch('/api/historial');
+    const data=await res.json();
+    if(!data.length){ container.innerHTML='<div class="output-empty">Aún no hay contenido guardado. Genera posts y pulsa 💾 Guardar para añadirlos aquí.</div>'; return; }
+    container.innerHTML=data.map(p=>`
+      <div class="history-item">
+        <div class="hi-type">${p.formato==='Reel'?'🎞️':p.formato==='Caption'?'📝':'📱'}</div>
+        <div class="hi-body">
+          <div class="hi-title">${escapeHTML(p.tema)}</div>
+          <div class="hi-time">${new Date(p.fecha).toLocaleDateString('es-ES',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'})}</div>
+        </div>
+        <span class="hi-chip">${escapeHTML(p.formato)}</span>
+      </div>
+    `).join('');
+  }catch(e){ container.innerHTML=`<div style="color:var(--rust);padding:16px;">Error al cargar historial</div>`; }
+}
+
+async function guardarEnHistorial(outputId, temaId, formatoId){
+  const contenido=document.getElementById(outputId).textContent.trim();
+  const tema=document.getElementById(temaId)?.value||document.getElementById(temaId)?.textContent||'Sin título';
+  const formato=document.getElementById(formatoId)?.value||'Post';
+  if(!contenido||contenido.includes('El contenido aparecerá')){ showToast('Genera contenido primero','error'); return; }
+  try{
+    const res=await fetch('/api/historial/guardar',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({tema,formato,contenido})
+    });
+    const data=await res.json();
+    if(data.ok) showToast('Guardado en el historial ✓','success');
+    else showToast('Error al guardar','error');
+  }catch(e){ showToast('Error al guardar','error'); }
+}
+
+// ─── CALENDAR TABLE ───────────────────────────────────────────────────────
+const schedule = [
+  {dia:'Lunes',hora:'19:00h',formato:'Carrusel',contenido:'Concepto educativo principal del bloque actual',prio:'★★★'},
+  {dia:'Martes',hora:'12:30h',formato:'Story',contenido:'Encuesta, pregunta o dato de la semana',prio:'★★☆'},
+  {dia:'Miércoles',hora:'19:30h',formato:'Reel',contenido:'Dato impactante, mito o pregunta corta (60s)',prio:'★★★'},
+  {dia:'Jueves',hora:'09:00h',formato:'Newsletter',contenido:'Análisis profundo o lección financiera — envío por email',prio:'★★★'},
+  {dia:'Jueves',hora:'19:00h',formato:'Carrusel',contenido:'Herramienta, recurso o comparativa',prio:'★★★'},
+  {dia:'Viernes',hora:'17:00h',formato:'Story',contenido:'Reflexión personal o pregunta abierta a la audiencia',prio:'★★☆'},
+  {dia:'Sábado',hora:'—',formato:'Descanso',contenido:'Sin publicación principal — responder DMs y comentarios',prio:'☆☆☆'},
+  {dia:'Domingo',hora:'20:00h',formato:'Story',contenido:'Teaser del contenido de la semana siguiente',prio:'★★☆'},
+];
+
+const fmtColors = {Carrusel:'var(--gold)',Reel:'#e07055',Newsletter:'var(--green)',Story:'#8899bb',Descanso:'var(--concrete)'};
+
+document.getElementById('cal-table-body').innerHTML = schedule.map(r=>`
+<tr>
+  <td style="font-family:'Syne',sans-serif;font-weight:700;color:var(--cream);font-size:13px;padding:14px 16px;border-bottom:1px solid var(--line2);">${r.dia}</td>
+  <td style="padding:14px 16px;border-bottom:1px solid var(--line2);"><span style="background:var(--navy);border:1px solid var(--line);padding:3px 10px;font-size:10px;color:var(--gold);">${r.hora}</span></td>
+  <td style="padding:14px 16px;border-bottom:1px solid var(--line2);"><span style="font-size:10px;color:${fmtColors[r.formato]||'var(--concrete)'};">${r.formato}</span></td>
+  <td style="padding:14px 16px;border-bottom:1px solid var(--line2);font-size:11px;color:var(--concrete);">${r.contenido}</td>
+  <td style="padding:14px 16px;border-bottom:1px solid var(--line2);font-size:12px;color:var(--gold);">${r.prio}</td>
+</tr>`).join('');
+</script>
+</body>
+</html>

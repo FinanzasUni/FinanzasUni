@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Cero — Arquitectura Financiera</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#0a0a0f; --navy:#1c2333; --gold:#c9a84c;
+    --gold-dim:rgba(201,168,76,0.12); --cream:#f4efe6;
+    --concrete:#6b7280; --rust:#b54a2f; --line:rgba(201,168,76,0.2);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);color:var(--cream);font-family:'DM Mono',monospace;}
+
+  header{
+    padding:20px 48px; border-bottom:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center;
+    position:sticky; top:0; background:rgba(10,10,15,.96); backdrop-filter:blur(12px); z-index:100;
+  }
+  .brand{font-family:'Playfair Display',serif;font-size:16px;color:var(--gold);}
+  .doc-label{font-size:10px;letter-spacing:3px;color:var(--concrete);text-transform:uppercase;}
+
+  .hero{padding:72px 48px 52px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:14px;}
+  .eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);display:block;}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,72px);font-weight:900;line-height:.95;letter-spacing:-1px;margin-bottom:18px;}
+  h1 em{font-style:italic;color:var(--gold);}
+  .hero-sub{font-size:12px;line-height:2;color:var(--concrete);max-width:500px;margin-bottom:36px;}
+  .meta{display:flex;gap:0;border:1px solid var(--line);}
+  .meta-item{padding:18px 28px;border-right:1px solid var(--line);}
+  .meta-item:last-child{border-right:none;}
+  .meta-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--gold);}
+  .meta-key{font-size:9px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-top:2px;}
+
+  /* CHANGE NOTICE */
+  .change-notice{
+    margin:0 48px; padding:20px 28px;
+    background:rgba(201,168,76,.07); border:1px solid rgba(201,168,76,.3);
+    display:flex; gap:16px; align-items:flex-start;
+  }
+  .change-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
+  .change-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--gold);margin-bottom:6px;}
+  .change-desc{font-size:11px;line-height:1.8;color:var(--concrete);}
+  .change-diff{display:flex;flex-direction:column;gap:6px;margin-top:12px;}
+  .diff-row{display:flex;gap:12px;align-items:center;font-size:11px;}
+  .diff-old{color:#e07055;text-decoration:line-through;opacity:.7;}
+  .diff-arrow{color:var(--concrete);}
+  .diff-new{color:var(--gold);}
+
+  /* SLIDES */
+  .slides-label{padding:44px 48px 20px;font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:14px;}
+  .slides-label::before{content:'';width:28px;height:1px;background:var(--gold);display:block;}
+
+  .slides-grid{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:2px; padding:0 48px; background:rgba(201,168,76,.07);
+  }
+
+  .slide{display:flex;flex-direction:column;background:var(--ink);}
+
+  /* PREVIEW */
+  .preview{
+    aspect-ratio:1; background:var(--navy);
+    display:flex; flex-direction:column; justify-content:space-between;
+    padding:22px; position:relative; overflow:hidden;
+  }
+  .preview.gold-bg{background:var(--gold);}
+  .preview.cream-bg{background:var(--cream);}
+
+  .grid-lines{
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(201,168,76,.05) 40px,rgba(201,168,76,.05) 41px),
+      repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(201,168,76,.05) 40px,rgba(201,168,76,.05) 41px);
+  }
+
+  .p-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;}
+  .p-brand{font-size:7px;letter-spacing:2px;color:rgba(201,168,76,.6);text-transform:uppercase;}
+  .p-brand.dark{color:rgba(0,0,0,.4);}
+  .p-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:rgba(201,168,76,.12);line-height:1;}
+  .p-num.dark{color:rgba(0,0,0,.12);}
+
+  .p-body{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:center;padding:14px 0;}
+
+  .p-tag{font-size:7px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;border-left:2px solid var(--gold);padding-left:8px;}
+  .p-tag.dark{color:var(--navy);border-color:var(--navy);}
+
+  .p-title{font-family:'Playfair Display',serif;color:var(--cream);line-height:1.15;}
+  .p-title.xl{font-size:clamp(14px,2vw,22px);font-weight:900;}
+  .p-title.lg{font-size:clamp(12px,1.8vw,18px);font-weight:700;}
+  .p-title.md{font-size:clamp(11px,1.5vw,15px);font-weight:400;font-style:italic;}
+  .p-title.dark{color:var(--ink);}
+
+  .p-sub{font-size:clamp(8px,1vw,11px);color:var(--concrete);margin-top:8px;line-height:1.6;}
+  .p-sub.dark{color:rgba(0,0,0,.5);}
+
+  .p-list{list-style:none;margin-top:10px;}
+  .p-list li{font-size:clamp(8px,1vw,11px);color:var(--concrete);line-height:1.9;padding-left:14px;position:relative;}
+  .p-list li::before{content:'◆';position:absolute;left:0;color:var(--gold);font-size:5px;top:5px;}
+
+  .p-highlight{
+    display:inline-block; margin-top:10px; padding:6px 10px;
+    font-family:'Syne',sans-serif; font-size:clamp(9px,1.2vw,13px); font-weight:700;
+  }
+  .p-highlight.gold-on-dark{background:var(--gold);color:var(--ink);}
+  .p-highlight.navy-on-gold{background:var(--navy);color:var(--gold);}
+
+  .p-bottom{position:relative;z-index:1;border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between;align-items:center;}
+  .p-bottom.dark-border{border-top:1px solid rgba(0,0,0,.15);}
+  .p-handle{font-size:7px;color:rgba(201,168,76,.5);letter-spacing:1px;}
+  .p-handle.dark{color:rgba(0,0,0,.4);}
+  .p-arrow{font-size:10px;color:var(--gold);}
+  .p-arrow.dark{color:var(--ink);}
+
+  /* NEW BADGE */
+  .new-badge{
+    position:absolute; top:0; right:0;
+    background:var(--gold); color:var(--ink);
+    font-size:8px; letter-spacing:2px; padding:4px 10px;
+    font-weight:700; text-transform:uppercase; z-index:2;
+  }
+
+  /* COPY */
+  .slide-copy{padding:18px 22px 22px;border-top:1px solid var(--line);flex:1;}
+  .copy-label{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+  .copy-text{font-size:11px;line-height:1.9;color:#9ca3af;}
+  .copy-note{margin-top:10px;padding:10px 14px;background:rgba(201,168,76,.06);border-left:2px solid var(--gold);font-size:10px;color:var(--concrete);line-height:1.7;font-style:italic;}
+  .copy-changed{margin-top:10px;padding:8px 12px;background:rgba(76,175,130,.08);border-left:2px solid #4caf82;font-size:10px;color:#4caf82;line-height:1.7;}
+
+  .swipe-hint{
+    grid-column:span 3; background:var(--navy);
+    padding:14px 24px; display:flex; align-items:center; justify-content:center;
+    gap:12px; font-size:10px; letter-spacing:2px; color:var(--gold); text-transform:uppercase;
+  }
+
+  /* CAPTION */
+  .caption-section{padding:52px 48px;border-top:1px solid var(--line);}
+  .sec-label{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:14px;}
+  .sec-label::before{content:'';width:28px;height:1px;background:var(--gold);display:block;}
+  .caption-box{background:var(--navy);border:1px solid var(--line);padding:32px;max-width:680px;}
+  .caption-text{font-size:13px;line-height:2.2;color:#d1d5db;white-space:pre-line;}
+  .caption-text .hook{color:var(--cream);font-weight:500;font-size:14px;}
+  .caption-text .hashtags{color:var(--gold);font-size:11px;}
+  .caption-text .cta{color:var(--cream);font-style:italic;}
+
+  /* TIPS */
+  .tips-wrap{padding:0 48px 64px;}
+  .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);}
+  .tip{background:var(--ink);padding:24px;}
+  .tip-icon{font-size:20px;margin-bottom:10px;}
+  .tip-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--cream);margin-bottom:6px;}
+  .tip-body{font-size:11px;color:var(--concrete);line-height:1.8;}
+
+  footer{padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);}
+  .f-brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);}
+  .f-note{font-size:10px;color:var(--concrete);line-height:1.8;text-align:right;}
+
+  @media(max-width:900px){
+    header,footer{padding:16px 20px;}
+    .hero{padding:48px 20px 36px;}
+    .change-notice{margin:0 20px;}
+    .slides-label{padding:32px 20px 16px;}
+    .slides-grid{grid-template-columns:1fr;padding:0 20px;}
+    .swipe-hint{grid-column:span 1;}
+    .caption-section{padding:36px 20px;}
+    .tips-wrap{padding:0 20px 48px;}
+    .tips-grid{grid-template-columns:1fr;}
+    .meta{flex-direction:column;}
+    .meta-item{border-right:none;border-bottom:1px solid var(--line);}
+    .meta-item:last-child{border-bottom:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Arquitectura Financiera</div>
+  <div class="doc-label">Post Cero · v2 Corregido</div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Carrusel de presentación · versión corregida</div>
+  <h1>Post Cero<br><em>corregido</em></h1>
+  <p class="hero-sub">Versión actualizada: sin referencias al negocio personal. El foco está en ti como joven, estudiante e inversor — no en tu vida profesional.</p>
+  <div class="meta">
+    <div class="meta-item"><div class="meta-val">6</div><div class="meta-key">Slides</div></div>
+    <div class="meta-item"><div class="meta-val">Carrusel</div><div class="meta-key">Formato</div></div>
+    <div class="meta-item"><div class="meta-val">v2</div><div class="meta-key">Versión</div></div>
+  </div>
+</div>
+
+<!-- CHANGE NOTICE -->
+<div class="change-notice" style="margin-top:32px;">
+  <div class="change-icon">✏️</div>
+  <div>
+    <div class="change-title">Cambios aplicados en esta versión</div>
+    <div class="change-desc">Slide 2 revisado. Se eliminan referencias al negocio propio para mantener la separación entre marca personal y vida profesional, tal y como marca la Regla 6 de la estrategia.</div>
+    <div class="change-diff">
+      <div class="diff-row">
+        <span class="diff-old">Gestor de una constructora</span>
+        <span class="diff-arrow">→</span>
+        <span class="diff-new">Emprendedor con 20 años</span>
+      </div>
+      <div class="diff-row">
+        <span class="diff-old">Estudiante de ingeniería</span>
+        <span class="diff-arrow">→</span>
+        <span class="diff-new">Estudiante universitario</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slides-label">Las 6 slides · Copy y diseño</div>
+
+<div class="slides-grid">
+
+  <!-- S1 -->
+  <div class="slide">
+    <div class="preview">
+      <div class="grid-lines"></div>
+      <div class="p-top"><span class="p-brand">Arquitectura Financiera</span><span class="p-num">01</span></div>
+      <div class="p-body">
+        <div class="p-tag">Post Cero · Presentación</div>
+        <div class="p-title xl">Nadie te va a enseñar a construir tu patrimonio.</div>
+        <div class="p-sub">Así que lo aprendemos juntos.</div>
+      </div>
+      <div class="p-bottom"><span class="p-handle">@arquitecturafinanciera</span><span class="p-arrow">→</span></div>
+    </div>
+    <div class="slide-copy">
+      <div class="copy-label">Texto del slide</div>
+      <div class="copy-text"><strong style="color:var(--cream)">"Nadie te va a enseñar a construir tu patrimonio."</strong><br><br>Subtítulo: <em>"Así que lo aprendemos juntos."</em></div>
+      <div class="copy-note">💡 Hook potente. Sin cambios — funciona perfectamente tal cual.</div>
+    </div>
+  </div>
+
+  <!-- S2 CORREGIDO -->
+  <div class="slide">
+    <div class="preview">
+      <div class="grid-lines"></div>
+      <div class="new-badge">✓ Corregido</div>
+      <div class="p-top"><span class="p-brand">Arquitectura Financiera</span><span class="p-num">02</span></div>
+      <div class="p-body">
+        <div class="p-tag">Quién soy</div>
+        <div class="p-title lg">Soy Diego.</div>
+        <ul class="p-list">
+          <li>Estudiante universitario</li>
+          <li>Emprendedor con 20 años</li>
+          <li>Inversor desde los 18</li>
+          <li>Aprendiendo en público</li>
+        </ul>
+      </div>
+      <div class="p-bottom"><span class="p-handle">@arquitecturafinanciera</span><span class="p-arrow">→</span></div>
+    </div>
+    <div class="slide-copy">
+      <div class="copy-label">Texto del slide · Corregido</div>
+      <div class="copy-text">
+        <strong style="color:var(--cream)">Título: "Soy Diego."</strong><br><br>
+        — Estudiante universitario<br>
+        — Emprendedor con 20 años<br>
+        — Inversor desde los 18<br>
+        — Aprendiendo en público
+      </div>
+      <div class="copy-changed">✓ Eliminadas referencias al negocio propio. "Emprendedor con 20 años" mantiene la credibilidad sin revelar detalles privados.</div>
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="slide">
+    <div class="preview">
+      <div class="grid-lines"></div>
+      <div class="p-top"><span class="p-brand">Arquitectura Financiera</span><span class="p-num">03</span></div>
+      <div class="p-body">
+        <div class="p-tag">El problema</div>
+        <div class="p-title lg">En la universidad aprendemos de todo.</div>
+        <div class="p-title md" style="margin-top:8px;">Menos a gestionar nuestro dinero.</div>
+        <div class="p-highlight gold-on-dark">Y eso tiene un coste enorme.</div>
+      </div>
+      <div class="p-bottom"><span class="p-handle">@arquitecturafinanciera</span><span class="p-arrow">→</span></div>
+    </div>
+    <div class="slide-copy">
+      <div class="copy-label">Texto del slide</div>
+      <div class="copy-text">
+        <strong style="color:var(--cream)">"En la universidad aprendemos de todo."</strong><br><br>
+        <em>"Menos a gestionar nuestro dinero."</em><br><br>
+        Destacado: <strong style="color:var(--gold)">"Y eso tiene un coste enorme."</strong>
+      </div>
+      <div class="copy-note">💡 Sin cambios — conecta directamente con el dolor de la audiencia universitaria.</div>
+    </div>
+  </div>
+
+  <!-- S4 -->
+  <div class="slide">
+    <div class="preview">
+      <div class="grid-lines"></div>
+      <div class="p-top"><span class="p-brand">Arquitectura Financiera</span><span class="p-num">04</span></div>
+      <div class="p-body">
+        <div class="p-tag">La solución</div>
+        <div class="p-title lg">Aquí construimos juntos lo que nadie nos enseñó.</div>
+        <ul class="p-list" style="margin-top:12px;">
+          <li>Finanzas personales reales</li>
+          <li>Inversión desde España</li>
+          <li>Cripto sin hype</li>
+          <li>Patrimonio desde cero</li>
+        </ul>
+      </div>
+      <div class="p-bottom"><span class="p-handle">@arquitecturafinanciera</span><span class="p-arrow">→</span></div>
+    </div>
+    <div class="slide-copy">
+      <div class="copy-label">Texto del slide</div>
+      <div class="copy-text">
+        <strong style="color:var(--cream)">"Aquí construimos juntos lo que nadie nos enseñó."</strong><br><br>
+        — Finanzas personales reales<br>
+        — Inversión desde España<br>
+        — Cripto sin hype<br>
+        — Patrimonio desde cero
+      </div>
+      <div class="copy-note">💡 Propuesta de valor + 4 pilares. El slide donde deciden si seguirte.</div>
+    </div>
+  </div>
+
+  <!-- S5 -->
+  <div class="slide">
+    <div class="preview">
+      <div class="grid-lines"></div>
+      <div class="p-top"><span class="p-brand">Arquitectura Financiera</span><span class="p-num">05</span></div>
+      <div class="p-body">
+        <div class="p-tag">Mi promesa</div>
+        <div class="p-title lg">Sin gurús. Sin promesas imposibles. Sin complicarlo.</div>
+        <div class="p-sub" style="margin-top:10px;">Solo lo que funciona, explicado como si se lo contara a un amigo.</div>
+      </div>
+      <div class="p-bottom"><span class="p-handle">@arquitecturafinanciera</span><span class="p-arrow">→</span></div>
+    </div>
+    <div class="slide-copy">
+      <div class="copy-label">Texto del slide</div>
+      <div class="copy-text">
+        <strong style="color:var(--cream)">"Sin gurús. Sin promesas imposibles. Sin complicarlo."</strong><br><br>
+        <em>"Solo lo que funciona, explicado como si se lo contara a un amigo."</em>
+      </div>
+      <div class="copy-note">💡 Tu diferencial más fuerte. Honestidad frente al resto de cuentas del nicho.</div>
+    </div>
+  </div>
+
+  <!-- S6 CTA -->
+  <div class="slide">
+    <div class="preview gold-bg">
+      <div class="p-top"><span class="p-brand dark">Arquitectura Financiera</span><span class="p-num dark">06</span></div>
+      <div class="p-body">
+        <div class="p-tag dark">Call to action</div>
+        <div class="p-title xl dark">Si quieres empezar a construir, empieza aquí.</div>
+        <div class="p-highlight navy-on-gold" style="margin-top:16px;">Sigue @arquitecturafinanciera</div>
+      </div>
+      <div class="p-bottom dark-border"><span class="p-handle dark">@arquitecturafinanciera</span><span class="p-arrow dark">↩</span></div>
+    </div>
+    <div class="slide-copy">
+      <div class="copy-label">Texto del slide</div>
+      <div class="copy-text">
+        <strong style="color:var(--cream)">"Si quieres empezar a construir, empieza aquí."</strong><br><br>
+        CTA en azul sobre dorado: <strong style="color:var(--gold)">"Sigue @arquitecturafinanciera"</strong>
+      </div>
+      <div class="copy-note">💡 Fondo dorado rompe el patrón. Máximo contraste para el CTA final.</div>
+    </div>
+  </div>
+
+  <div class="swipe-hint">← Desliza para ver todos los slides →</div>
+</div>
+
+<!-- CAPTION -->
+<div class="caption-section">
+  <div class="sec-label">Caption de Instagram · v2</div>
+  <div class="caption-box">
+    <div class="caption-text"><span class="hook">Nadie te va a enseñar a construir tu patrimonio. 🏗️
+
+Así que decidí aprenderlo — y compartirlo.</span>
+
+Me llamo Diego. Tengo 20 años, soy estudiante universitario e inversor desde los 18.
+
+Nadie en clase me explicó qué es un ETF, cómo tributan mis inversiones en España o por qué la inflación se come mis ahorros.
+
+Lo tuve que aprender solo.
+
+Y eso no debería ser así.
+
+Por eso nace Arquitectura Financiera:
+
+Un espacio donde construimos juntos lo que el sistema educativo no nos enseñó.
+
+— Finanzas personales reales
+— Inversión desde España
+— Cripto sin hype ni promesas
+— Patrimonio desde cero, paso a paso
+
+Sin gurús. Sin hacerte rico rápido. Sin complicarlo más de lo que es.
+
+Solo lo que funciona, explicado como si te lo contara un amigo.
+
+<span class="cta">Si estás empezando — o llevas tiempo queriendo empezar — este es tu sitio. 👇</span>
+
+<span class="hashtags">#arquitecturafinanciera #finanzaspersonales #invertirdesdeespana #educacionfinanciera #inversion #etf #bitcoin #finanzasjovenes #patrimoniopersonal #libertadfinanciera</span></div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="sec-label" style="padding:0 48px 20px;">Consejos de publicación</div>
+<div class="tips-wrap">
+  <div class="tips-grid">
+    <div class="tip">
+      <div class="tip-icon">⏰</div>
+      <div class="tip-title">Mejor horario</div>
+      <div class="tip-body">Publica entre las 19:00 y las 21:00h de martes a jueves. Máxima actividad de la audiencia joven española.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">📌</div>
+      <div class="tip-title">Fíjalo en el perfil</div>
+      <div class="tip-body">Una vez publicado, fíjalo como primer post. Todo nuevo visitante lo verá primero y entenderá la propuesta.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">💬</div>
+      <div class="tip-title">Primera hora activa</div>
+      <div class="tip-body">Responde cada comentario en la primera hora. El algoritmo de Instagram premia la interacción rápida y dispara el alcance orgánico.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="f-brand">Arquitectura Financiera</div>
+  <div class="f-note">Post Cero · v2 Corregido<br>@arquitecturafinanciera · 2025</div>
+</footer>
+
+</body>
+</html>

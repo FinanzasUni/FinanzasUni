@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloque 02 — Ahorro Real · Arquitectura Financiera</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Syne:wght@600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1c2333;
+    --navy2: #0d1117;
+    --gold: #c9a84c;
+    --goldl: rgba(201,168,76,.15);
+    --cream: #f4efe6;
+    --gray: #6b7280;
+    --lgray: #9ca3af;
+    --line: rgba(201,168,76,.15);
+    --bg: #0d1117;
+    --card: #111827;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { background:var(--bg); color:var(--cream); font-family:'DM Mono',monospace; }
+  body { max-width:900px; margin:0 auto; padding:0 0 80px; }
+
+  /* ── HEADER ── */
+  .page-header { padding:72px 40px 56px; border-bottom:1px solid var(--line); }
+  .eyebrow { font-size:11px; letter-spacing:4px; color:var(--gold); text-transform:uppercase; margin-bottom:20px; }
+  .page-h1 { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,56px); font-weight:900; color:var(--cream); line-height:1.1; margin-bottom:18px; }
+  .page-h1 em { color:var(--gold); font-style:normal; }
+  .page-sub { font-size:15px; color:var(--gray); line-height:1.8; max-width:600px; }
+
+  /* ── POST SECTION ── */
+  .post-section { padding:56px 40px; border-bottom:1px solid var(--line); }
+  .post-header { display:flex; align-items:flex-start; gap:24px; margin-bottom:36px; }
+  .post-num { font-family:'Playfair Display',serif; font-size:72px; font-weight:900; color:rgba(201,168,76,.1); line-height:.9; flex-shrink:0; width:80px; }
+  .post-meta {}
+  .post-bloque { font-size:9px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; margin-bottom:6px; }
+  .post-title { font-family:'Syne',sans-serif; font-size:clamp(18px,2.5vw,26px); font-weight:800; color:var(--cream); line-height:1.2; margin-bottom:6px; }
+  .post-desc { font-size:12px; color:var(--gray); line-height:1.7; }
+
+  /* ── SLIDES GRID ── */
+  .slides-label { font-size:10px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; margin-bottom:16px; }
+  .slides-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:36px; }
+  .slide-thumb { background:var(--navy); border-radius:6px; aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:12px; border:1px solid var(--line); }
+  .slide-thumb .sn { font-size:10px; color:var(--gold); margin-bottom:6px; letter-spacing:2px; }
+  .slide-thumb .sl { font-size:11px; color:var(--lgray); text-align:center; line-height:1.4; }
+
+  /* ── CONTENT BLOCKS ── */
+  .section-label { font-size:10px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; margin-bottom:12px; }
+  .hook-box { background:rgba(201,168,76,.07); border:1px solid var(--line); border-radius:8px; padding:24px 28px; margin-bottom:20px; }
+  .hook-box p { font-size:16px; color:var(--cream); line-height:1.75; }
+  .hook-box p strong { color:var(--gold); }
+
+  .caption-box { background:var(--card); border-radius:8px; padding:24px 28px; margin-bottom:20px; }
+  .caption-box pre { font-family:'DM Mono',monospace; font-size:13px; color:var(--lgray); line-height:1.85; white-space:pre-wrap; }
+  .caption-box pre .gold { color:var(--gold); }
+
+  .hashtags-box { background:rgba(201,168,76,.05); border-radius:8px; padding:20px 28px; margin-bottom:20px; }
+  .hashtags-box p { font-size:12px; color:var(--gray); line-height:2; }
+  .hashtags-box span { color:var(--gold); margin-right:6px; }
+
+  .timing-row { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:0; }
+  .timing-chip { font-size:11px; color:var(--lgray); background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:20px; padding:6px 14px; }
+  .timing-chip strong { color:var(--cream); }
+
+  /* ── CALENDAR TABLE ── */
+  .calendar { background:var(--card); border-radius:8px; overflow:hidden; margin:32px 40px 0; }
+  .cal-header { display:grid; grid-template-columns:80px 1fr 1fr 80px; gap:0; background:rgba(201,168,76,.1); }
+  .cal-header div { font-size:10px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; padding:14px 20px; }
+  .cal-row { display:grid; grid-template-columns:80px 1fr 1fr 80px; border-top:1px solid var(--line); }
+  .cal-row:hover { background:rgba(255,255,255,.02); }
+  .cal-row div { padding:16px 20px; font-size:13px; color:var(--lgray); }
+  .cal-row .week { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:rgba(201,168,76,.3); }
+  .cal-row .post-t { color:var(--cream); font-size:13px; }
+  .cal-row .state { font-size:11px; }
+  .state-ready { color:#2ecc71; }
+  .state-todo { color:var(--gray); }
+
+  /* ── FOOTER ── */
+  .page-footer { padding:48px 40px; text-align:center; }
+  .page-footer p { font-size:12px; color:var(--gray); line-height:1.7; }
+  .page-footer strong { color:var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">Sistema de contenido · Bloque 02 — Ahorro Real</div>
+  <h1 class="page-h1">Los siguientes <em>5 posts</em><br>listos para publicar</h1>
+  <p class="page-sub">Slides, captions e instrucciones de publicación del Bloque 02. Cadencia recomendada: uno cada 2-3 días, continuando desde donde dejó el Bloque 01.</p>
+</div>
+
+<!-- ════════════ POST 06 ════════════ -->
+<div class="post-section">
+  <div class="post-header">
+    <div class="post-num">06</div>
+    <div class="post-meta">
+      <div class="post-bloque">💰 Bloque 02 — Ahorro Real</div>
+      <div class="post-title">El fondo de emergencia: el primer escudo de tu patrimonio</div>
+      <div class="post-desc">El concepto más ignorado y más importante de las finanzas personales. Alto potencial de guardados. Explica qué es, cuánto necesitas y dónde guardarlo.</div>
+    </div>
+  </div>
+
+  <div class="slides-label">Slides del carrusel</div>
+  <div class="slides-grid">
+    <div class="slide-thumb"><div class="sn">01</div><div class="sl">Portada<br>"El fondo de emergencia"</div></div>
+    <div class="slide-thumb"><div class="sn">02</div><div class="sl">¿Qué es?<br>4 claves básicas</div></div>
+    <div class="slide-thumb"><div class="sn">03</div><div class="sl">El cálculo<br>2.400€ mínimo</div></div>
+    <div class="slide-thumb"><div class="sn">04</div><div class="sl">SÍ vs NO<br>Dónde guardarlo</div></div>
+    <div class="slide-thumb"><div class="sn">05</div><div class="sl">CTA<br>¿Tienes el tuyo?</div></div>
+  </div>
+
+  <div class="section-label">Hook (primera línea)</div>
+  <div class="hook-box">
+    <p><strong>Antes de invertir un solo euro, necesitas esto.</strong></p>
+  </div>
+
+  <div class="section-label">Caption completa</div>
+  <div class="caption-box">
+    <pre>Antes de invertir un solo euro, necesitas esto. 🛡
+
+El fondo de emergencia no es opcional. Es la base de todo.
+
+Si mañana pierdes el trabajo, se rompe el coche o aparece una factura inesperada... ¿tienes dinero para aguantar 3 meses sin tocar nada más?
+
+Si la respuesta es no, eso es lo primero que hay que construir.
+
+¿Qué es?
+→ 3 a 6 meses de tus gastos esenciales
+→ Líquido (disponible en 24-48h)
+→ En una cuenta separada, intocable
+→ Solo para emergencias reales (no para caprichos)
+
+¿Cuánto necesitas tú?
+Suma: alquiler + comida + transporte + suministros
+Multiplica por 3. Ese es tu número mínimo.
+
+¿Dónde guardarlo?
+En una cuenta separada de la que usas a diario. Idealmente una cuenta remunerada (sin permanencia) para que algo genere mientras espera.
+
+Guarda este post. Es la primera regla del dinero. 👇</pre>
+  </div>
+
+  <div class="section-label">Hashtags</div>
+  <div class="hashtags-box">
+    <p>
+      <span>#fondodeemergencia</span><span>#arquitecturafinanciera</span><span>#finanzaspersonales</span><span>#ahorro</span><span>#educacionfinanciera</span><span>#dinero</span><span>#finanzasjovenes</span><span>#libertadfinanciera</span><span>#finanzasespana</span><span>#patrimoniodesdecer</span>
+    </p>
+  </div>
+
+  <div class="timing-row">
+    <div class="timing-chip"><strong>Mejor hora:</strong> Lunes o martes, 19-21h</div>
+    <div class="timing-chip"><strong>Formato:</strong> Carrusel 5 slides</div>
+    <div class="timing-chip"><strong>Semana:</strong> 4 del lanzamiento</div>
+  </div>
+</div>
+
+<!-- ════════════ POST 07 ════════════ -->
+<div class="post-section">
+  <div class="post-header">
+    <div class="post-num">07</div>
+    <div class="post-meta">
+      <div class="post-bloque">💰 Bloque 02 — Ahorro Real</div>
+      <div class="post-title">Págate a ti primero: el método que más dinero te hará ahorrar</div>
+      <div class="post-desc">El hábito más poderoso de las finanzas personales. Muy compartible, muy accionable. Perfecto para viralidad porque todo el mundo se identifica con "nunca me sobra nada a fin de mes".</div>
+    </div>
+  </div>
+
+  <div class="slides-label">Slides del carrusel</div>
+  <div class="slides-grid">
+    <div class="slide-thumb"><div class="sn">01</div><div class="sl">Portada<br>"Págate a ti primero"</div></div>
+    <div class="slide-thumb"><div class="sn">02</div><div class="sl">El error<br>"Ahorro lo que sobra"</div></div>
+    <div class="slide-thumb"><div class="sn">03</div><div class="sl">El método<br>3 pasos al cobrar</div></div>
+    <div class="slide-thumb"><div class="sn">04</div><div class="sl">El número<br>20% de tus ingresos</div></div>
+    <div class="slide-thumb"><div class="sn">05</div><div class="sl">CTA<br>¿Ya lo automatizas?</div></div>
+  </div>
+
+  <div class="section-label">Hook (primera línea)</div>
+  <div class="hook-box">
+    <p><strong>El 90% de la gente ahorra lo que le sobra. Por eso el 90% no ahorra nada.</strong></p>
+  </div>
+
+  <div class="section-label">Caption completa</div>
+  <div class="caption-box">
+    <pre>El 90% de la gente ahorra lo que le sobra. Por eso el 90% no ahorra nada. 💸
+
+"Ahorro lo que me queda a fin de mes."
+
+El problema: nunca queda nada. El dinero que tienes delante, lo gastas. No es falta de disciplina. Es psicología básica.
+
+La solución: págate a ti primero.
+
+Cómo funciona:
+El día que cobras →
+1. Paga tus gastos fijos (alquiler, facturas)
+2. Transfiérete a ti primero (10-20% de tus ingresos)
+3. Vive con lo que queda
+
+Automatiza esa transferencia. Si tienes que hacerla tú cada mes, algún mes no la harás.
+
+¿Cuánto transferirte?
+→ Mínimo: 10% de tus ingresos netos
+→ Objetivo: 20%
+→ Si estás empezando: lo que puedas, aunque sean 50€
+
+Con 1.200€ netos → transfiérete 240€ el mismo día que cobras. El resto, para vivir.
+
+Guarda este post y ponlo en práctica esta semana. 👇</pre>
+  </div>
+
+  <div class="section-label">Hashtags</div>
+  <div class="hashtags-box">
+    <p>
+      <span>#pagateatiprimero</span><span>#arquitecturafinanciera</span><span>#ahorro</span><span>#finanzaspersonales</span><span>#habitos</span><span>#dinero</span><span>#educacionfinanciera</span><span>#finanzasjovenes</span><span>#libertadfinanciera</span><span>#finanzasespana</span>
+    </p>
+  </div>
+
+  <div class="timing-row">
+    <div class="timing-chip"><strong>Mejor hora:</strong> Jueves o viernes, 19-21h</div>
+    <div class="timing-chip"><strong>Formato:</strong> Carrusel 5 slides</div>
+    <div class="timing-chip"><strong>Semana:</strong> 4 del lanzamiento</div>
+  </div>
+</div>
+
+<!-- ════════════ POST 08 ════════════ -->
+<div class="post-section">
+  <div class="post-header">
+    <div class="post-num">08</div>
+    <div class="post-meta">
+      <div class="post-bloque">💰 Bloque 02 — Ahorro Real</div>
+      <div class="post-title">Cuentas remuneradas en España: dónde poner tu dinero mientras espera</div>
+      <div class="post-desc">Contenido muy práctico y muy buscado. Comparativa con nombres reales (Trade Republic, MyInvestor, BBVA). Alto potencial de guardados y compartidos.</div>
+    </div>
+  </div>
+
+  <div class="slides-label">Slides del carrusel</div>
+  <div class="slides-grid">
+    <div class="slide-thumb"><div class="sn">01</div><div class="sl">Portada<br>"Tu dinero trabaja mientras espera"</div></div>
+    <div class="slide-thumb"><div class="sn">02</div><div class="sl">Qué es<br>4 características</div></div>
+    <div class="slide-thumb"><div class="sn">03</div><div class="sl">Comparativa<br>3 opciones España</div></div>
+    <div class="slide-thumb"><div class="sn">04</div><div class="sl">Qué mirar<br>4 preguntas clave</div></div>
+    <div class="slide-thumb"><div class="sn">05</div><div class="sl">CTA<br>¿Ya tienes la tuya?</div></div>
+  </div>
+
+  <div class="section-label">Hook (primera línea)</div>
+  <div class="hook-box">
+    <p><strong>Tu fondo de emergencia está parado perdiendo dinero. Esto lo soluciona.</strong></p>
+  </div>
+
+  <div class="section-label">Caption completa</div>
+  <div class="caption-box">
+    <pre>Tu fondo de emergencia está parado perdiendo dinero. Esto lo soluciona. 📊
+
+Una cuenta remunerada te paga intereses por tener dinero ahí.
+
+Sin invertir. Sin riesgo de bolsa. Sin permanencia obligatoria.
+
+¿Cuáles son las mejores opciones en España ahora mismo?
+
+→ Trade Republic: 4% TAE. Sin permanencia. Sin comisiones. App muy sencilla.
+→ MyInvestor: 2,5% TAE. Banco español. Cubierto por FGD. Sin requisitos raros.
+→ BBVA Online: 2% TAE el primer año. Sin comisiones de mantenimiento.
+
+Antes de abrir cualquiera, hazte estas 4 preguntas:
+1. ¿Cuál es la TAE real (no la nominal)?
+2. ¿Hay permanencia mínima?
+3. ¿Tiene comisiones de mantenimiento?
+4. ¿Está cubierta por el FGD?
+
+⚠️ Los datos son orientativos. Las TAEs cambian. Comprueba siempre la oferta actualizada antes de abrir.
+
+Guarda este post y compara las opciones. Tu fondo de emergencia debería estar generando algo mientras espera. 👇</pre>
+  </div>
+
+  <div class="section-label">Hashtags</div>
+  <div class="hashtags-box">
+    <p>
+      <span>#cuentasremuneradas</span><span>#arquitecturafinanciera</span><span>#ahorro</span><span>#finanzaspersonales</span><span>#tradererepublic</span><span>#myinvestor</span><span>#dinero</span><span>#educacionfinanciera</span><span>#finanzasespana</span><span>#intereses</span>
+    </p>
+  </div>
+
+  <div class="timing-row">
+    <div class="timing-chip"><strong>Mejor hora:</strong> Martes o miércoles, 19-21h</div>
+    <div class="timing-chip"><strong>Formato:</strong> Carrusel 5 slides</div>
+    <div class="timing-chip"><strong>Semana:</strong> 5 del lanzamiento</div>
+  </div>
+</div>
+
+<!-- ════════════ POST 09 ════════════ -->
+<div class="post-section">
+  <div class="post-header">
+    <div class="post-num">09</div>
+    <div class="post-meta">
+      <div class="post-bloque">💰 Bloque 02 — Ahorro Real</div>
+      <div class="post-title">Ahorrar sin objetivo es acumular dinero muerto</div>
+      <div class="post-desc">Post conceptual y de alto impacto emocional. Reencuadra la idea de ahorrar e introduce los 3 tipos de ahorro. Muy compartible por personas que "ahorran pero no saben para qué".</div>
+    </div>
+  </div>
+
+  <div class="slides-label">Slides del carrusel</div>
+  <div class="slides-grid">
+    <div class="slide-thumb"><div class="sn">01</div><div class="sl">Portada<br>"Dinero muerto"</div></div>
+    <div class="slide-thumb"><div class="sn">02</div><div class="sl">Inflación<br>-300€/año silenciosos</div></div>
+    <div class="slide-thumb"><div class="sn">03</div><div class="sl">Los 3 tipos<br>Emergencia / Objetivos / Inversión</div></div>
+    <div class="slide-thumb"><div class="sn">04</div><div class="sl">Define metas<br>Nombre a cada euro</div></div>
+    <div class="slide-thumb"><div class="sn">05</div><div class="sl">CTA<br>¿Cuál es tu objetivo?</div></div>
+  </div>
+
+  <div class="section-label">Hook (primera línea)</div>
+  <div class="hook-box">
+    <p><strong>Tienes dinero ahorrado y aun así se está evaporando. Así funciona.</strong></p>
+  </div>
+
+  <div class="section-label">Caption completa</div>
+  <div class="caption-box">
+    <pre>Tienes dinero ahorrado y aun así se está evaporando. Así funciona. 🔥
+
+Con una inflación del 3%, 10.000€ parados pierden 300€ de poder adquisitivo cada año.
+
+Sin que nadie te avise. Sin que lo veas en tu cuenta.
+
+Ahorrar sin objetivo no es seguro. Es lento. Es dinero muerto.
+
+El ahorro necesita propósito.
+
+Los 3 tipos de ahorro que necesitas:
+
+🛡 Emergencia
+3-6 meses de gastos esenciales. No se toca. No busca rentabilidad máxima. Es tu red de seguridad.
+
+🎯 Objetivos
+Viaje, coche, máster, entrada para un piso. Plazo definido. Cuenta remunerada mientras espera.
+
+📈 Inversión
+Largo plazo. ETFs, fondos indexados. Dinero que no tocarás en años y que trabaja para ti.
+
+Cómo organizarlo:
+→ Pon nombre a cada euro que ahorras
+→ Asigna una fecha límite a cada meta
+→ Usa cuentas o sobres separados por objetivo
+→ Revisa cada 3 meses
+
+¿Cuál es tu objetivo de ahorro ahora mismo? 👇
+Cuéntamelo en comentarios. Escribirlo es el primer paso.</pre>
+  </div>
+
+  <div class="section-label">Hashtags</div>
+  <div class="hashtags-box">
+    <p>
+      <span>#objetivosfinancieros</span><span>#arquitecturafinanciera</span><span>#ahorro</span><span>#inflacion</span><span>#finanzaspersonales</span><span>#dinero</span><span>#educacionfinanciera</span><span>#finanzasjovenes</span><span>#libertadfinanciera</span><span>#finanzasespana</span>
+    </p>
+  </div>
+
+  <div class="timing-row">
+    <div class="timing-chip"><strong>Mejor hora:</strong> Jueves, 19-21h</div>
+    <div class="timing-chip"><strong>Formato:</strong> Carrusel 5 slides</div>
+    <div class="timing-chip"><strong>Semana:</strong> 5 del lanzamiento</div>
+  </div>
+</div>
+
+<!-- ════════════ POST 10 ════════════ -->
+<div class="post-section">
+  <div class="post-header">
+    <div class="post-num">10</div>
+    <div class="post-meta">
+      <div class="post-bloque">💰 Bloque 02 — Ahorro Real</div>
+      <div class="post-title">De 0€ a 3 meses de seguridad financiera: el plan paso a paso</div>
+      <div class="post-desc">El cierre perfecto del Bloque 02. Carrusel accionable con pasos concretos. Muy alto potencial de guardados. Conecta todo lo aprendido en el bloque en un plan ejecutable.</div>
+    </div>
+  </div>
+
+  <div class="slides-label">Slides del carrusel</div>
+  <div class="slides-grid">
+    <div class="slide-thumb"><div class="sn">01</div><div class="sl">Portada<br>"De 0€ a 3 meses"</div></div>
+    <div class="slide-thumb"><div class="sn">02</div><div class="sl">Paso 1<br>Calcula tu número</div></div>
+    <div class="slide-thumb"><div class="sn">03</div><div class="sl">Paso 2<br>Divide en hitos</div></div>
+    <div class="slide-thumb"><div class="sn">04</div><div class="sl">Paso 3<br>Automatiza y olvida</div></div>
+    <div class="slide-thumb"><div class="sn">05</div><div class="sl">CTA<br>¿Cuál es tu número?</div></div>
+  </div>
+
+  <div class="section-label">Hook (primera línea)</div>
+  <div class="hook-box">
+    <p><strong>No necesitas ganar más. Necesitas un plan. Este es.</strong></p>
+  </div>
+
+  <div class="section-label">Caption completa</div>
+  <div class="caption-box">
+    <pre>No necesitas ganar más. Necesitas un plan. Este es. 🏗
+
+De 0€ a 3 meses de seguridad financiera, paso a paso.
+
+PASO 1: Calcula cuánto necesitas
+→ Suma tus gastos esenciales del mes (alquiler, comida, transporte, suministros)
+→ Multiplica por 3
+→ Ese es tu objetivo mínimo. Anótalo.
+
+Ejemplo: 900€/mes × 3 = 2.700€
+
+PASO 2: Divide en hitos
+No intentes llegar al objetivo de golpe. Ve a por el primer hito:
+→ Mes 1-2: acumula el equivalente a 1 mes de gastos
+→ Mes 3-6: llega a los 3 meses completos
+
+Ahorra entre el 10-20% de tu sueldo cada mes. Lo que puedas, de forma constante.
+
+PASO 3: Automatiza y olvida
+→ Abre una cuenta bancaria separada solo para esto
+→ Pon una transferencia automática el día que cobras
+→ Usa una cuenta remunerada mientras crece (hasta un 4% TAE ahora mismo)
+→ No lo toques. No lo veas. Déjalo crecer.
+
+¿Cuál es tu número de seguridad?
+Calcula tus 3 meses de gastos y cuéntamelo en comentarios. 👇</pre>
+  </div>
+
+  <div class="section-label">Hashtags</div>
+  <div class="hashtags-box">
+    <p>
+      <span>#fondodeemergencia</span><span>#arquitecturafinanciera</span><span>#plandeahorro</span><span>#ahorro</span><span>#finanzaspersonales</span><span>#dinero</span><span>#educacionfinanciera</span><span>#finanzasjovenes</span><span>#libertadfinanciera</span><span>#finanzasespana</span>
+    </p>
+  </div>
+
+  <div class="timing-row">
+    <div class="timing-chip"><strong>Mejor hora:</strong> Lunes, 19-21h</div>
+    <div class="timing-chip"><strong>Formato:</strong> Carrusel 5 slides</div>
+    <div class="timing-chip"><strong>Semana:</strong> 6 del lanzamiento</div>
+  </div>
+</div>
+
+<!-- ════════════ CALENDARIO ════════════ -->
+<div class="calendar">
+  <div class="cal-header">
+    <div>Semana</div>
+    <div>Post</div>
+    <div>Tema</div>
+    <div>Estado</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S1</div>
+    <div class="post-t">Post 00 — Presentación</div>
+    <div>Quién soy y de qué va esto</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S1</div>
+    <div class="post-t">Post 01 — Nadie te enseñó</div>
+    <div>¿Por qué no sabemos manejar el dinero?</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S2</div>
+    <div class="post-t">Post 02 — Qué son las finanzas</div>
+    <div>Definición clara y desmitificación</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S2</div>
+    <div class="post-t">Post 03 — Ingresos vs Gastos</div>
+    <div>El balance que define tu libertad</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S3</div>
+    <div class="post-t">Post 04 — Regla 50/30/20</div>
+    <div>El presupuesto más simple que existe</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S3</div>
+    <div class="post-t">Post 05 — Gastos hormiga</div>
+    <div>El enemigo silencioso del ahorro</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S4</div>
+    <div class="post-t">Post 06 — Fondo de emergencia</div>
+    <div>El primer escudo de tu patrimonio</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S4</div>
+    <div class="post-t">Post 07 — Págate primero</div>
+    <div>El método que más dinero te hace ahorrar</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S5</div>
+    <div class="post-t">Post 08 — Cuentas remuneradas</div>
+    <div>Tu dinero trabaja mientras espera</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S5</div>
+    <div class="post-t">Post 09 — Dinero muerto</div>
+    <div>Ahorrar sin objetivo no basta</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S6</div>
+    <div class="post-t">Post 10 — Plan de ahorro</div>
+    <div>De 0€ a 3 meses, paso a paso</div>
+    <div class="state state-ready">✓ Listo</div>
+  </div>
+  <div class="cal-row">
+    <div class="week">S7+</div>
+    <div class="post-t">Bloque 03 — Inversión Indexada</div>
+    <div>ETFs, fondos indexados, DEGIRO, IRPF</div>
+    <div class="state state-todo">⏳ Próximo</div>
+  </div>
+</div>
+
+<div class="page-footer">
+  <p>Arquitectura Financiera · <strong>@arquitecturafinanciera</strong><br>
+  Bloque 02 completo — 10 posts listos para publicar<br>
+  Bloque 03 (Inversión Indexada) · Fase 2 del plan estratégico</p>
+</div>
+
+</body>
+</html>

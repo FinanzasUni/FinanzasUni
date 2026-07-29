@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primeros 5 Posts — Arquitectura Financiera</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0f; --navy:#1c2333; --navy2:#232e42;
+  --gold:#c9a84c; --cream:#f4efe6; --concrete:#6b7280;
+  --rust:#b54a2f; --line:rgba(201,168,76,0.18);
+  --green:#4caf82;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--ink);color:var(--cream);font-family:'DM Mono',monospace;}
+
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,10,15,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  padding:16px 40px;display:flex;justify-content:space-between;align-items:center;
+}
+.nav-brand{font-family:'Playfair Display',serif;font-size:16px;color:var(--gold);}
+.nav-meta{font-size:10px;letter-spacing:3px;color:var(--concrete);text-transform:uppercase;}
+
+/* PAGE HERO */
+.page-hero{padding:72px 40px 52px;border-bottom:1px solid var(--line);}
+.eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);display:block;}
+.page-h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,72px);font-weight:900;line-height:.95;letter-spacing:-1px;margin-bottom:18px;}
+.page-h1 em{font-style:italic;color:var(--gold);}
+.page-sub{font-size:12px;line-height:2;color:var(--concrete);max-width:520px;}
+
+/* POST SECTION */
+.post-section{padding:56px 40px;border-bottom:1px solid var(--line);}
+.post-header{display:flex;align-items:flex-start;gap:24px;margin-bottom:36px;}
+.post-num{font-family:'Playfair Display',serif;font-size:72px;font-weight:900;color:rgba(201,168,76,.12);line-height:.9;flex-shrink:0;width:80px;}
+.post-meta{}
+.post-bloque{font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.post-title{font-family:'Syne',sans-serif;font-size:clamp(18px,2.5vw,26px);font-weight:800;color:var(--cream);line-height:1.2;margin-bottom:6px;}
+.post-desc{font-size:12px;color:var(--concrete);line-height:1.7;}
+.fmt-pill{display:inline-flex;gap:8px;margin-top:10px;}
+.fmt{font-size:9px;letter-spacing:1px;padding:3px 10px;text-transform:uppercase;}
+.fmt-r{background:rgba(181,74,47,.2);color:#e07055;}
+.fmt-c{background:rgba(201,168,76,.15);color:var(--gold);}
+.fmt-p{background:rgba(42,52,71,.8);color:#8899bb;border:1px solid rgba(136,153,187,.3);}
+.lvl{font-size:9px;letter-spacing:1px;padding:3px 10px;border:1px solid;text-transform:uppercase;}
+.lvl-b{color:var(--green);border-color:rgba(76,175,130,.3);}
+
+/* SLIDES WRAPPER */
+.slides-row{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:2px;background:rgba(201,168,76,.06);
+}
+
+/* SLIDE */
+.slide{background:var(--ink);}
+.slide-preview{
+  aspect-ratio:1;display:flex;flex-direction:column;
+  justify-content:space-between;padding:20px;
+  position:relative;overflow:hidden;
+}
+/* variants */
+.bg-navy{background:var(--navy);}
+.bg-cream{background:var(--cream);}
+.bg-gold{background:var(--gold);}
+.bg-rust{background:var(--rust);}
+.bg-ink{background:#0a0a0f;}
+.bg-dark2{background:#111827;}
+
+.grid-tex{
+  position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(0deg,transparent,transparent 36px,rgba(201,168,76,.05) 36px,rgba(201,168,76,.05) 37px),
+    repeating-linear-gradient(90deg,transparent,transparent 36px,rgba(201,168,76,.05) 36px,rgba(201,168,76,.05) 37px);
+}
+.grid-tex.light{background:
+  repeating-linear-gradient(0deg,transparent,transparent 36px,rgba(0,0,0,.04) 36px,rgba(0,0,0,.04) 37px),
+  repeating-linear-gradient(90deg,transparent,transparent 36px,rgba(0,0,0,.04) 36px,rgba(0,0,0,.04) 37px);
+}
+
+.s-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;}
+.s-brand{font-size:7px;letter-spacing:2px;text-transform:uppercase;}
+.s-brand.light{color:rgba(0,0,0,.4);}
+.s-brand.dark{color:rgba(201,168,76,.55);}
+.s-idx{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;line-height:1;}
+.s-idx.fade-gold{color:rgba(201,168,76,.14);}
+.s-idx.fade-dark{color:rgba(0,0,0,.12);}
+
+.s-body{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:center;padding:12px 0;}
+.s-tag{font-size:7px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;border-left:2px solid;padding-left:8px;}
+.s-tag.gold{color:var(--gold);border-color:var(--gold);}
+.s-tag.dark{color:var(--navy);border-color:var(--navy);}
+.s-tag.cream{color:var(--cream);border-color:var(--cream);}
+.s-tag.ink{color:var(--ink);border-color:var(--ink);}
+
+.s-h{font-family:'Playfair Display',serif;line-height:1.15;}
+.s-h.xl{font-size:clamp(14px,1.8vw,20px);font-weight:900;}
+.s-h.lg{font-size:clamp(12px,1.5vw,17px);font-weight:700;}
+.s-h.md{font-size:clamp(10px,1.2vw,14px);font-weight:400;font-style:italic;}
+.s-h.c-cream{color:var(--cream);}
+.s-h.c-ink{color:var(--ink);}
+.s-h.c-gold{color:var(--gold);}
+.s-h.c-navy{color:var(--navy);}
+
+.s-sub{font-size:clamp(8px,.9vw,10px);color:var(--concrete);margin-top:6px;line-height:1.6;}
+.s-sub.light{color:rgba(0,0,0,.45);}
+.s-sub.cream{color:rgba(244,239,230,.55);}
+
+.s-list{list-style:none;margin-top:8px;}
+.s-list li{font-size:clamp(7px,.85vw,10px);line-height:1.9;padding-left:12px;position:relative;}
+.s-list li::before{content:'◆';position:absolute;left:0;font-size:4px;top:5px;}
+.s-list.gold li{color:var(--concrete);}
+.s-list.gold li::before{color:var(--gold);}
+.s-list.dark li{color:rgba(0,0,0,.55);}
+.s-list.dark li::before{color:var(--navy);}
+
+.s-big{font-family:'Playfair Display',serif;font-weight:900;line-height:1;}
+.s-big.xl2{font-size:clamp(28px,4vw,48px);}
+
+.s-chip{display:inline-block;padding:5px 10px;margin-top:8px;font-family:'Syne',sans-serif;font-size:clamp(8px,1vw,12px);font-weight:700;}
+.chip-gold-ink{background:var(--gold);color:var(--ink);}
+.chip-navy-gold{background:var(--navy);color:var(--gold);}
+.chip-ink-gold{background:var(--ink);color:var(--gold);}
+.chip-cream-navy{background:var(--cream);color:var(--navy);}
+
+.s-bar{height:3px;margin-top:10px;}
+.bar-gold{background:linear-gradient(90deg,var(--gold),rgba(201,168,76,.2));}
+.bar-rust{background:linear-gradient(90deg,var(--rust),rgba(181,74,47,.2));}
+
+.s-rule{width:32px;height:2px;background:var(--gold);margin:8px 0;}
+.s-rule.dark{background:var(--navy);}
+
+.s-bottom{position:relative;z-index:1;border-top:1px solid;padding-top:8px;display:flex;justify-content:space-between;align-items:center;}
+.s-bottom.b-line{border-color:var(--line);}
+.s-bottom.b-dark{border-color:rgba(0,0,0,.15);}
+.s-handle{font-size:7px;letter-spacing:1px;}
+.s-handle.g{color:rgba(201,168,76,.45);}
+.s-handle.d{color:rgba(0,0,0,.4);}
+.s-arrow{font-size:10px;}
+.s-arrow.g{color:var(--gold);}
+.s-arrow.d{color:var(--ink);}
+
+/* CAPTION PANEL */
+.caption-panel{background:var(--navy2);padding:28px;margin-top:2px;}
+.cp-label{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
+.cp-text{font-size:12px;line-height:2;color:#9ca3af;white-space:pre-line;}
+.cp-text strong{color:var(--cream);}
+.cp-text em{color:var(--gold);}
+.cp-hashtags{font-size:10px;color:rgba(201,168,76,.6);margin-top:12px;line-height:1.9;}
+
+/* HOOK BANNER */
+.hook-banner{
+  padding:20px 28px;background:rgba(201,168,76,.07);
+  border-left:3px solid var(--gold);margin-bottom:24px;
+}
+.hook-label{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.hook-text{font-size:14px;font-family:'Syne',sans-serif;font-weight:700;color:var(--cream);line-height:1.4;}
+
+/* POST NUMBER label */
+.post-number-label{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--navy);padding:8px 20px;
+  font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+@media(max-width:700px){
+  nav{padding:14px 20px;}
+  .page-hero,.post-section{padding:40px 20px;}
+  .slides-row{grid-template-columns:1fr 1fr;}
+  .post-num{font-size:48px;width:56px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Arquitectura Financiera</div>
+  <div class="nav-meta">Primeros 5 posts · Diseño visual</div>
+</nav>
+
+<div class="page-hero">
+  <div class="eyebrow">Sistema de contenido · Bloque 01 — Cimientos</div>
+  <h1 class="page-h1">Los primeros <em>5 posts</em><br>listos para publicar</h1>
+  <p class="page-sub">Diseño visual completo de cada slide, copy exacto y caption de Instagram. Publicación: uno cada 2-3 días, empezando por el Post Cero.</p>
+</div>
+
+<!-- ═══════════════════ POST 1 ═══════════════════ -->
+<div class="post-section">
+  <div class="post-number-label">Post 01</div>
+  <div class="post-header">
+    <div class="post-num">01</div>
+    <div class="post-meta">
+      <div class="post-bloque">🧱 Bloque 01 — Cimientos</div>
+      <div class="post-title">¿Por qué nadie te enseñó a manejar el dinero?</div>
+      <div class="post-desc">El primer post de contenido. Plantea el problema universal que une a toda tu audiencia y establece la razón de existir de la cuenta.</div>
+      <div class="fmt-pill">
+        <span class="fmt fmt-r">Reel</span>
+        <span class="lvl lvl-b">Base</span>
+      </div>
+    </div>
+  </div>
+  <div class="hook-banner">
+    <div class="hook-label">Hook de apertura (primeros 3 segundos)</div>
+    <div class="hook-text">"Te enseñaron a derivar. A conjugar en latín. A hacer la fotosíntesis. Pero nadie te explicó qué hacer con tu primer sueldo."</div>
+  </div>
+  <div class="slides-row">
+    <!-- Cover -->
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">01</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Cimientos · 01</div>
+          <div class="s-h xl c-cream">¿Por qué nadie te enseñó a manejar el dinero?</div>
+          <div class="s-rule"></div>
+          <div class="s-sub">La pregunta que todos deberían hacerse.</div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <!-- S2 -->
+    <div class="slide">
+      <div class="slide-preview bg-cream">
+        <div class="grid-tex light"></div>
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">02</span></div>
+        <div class="s-body">
+          <div class="s-tag dark">El problema</div>
+          <div class="s-h lg c-navy">12 años en el colegio.</div>
+          <div class="s-h md c-navy" style="margin-top:6px">4 en la universidad.</div>
+          <div class="s-h lg c-navy" style="margin-top:10px">0 horas de educación financiera.</div>
+          <div class="s-chip chip-navy-gold" style="margin-top:12px">Eso no es accidente.</div>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">→</span></div>
+      </div>
+    </div>
+    <!-- S3 -->
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">03</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">El coste real</div>
+          <div class="s-big xl2 c-gold">€47.000</div>
+          <div class="s-h md c-cream" style="margin-top:8px">Lo que pierde de media una persona que no invierte sus ahorros durante 10 años.</div>
+          <div class="s-bar bar-gold" style="margin-top:12px;width:70%"></div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <!-- S4 -->
+    <div class="slide">
+      <div class="slide-preview bg-dark2">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">04</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Por qué importa</div>
+          <div class="s-h lg c-cream">El dinero no es un tabú.</div>
+          <div class="s-h md c-cream" style="margin-top:6px;opacity:.8">Es la herramienta más poderosa que tienes para construir la vida que quieres.</div>
+          <div class="s-chip chip-gold-ink" style="margin-top:12px">Y nadie te la enseña.</div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <!-- S5 CTA -->
+    <div class="slide">
+      <div class="slide-preview bg-gold">
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">05</span></div>
+        <div class="s-body">
+          <div class="s-tag ink">Lo que viene</div>
+          <div class="s-h lg c-ink">Aquí lo aprendemos juntos.</div>
+          <div class="s-h md c-ink" style="margin-top:8px;opacity:.7">Semana a semana. Sin jerga. Con contexto español real.</div>
+          <div class="s-chip chip-navy-gold" style="margin-top:14px">Guarda este post. Lo vas a necesitar.</div>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">↩</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="caption-panel">
+    <div class="cp-label">Caption · Post 01</div>
+    <div class="cp-text"><strong>12 años de colegio. 4 de universidad. 0 horas de educación financiera.</strong>
+
+¿Casualidad? No lo creo.
+
+El sistema nos enseña a ser buenos empleados. A consumir. A depender de un sueldo.
+
+Pero nadie nos enseña a gestionar ese sueldo cuando llega.
+
+Y eso tiene un coste enorme — aunque no lo veas inmediatamente.
+
+Cada año que tu dinero está parado en una cuenta al 0%, la inflación lo erosiona.
+Cada año que no inviertes, pierdes años de interés compuesto que ya no recuperas.
+
+La buena noticia: no es tarde para aprender.
+
+La mala: tampoco es tan rápido como te prometieron.
+
+Esto no va de hacerse rico. Va de entender las reglas del juego antes de que el juego te coma a ti.
+
+<em>Empieza por guardar este post. 👇</em></div>
+    <div class="cp-hashtags">#arquitecturafinanciera #educacionfinanciera #finanzaspersonales #dinero #invertir #finanzasjovenes #independenciafinanciera #finanzasespana</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ POST 2 ═══════════════════ -->
+<div class="post-section">
+  <div class="post-number-label">Post 02</div>
+  <div class="post-header">
+    <div class="post-num">02</div>
+    <div class="post-meta">
+      <div class="post-bloque">🧱 Bloque 01 — Cimientos</div>
+      <div class="post-title">Qué son las finanzas personales (y qué NO son)</div>
+      <div class="post-desc">Definición clara y desmitificación. Rompe el imaginario de que las finanzas son solo para ricos o expertos. Carrusel educativo puro.</div>
+      <div class="fmt-pill">
+        <span class="fmt fmt-c">Carrusel</span>
+        <span class="lvl lvl-b">Base</span>
+      </div>
+    </div>
+  </div>
+  <div class="hook-banner">
+    <div class="hook-label">Hook de apertura</div>
+    <div class="hook-text">"Las finanzas personales no son lo que te enseñó tu banco. Te explico en 5 slides lo que realmente son — y lo que no."</div>
+  </div>
+  <div class="slides-row">
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">01</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Cimientos · 02</div>
+          <div class="s-h xl c-cream">Qué son las finanzas personales.</div>
+          <div class="s-h md c-cream" style="margin-top:8px">(y qué NO son)</div>
+          <div class="s-rule"></div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-cream">
+        <div class="grid-tex light"></div>
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">02</span></div>
+        <div class="s-body">
+          <div class="s-tag dark">Lo que SÍ son</div>
+          <div class="s-h lg c-navy" style="margin-bottom:10px">Las finanzas personales son:</div>
+          <ul class="s-list dark">
+            <li>Saber cuánto entra y cuánto sale</li>
+            <li>Decidir qué hacer con lo que sobre</li>
+            <li>Protegerte de los imprevistos</li>
+            <li>Hacer que tu dinero crezca</li>
+          </ul>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-rust">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand" style="color:rgba(244,239,230,.5);font-size:7px;letter-spacing:2px;text-transform:uppercase;">AF</span><span class="s-idx" style="font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:rgba(244,239,230,.12);">03</span></div>
+        <div class="s-body">
+          <div class="s-tag cream">Lo que NO son</div>
+          <ul class="s-list" style="margin-top:4px">
+            <li style="color:rgba(244,239,230,.8)">Solo para gente con mucho dinero</li>
+            <li style="color:rgba(244,239,230,.8)">Renuncia al ocio para siempre</li>
+            <li style="color:rgba(244,239,230,.8)">Tablas Excel imposibles de llevar</li>
+            <li style="color:rgba(244,239,230,.8)">Magia para hacerse rico</li>
+          </ul>
+          <div class="s-chip" style="background:rgba(244,239,230,.15);color:var(--cream);margin-top:12px;font-size:10px;">Son hábitos. Nada más.</div>
+        </div>
+        <div class="s-bottom" style="border-top:1px solid rgba(244,239,230,.2);padding-top:8px;display:flex;justify-content:space-between;"><span style="font-size:7px;color:rgba(244,239,230,.4);letter-spacing:1px;">@arquitecturafinanciera</span><span style="font-size:10px;color:rgba(244,239,230,.7);">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">04</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">La clave</div>
+          <div class="s-h lg c-cream">No se trata de ganar más.</div>
+          <div class="s-h md c-cream" style="margin-top:8px">Se trata de perder menos y hacer crecer lo que tienes.</div>
+          <div class="s-bar bar-gold" style="width:60%;margin-top:14px"></div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-gold">
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">05</span></div>
+        <div class="s-body">
+          <div class="s-tag ink">Conclusión</div>
+          <div class="s-h lg c-ink">Las finanzas personales son tu plan.</div>
+          <div class="s-h md c-ink" style="margin-top:8px;opacity:.7">Y un plan malo siempre será mejor que ningún plan.</div>
+          <div class="s-chip chip-navy-gold" style="margin-top:14px">¿Cuál es el tuyo?</div>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">↩</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="caption-panel">
+    <div class="cp-label">Caption · Post 02</div>
+    <div class="cp-text"><strong>Las finanzas personales no son lo que te enseñó tu banco. 💡</strong>
+
+Muchos piensan que son tablas Excel imposibles, análisis de mercados o algo que solo importa cuando eres mayor.
+
+No. Son mucho más simples — y mucho más importantes — que eso.
+
+Finanzas personales = saber qué entra, qué sale, qué sobra y qué hacer con ese sobrante.
+
+Eso es todo.
+
+No necesitas ser economista. No necesitas invertir miles de euros desde el primer día. No necesitas renunciar a salir o disfrutar la vida.
+
+Solo necesitas un plan.
+
+Y un plan malo siempre es mejor que ningún plan.
+
+<em>Guarda este carrusel si quieres volver a repasarlo. 📌</em></div>
+    <div class="cp-hashtags">#arquitecturafinanciera #finanzaspersonales #educacionfinanciera #ahorrar #dinero #finanzasjovenes #presupuesto #invertir</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ POST 3 ═══════════════════ -->
+<div class="post-section">
+  <div class="post-number-label">Post 03</div>
+  <div class="post-header">
+    <div class="post-num">03</div>
+    <div class="post-meta">
+      <div class="post-bloque">🧱 Bloque 01 — Cimientos</div>
+      <div class="post-title">Ingresos vs. Gastos: el balance que define tu libertad</div>
+      <div class="post-desc">El concepto más básico pero menos practicado. Con datos visuales impactantes y el marco mental correcto para empezar a ahorrar.</div>
+      <div class="fmt-pill">
+        <span class="fmt fmt-c">Carrusel</span>
+        <span class="lvl lvl-b">Base</span>
+      </div>
+    </div>
+  </div>
+  <div class="hook-banner">
+    <div class="hook-label">Hook de apertura</div>
+    <div class="hook-text">"Ganar más no te hace libre. Gastar menos de lo que ganas, sí. La diferencia entre las dos personas que ganan lo mismo."</div>
+  </div>
+  <div class="slides-row">
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">01</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Cimientos · 03</div>
+          <div class="s-h xl c-cream">Ingresos vs. Gastos.</div>
+          <div class="s-h md c-cream" style="margin-top:8px">El balance que define tu libertad financiera.</div>
+          <div class="s-rule"></div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-cream">
+        <div class="grid-tex light"></div>
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">02</span></div>
+        <div class="s-body">
+          <div class="s-tag dark">Persona A</div>
+          <div class="s-h lg c-navy">Gana €1.800/mes</div>
+          <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:rgba(28,35,51,.5)"><span>Ingresos</span><span style="color:var(--green);font-weight:700">+€1.800</span></div>
+            <div style="height:3px;background:var(--green);border-radius:0;width:100%"></div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:rgba(28,35,51,.5)"><span>Gastos</span><span style="color:var(--rust);font-weight:700">-€1.750</span></div>
+            <div style="height:3px;background:var(--rust);border-radius:0;width:97%"></div>
+          </div>
+          <div class="s-chip chip-navy-gold" style="margin-top:10px">Ahorro: €50/mes</div>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-dark2">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">03</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Persona B</div>
+          <div class="s-h lg c-cream">También gana €1.800/mes</div>
+          <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--concrete)"><span>Ingresos</span><span style="color:var(--green);font-weight:700">+€1.800</span></div>
+            <div style="height:3px;background:var(--green);width:100%"></div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--concrete)"><span>Gastos</span><span style="color:var(--rust);font-weight:700">-€1.400</span></div>
+            <div style="height:3px;background:var(--rust);width:77%"></div>
+          </div>
+          <div class="s-chip chip-gold-ink" style="margin-top:10px">Ahorro: €400/mes</div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">04</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">En 10 años</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">
+            <div style="text-align:center;padding:10px;background:rgba(255,255,255,.04)">
+              <div style="font-size:8px;color:var(--concrete);margin-bottom:4px">Persona A</div>
+              <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--concrete)">€6.000</div>
+            </div>
+            <div style="text-align:center;padding:10px;background:rgba(201,168,76,.1)">
+              <div style="font-size:8px;color:var(--concrete);margin-bottom:4px">Persona B</div>
+              <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--gold)">€48.000+</div>
+            </div>
+          </div>
+          <div class="s-h md c-cream" style="margin-top:10px">El mismo sueldo. Una diferencia de €42.000.</div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-gold">
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">05</span></div>
+        <div class="s-body">
+          <div class="s-tag ink">La regla</div>
+          <div class="s-h lg c-ink">Primero págate a ti mismo.</div>
+          <div class="s-h md c-ink" style="margin-top:8px;opacity:.7">Antes de gastar: separa el ahorro. No lo que sobre al final. Lo primero.</div>
+          <div class="s-chip chip-ink-gold" style="margin-top:12px">Esto lo cambia todo.</div>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">↩</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="caption-panel">
+    <div class="cp-label">Caption · Post 03</div>
+    <div class="cp-text"><strong>Dos personas. El mismo sueldo. €42.000 de diferencia en 10 años. 📊</strong>
+
+No es magia. Es matemática básica.
+
+La Persona A gana €1.800 y gasta €1.750. Le sobran €50. Los deja en el banco.
+La Persona B gana €1.800 y gasta €1.400. Ahorra €400 y los invierte.
+
+En 10 años:
+— Persona A: ~€6.000 ahorrados
+— Persona B: +€48.000 (con interés compuesto al 7%)
+
+El sueldo no es el factor. La brecha entre ingresos y gastos, sí.
+
+Y la clave no es sufrir ni no gastar en nada. Es cambiar el orden:
+
+<em>Primero págate a ti mismo. Luego gasta lo que sobre.</em>
+
+No lo que sobre al final del mes. Lo primero que sale cuando cobra. Automático.
+
+Ese simple cambio de orden lo transforma todo.
+
+¿Cuánto te estás pagando a ti mismo este mes?</div>
+    <div class="cp-hashtags">#arquitecturafinanciera #finanzaspersonales #ahorro #ahorrar #inversion #dinero #presupuesto #interescompuesto #libertadfinanciera</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ POST 4 ═══════════════════ -->
+<div class="post-section">
+  <div class="post-number-label">Post 04</div>
+  <div class="post-header">
+    <div class="post-num">04</div>
+    <div class="post-meta">
+      <div class="post-bloque">🧱 Bloque 01 — Cimientos</div>
+      <div class="post-title">La regla 50/30/20: el presupuesto más simple que existe</div>
+      <div class="post-desc">La herramienta más compartida del nicho. Alto potencial de guardados y shares. Carrusel con gráfico visual claro.</div>
+      <div class="fmt-pill">
+        <span class="fmt fmt-c">Carrusel</span>
+        <span class="lvl lvl-b">Base</span>
+      </div>
+    </div>
+  </div>
+  <div class="hook-banner">
+    <div class="hook-label">Hook de apertura</div>
+    <div class="hook-text">"Si tuvieras que usar un solo sistema de presupuesto para siempre, este sería. 5 minutos para entenderlo. De por vida para aplicarlo."</div>
+  </div>
+  <div class="slides-row">
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">01</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Cimientos · 04</div>
+          <div class="s-h xl c-cream">La regla 50/30/20.</div>
+          <div class="s-h md c-cream" style="margin-top:8px">El presupuesto más simple — y más efectivo — que existe.</div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-cream">
+        <div class="grid-tex light"></div>
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">02</span></div>
+        <div class="s-body">
+          <div class="s-tag dark">El 50%</div>
+          <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--navy);line-height:1;">50%</div>
+          <div class="s-h lg c-navy" style="margin-top:6px">Necesidades</div>
+          <ul class="s-list dark" style="margin-top:8px">
+            <li>Alquiler o hipoteca</li>
+            <li>Alimentación</li>
+            <li>Transporte</li>
+            <li>Facturas del hogar</li>
+          </ul>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-dark2">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">03</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">El 30%</div>
+          <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--gold);line-height:1;">30%</div>
+          <div class="s-h lg c-cream" style="margin-top:6px">Ocio y deseos</div>
+          <ul class="s-list gold" style="margin-top:8px">
+            <li>Salidas y restaurantes</li>
+            <li>Ropa y caprichos</li>
+            <li>Viajes y experiencias</li>
+            <li>Suscripciones</li>
+          </ul>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">04</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">El 20%</div>
+          <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--cream);line-height:1;">20%</div>
+          <div class="s-h lg c-cream" style="margin-top:6px">Ahorro e inversión</div>
+          <ul class="s-list gold" style="margin-top:8px">
+            <li>Fondo de emergencia</li>
+            <li>Inversión en ETFs</li>
+            <li>Pago de deudas extra</li>
+            <li>Objetivos financieros</li>
+          </ul>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-gold">
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">05</span></div>
+        <div class="s-body">
+          <div class="s-tag ink">Con €1.500 netos</div>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+            <div style="display:flex;align-items:center;gap:8px"><div style="width:50%;height:16px;background:var(--navy);display:flex;align-items:center;padding:0 8px"><span style="font-size:8px;color:var(--gold);font-weight:700">€750 necesidades</span></div></div>
+            <div style="display:flex;align-items:center;gap:8px"><div style="width:30%;height:16px;background:var(--rust);display:flex;align-items:center;padding:0 8px"><span style="font-size:8px;color:white;font-weight:700">€450 ocio</span></div></div>
+            <div style="display:flex;align-items:center;gap:8px"><div style="width:20%;height:16px;background:var(--ink);display:flex;align-items:center;padding:0 8px"><span style="font-size:8px;color:var(--gold);font-weight:700">€300</span></div></div>
+          </div>
+          <div class="s-chip chip-ink-gold" style="margin-top:12px">€300/mes invertidos = futuro</div>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">↩</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="caption-panel">
+    <div class="cp-label">Caption · Post 04</div>
+    <div class="cp-text"><strong>El único sistema de presupuesto que necesitas. Y cabe en 3 números. 📐</strong>
+
+50 — 30 — 20
+
+50% para lo que necesitas vivir.
+30% para lo que quieres disfrutar.
+20% para construir tu futuro.
+
+¿Por qué funciona? Porque es lo suficientemente simple para seguirlo de verdad.
+
+Los sistemas complejos no se sostienen. Los sencillos, sí.
+
+Aplicado a un sueldo de €1.500 netos:
+— €750 en necesidades (alquiler, comida, transporte)
+— €450 en ocio (salir, ropa, viajes)
+— €300 en ahorro e inversión
+
+¿El truco? Automatizar ese 20% el día que cobra. Antes de ver el dinero.
+
+Lo que no ves, no gastas.
+
+<em>Guarda este carrusel y aplícalo esta semana. 📌</em>
+
+¿Cuánto % ahorras tú ahora mismo? Dímelo en comentarios.</div>
+    <div class="cp-hashtags">#arquitecturafinanciera #502030 #presupuesto #finanzaspersonales #ahorrar #dinero #regladelpresupuesto #educacionfinanciera #finanzasjovenes</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ POST 5 ═══════════════════ -->
+<div class="post-section" style="border-bottom:none;">
+  <div class="post-number-label">Post 05</div>
+  <div class="post-header">
+    <div class="post-num">05</div>
+    <div class="post-meta">
+      <div class="post-bloque">🧱 Bloque 01 — Cimientos</div>
+      <div class="post-title">Los gastos hormiga: el enemigo silencioso de tus ahorros</div>
+      <div class="post-desc">Contenido de alto impacto emocional. Muestra con números reales cómo pequeños gastos destruyen el ahorro. Gran potencial de compartir.</div>
+      <div class="fmt-pill">
+        <span class="fmt fmt-r">Reel</span>
+        <span class="lvl lvl-b">Base</span>
+      </div>
+    </div>
+  </div>
+  <div class="hook-banner">
+    <div class="hook-label">Hook de apertura (primeros 3 segundos del Reel)</div>
+    <div class="hook-text">"€3 de café al día. Parece nada. Pero te voy a mostrar el número que esconde — y te va a doler."</div>
+  </div>
+  <div class="slides-row">
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">01</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Cimientos · 05</div>
+          <div class="s-h xl c-cream">Los gastos hormiga.</div>
+          <div class="s-h md c-cream" style="margin-top:8px">El enemigo silencioso de tus ahorros.</div>
+          <div class="s-rule"></div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-cream">
+        <div class="grid-tex light"></div>
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">02</span></div>
+        <div class="s-body">
+          <div class="s-tag dark">El café diario</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px">
+            <div style="padding:8px;background:rgba(28,35,51,.06);text-align:center">
+              <div style="font-size:8px;color:rgba(28,35,51,.4);margin-bottom:4px">Por día</div>
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--navy)">€3</div>
+            </div>
+            <div style="padding:8px;background:rgba(28,35,51,.06);text-align:center">
+              <div style="font-size:8px;color:rgba(28,35,51,.4);margin-bottom:4px">Al mes</div>
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--navy)">€90</div>
+            </div>
+            <div style="padding:8px;background:rgba(181,74,47,.1);text-align:center">
+              <div style="font-size:8px;color:rgba(28,35,51,.4);margin-bottom:4px">Al año</div>
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--rust)">€1.080</div>
+            </div>
+            <div style="padding:8px;background:rgba(181,74,47,.2);text-align:center">
+              <div style="font-size:8px;color:rgba(28,35,51,.4);margin-bottom:4px">En 10 años</div>
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--rust)">€10.800</div>
+            </div>
+          </div>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-dark2">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">03</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Los sospechosos habituales</div>
+          <ul class="s-list gold" style="margin-top:6px">
+            <li>Café diario: €90/mes</li>
+            <li>Netflix + Spotify + Prime: €35/mes</li>
+            <li>Delivery fin de semana: €60/mes</li>
+            <li>Compras por impulso online: €50/mes</li>
+          </ul>
+          <div class="s-chip chip-gold-ink" style="margin-top:12px">Total: €235/mes → €2.820/año</div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-navy">
+        <div class="grid-tex"></div>
+        <div class="s-top"><span class="s-brand dark">AF</span><span class="s-idx fade-gold">04</span></div>
+        <div class="s-body">
+          <div class="s-tag gold">Invertido al 7%</div>
+          <div class="s-big xl2 c-gold">€38.000</div>
+          <div class="s-h md c-cream" style="margin-top:8px">Lo que valdrían esos €235/mes en 10 años si los invirtieras en lugar de gastarlos.</div>
+          <div class="s-bar bar-gold" style="margin-top:12px;width:80%"></div>
+        </div>
+        <div class="s-bottom b-line"><span class="s-handle g">@arquitecturafinanciera</span><span class="s-arrow g">→</span></div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-preview bg-gold">
+        <div class="s-top"><span class="s-brand light">AF</span><span class="s-idx fade-dark">05</span></div>
+        <div class="s-body">
+          <div class="s-tag ink">La solución</div>
+          <div class="s-h lg c-ink">No se trata de no tomar café.</div>
+          <div class="s-h md c-ink" style="margin-top:8px;opacity:.75">Se trata de saber exactamente cuánto te cuesta ese café — y decidir si vale la pena.</div>
+          <div class="s-chip chip-navy-gold" style="margin-top:14px">Consciencia, no sacrificio.</div>
+        </div>
+        <div class="s-bottom b-dark"><span class="s-handle d">@arquitecturafinanciera</span><span class="s-arrow d">↩</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="caption-panel">
+    <div class="cp-label">Caption · Post 05</div>
+    <div class="cp-text"><strong>€3 al día parece nada. Pero en 10 años son €10.800. 🐜</strong>
+
+Y no hablo solo del café.
+
+Hablo de los gastos que no duelen porque son pequeños — pero suman sin que te des cuenta.
+
+Los gastos hormiga:
+☕ Café diario: €90/mes
+📺 Netflix + Spotify + Prime: €35/mes
+🍕 Delivery fin de semana: €60/mes
+🛒 Compras impulsivas online: €50/mes
+
+Total: €235/mes que se van sin pena ni gloria.
+
+En 10 años: €28.200 gastados.
+Invertidos al 7%: casi €38.000.
+
+La diferencia entre tenerlos y no tenerlos es enorme.
+
+¿La solución? No es no tomar café. No es vivir como un monje.
+
+Es ser consciente de lo que gastas. Saberlo. Decidirlo.
+
+Un gasto que eliges conscientemente no es un gasto hormiga. Es una decisión.
+
+<em>¿Cuál es tu mayor gasto hormiga? 👇 Cuéntamelo en comentarios.</em></div>
+    <div class="cp-hashtags">#arquitecturafinanciera #gastoshormiga #ahorrar #finanzaspersonales #dinero #presupuesto #habitos #conscienciafinanciera #finanzasjovenes</div>
+  </div>
+</div>
+
+</body>
+</html>
