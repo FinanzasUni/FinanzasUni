@@ -53,3 +53,7 @@ Empaquetado para publicar: 5 slides de `posts-instagram/post-04-regla-502030/`, 
 y hashtags de `files/arquitectura-financiera-5posts.html`. Es el siguiente post en la
 cola tras "Ingresos vs Gastos" (Post 03). → [[contenido/bloque-01-cimientos]],
 [[conceptos/regla-50-30-20]]
+
+## [2026-07-29] publicacion | Post 04 — La regla 50/30/20
+Confirmado publicado en Instagram por Diego. Siguiente en cola: Post 05 (gastos
+hormiga). → [[contenido/bloque-01-cimientos]]
