@@ -7,9 +7,15 @@ fuentes: [files/arquitectura-financiera-5posts.html, files/post-cero-corregido.h
 
 # Bloque 01 — Cimientos
 
-Estado: ✅ **Publicado / listo para publicar** — imágenes finales generadas en
-`posts/post-00-presentacion` … `posts/post-05-gastos-hormiga` y en `posts-instagram/`
-(carpetas equivalentes, revisar cuál es la versión final a subir).
+Estado real a 2026-07-29 (confirmado con Diego): **Posts 00, 01, 02 y 03 ya están
+publicados en Instagram.** Posts 04 y 05 tienen imágenes finales listas pero **todavía
+no se han publicado** — 04 es el siguiente post a publicar.
+
+**Carpeta canónica de imágenes: `posts-instagram/`**, no `posts/`. Ambas contienen las
+mismas 11 subcarpetas, pero `posts-instagram/` es una revisión posterior (misma fecha,
+timestamps más tardíos) con la tipografía serif que sí coincide con el logo de marca y
+con el handle real grabado en las imágenes. `posts/` se conserva como iteración de
+diseño anterior, ya superada — no usar para publicar.
 
 | # | Post | Formato | Concepto | Hook |
 |---|------|---------|----------|------|
@@ -23,8 +29,10 @@ Estado: ✅ **Publicado / listo para publicar** — imágenes finales generadas 
 **Caption del Post 0** está lista y archivada en `branding/perfil-instagram.txt`
 (incluye hashtags de lanzamiento).
 
-**Pendiente de confirmar con Diego**: si las imágenes de `posts/` o `posts-instagram/`
-son la versión definitiva a publicar (ambas carpetas tienen las mismas 11 subcarpetas,
-`posts-instagram` parece la revisión más reciente por fecha de modificación).
+⚠️ **Contradicción de handle**: `branding/perfil-instagram.txt` indica el handle
+`@arquitecturafinanciera`, pero las imágenes finales en `posts-instagram/` tienen
+grabado `@arquitectura_financieralife`. Esto afecta a las imágenes ya publicadas de los
+posts 00-03 — comprobar cuál es el handle real de la cuenta activa y corregir la
+página `branding/perfil-instagram.txt` o regenerar imágenes según corresponda.
 
 Ver plan de fases en [[../estrategia/plan-2026]] (objetivo 01 de Fase 1).

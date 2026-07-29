@@ -29,3 +29,21 @@ extraer detalle de posts 09 y 10 en una próxima sesión.
 ## [2026-07-29] ingesta | arquitectura-financiera-agent/CLAUDE.md
 Stack técnico, 7 endpoints, contexto de marca embebido en prompts, roadmap.
 → [[tecnologia/agente-ia]]
+
+## [2026-07-29] revision | Resolución de huecos: posts/ vs posts-instagram/, estado Bloque 02
+Diego confirmó que el último post publicado es "Ingresos vs Gastos" (Post 03). Se
+comparó visualmente `posts/` vs `posts-instagram/` para el Post 04: `posts-instagram/`
+es la versión canónica (tipografía coincide con el logo, handle grabado). Se corrigió
+el estado del Bloque 02: SÍ tiene imágenes finales completas para los 10 posts, no
+estaba a medias — la nota anterior de esta wiki era incorrecta. Se detectó una
+contradicción real y sin resolver: el handle grabado en las imágenes
+(`@arquitectura_financieralife`) no coincide con el de `branding/perfil-instagram.txt`
+(`@arquitecturafinanciera`). Se crearon páginas de concepto para Posts 09 y 10
+([[conceptos/dinero-muerto]], [[conceptos/plan-de-ahorro]]) que faltaban.
+→ [[contenido/bloque-01-cimientos]], [[contenido/bloque-02-ahorro-real]], [[fuentes/registro]]
+
+## [2026-07-29] entrega | Post 04 — La regla 50/30/20 (siguiente a publicar)
+Empaquetado para publicar: 5 slides de `posts-instagram/post-04-regla-502030/`, caption
+y hashtags de `files/arquitectura-financiera-5posts.html`. Es el siguiente post en la
+cola tras "Ingresos vs Gastos" (Post 03). → [[contenido/bloque-01-cimientos]],
+[[conceptos/regla-50-30-20]]

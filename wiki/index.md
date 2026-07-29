@@ -26,11 +26,13 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[conceptos/fondo-de-emergencia|Fondo de emergencia]] — Post 06
 - [[conceptos/pagate-a-ti-primero|Págate a ti primero]] — Post 07
 - [[conceptos/cuentas-remuneradas-espana|Cuentas remuneradas en España]] — Post 08
+- [[conceptos/dinero-muerto|Dinero muerto (ahorrar sin objetivo)]] — Post 09
+- [[conceptos/plan-de-ahorro|Plan de ahorro: de 0€ a 3 meses]] — Post 10
 
 ## Contenido (estado de bloques y posts)
 
-- [[contenido/bloque-01-cimientos|Bloque 01 — Cimientos]] ✅ publicado/listo
-- [[contenido/bloque-02-ahorro-real|Bloque 02 — Ahorro Real]] 🟡 copy listo, imágenes por confirmar
+- [[contenido/bloque-01-cimientos|Bloque 01 — Cimientos]] — posts 00-03 publicados, 04-05 listos para publicar
+- [[contenido/bloque-02-ahorro-real|Bloque 02 — Ahorro Real]] — 10 posts completos, listos para publicar
 - [[contenido/formato-carrusel|Formato estándar de carrusel]]
 
 ## Tecnología
@@ -50,3 +52,6 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - No existe todavía página de "competencia" ni de "ideas de post pendientes" — crear
   cuando se empiece a hacer benchmark de otras cuentas del nicho.
 - `files/post-cero-corregido.html` no se ha leído en detalle todavía.
+- ⚠️ Handle de Instagram sin resolver: `@arquitecturafinanciera` (perfil-instagram.txt)
+  vs `@arquitectura_financieralife` (grabado en las imágenes ya publicadas). Ver
+  [[fuentes/registro]].

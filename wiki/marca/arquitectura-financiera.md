@@ -7,7 +7,10 @@ fuentes: [Estrategia-Arquitectura-Financiera-2026.docx, branding/perfil-instagra
 
 # Arquitectura Financiera
 
-**Handle**: @arquitecturafinanciera
+**Handle**: ⚠️ contradicción sin resolver — `branding/perfil-instagram.txt` dice
+`@arquitecturafinanciera`, pero las imágenes finales en `posts-instagram/` (incluidas las
+de posts ya publicados) tienen grabado `@arquitectura_financieralife`. Ver detalle en
+[[../fuentes/registro]]. Confirmar con Diego cuál es el handle real antes de asumir uno.
 **Nombre a mostrar**: Arquitectura Financiera 🏛
 **Fundador**: Diego Moreno — estudiante universitario, emprendedor, 20 años, inversor desde los 18.
 
