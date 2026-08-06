@@ -77,3 +77,16 @@ el tramo publicitario de la app "Imagine" por la misma razón que con Crescenta.
 → [[conceptos/fuck-you-money]], [[conceptos/los-tres-escalones-de-ahorro]],
 [[conceptos/deuda-buena-vs-deuda-mala]], [[conceptos/tipos-de-interes-explicados]],
 [[conceptos/cartera-60-40-e-indexacion]], [[fuentes/registro]]
+
+## [2026-07-29] ingesta | Entrevista a experto en Bitcoin/regulación cripto ("Sergi")
+Tercera fuente externa, la primera enfocada en cripto — encaja con el Bloque 04 (Cripto
+sin Hype). Se extrajeron 4 conceptos técnicos/educativos: Bitcoin como activo no
+mutable (narrativa oro digital), el ciclo de adopción retail→institucional, la
+regulación MiCA y stablecoins (UE vs. EE.UU.), y una señal práctica para detectar
+exageraciones sobre compras tempranas de Bitcoin. ⚠️ Esta fuente es marcadamente
+alcista/opinativa (predicciones de precio, framing de "momento de comprar") pese a
+decir "no es consejo de inversión" — se descartó explícitamente todo ese framing por
+contradecir el principio de marca "sin hype, sin promesas de rentabilidad". →
+[[conceptos/bitcoin-activo-no-mutable]], [[conceptos/institucional-vs-retail-bitcoin]],
+[[conceptos/mica-regulacion-cripto]], [[conceptos/como-detectar-estafas-cripto]],
+[[fuentes/registro]]

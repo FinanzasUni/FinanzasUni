@@ -23,6 +23,7 @@ original.
 | Plantillas de slide | `slides/*.html` | Diseño HTML individual de cada slide | [[../contenido/formato-carrusel]] |
 | Entrevista a Ramiro (ex-Wall Street, Crescenta) | YouTube: https://www.youtube.com/watch?v=vU7kzKIcpgo | Historia personal sobre por qué el day trading no funciona; explicación de cómo funciona el ciclo privado→bolsa de una empresa (ejemplo SpaceX) | [[../conceptos/por-que-no-funciona-el-day-trading]], [[../conceptos/mercado-privado-vs-bolsa]] |
 | Entrevista a economista "Joan" sobre dinero/inversión | Transcripción pegada por Diego, sin URL de referencia (pendiente de conseguir el enlace para citarla mejor) | Psicología del dinero (fuck you money), escalones de ahorro 1.000/10.000/100.000€, deuda buena vs mala, tipos de interés, cartera 60/40 e indexación | [[../conceptos/fuck-you-money]], [[../conceptos/los-tres-escalones-de-ahorro]], [[../conceptos/deuda-buena-vs-deuda-mala]], [[../conceptos/tipos-de-interes-explicados]], [[../conceptos/cartera-60-40-e-indexacion]] |
+| Entrevista a experto en Bitcoin/regulación cripto ("Sergi", abogado) | Transcripción pegada por Diego, sin URL de referencia | Bitcoin como activo no mutable/narrativa oro digital, ciclo institucional vs retail, regulación MiCA y stablecoins, cómo detectar a alguien mintiendo sobre compras de Bitcoin | [[../conceptos/bitcoin-activo-no-mutable]], [[../conceptos/institucional-vs-retail-bitcoin]], [[../conceptos/mica-regulacion-cripto]], [[../conceptos/como-detectar-estafas-cripto]] |
 
 ## Resuelto — `posts/` vs `posts-instagram/` (2026-07-29)
 
@@ -65,6 +66,18 @@ código promocional). Misma regla que con Crescenta: **no reutilizar la mención
 producto ni el código promocional** en contenido de la cuenta — las cinco páginas de
 concepto creadas a partir de esta fuente son solo la parte educativa, independiente del
 patrocinio.
+
+## Nota sobre la entrevista al experto en Bitcoin (2026-07-29)
+
+⚠️ Esta fuente es la más alcista/con más carga de opinión de las tres ingeridas hasta
+ahora. El entrevistado repite "no es consejo de inversión" pero da señales claras de
+"ahora es buen momento para comprar" y hace predicciones de precio. Esto **contradice
+directamente** el principio de marca "cripto sin hype, sin promesas de rentabilidad"
+(ver [[../marca/voz-y-tono]]). Las 4 páginas de concepto creadas se limitan
+estrictamente a la parte técnica/educativa (qué es Bitcoin, cómo funciona la adopción,
+regulación MiCA, cómo detectar exageraciones) — **no usar ninguna cifra de precio,
+predicción ni framing de "es el momento de comprar" de esta fuente** en contenido de la
+cuenta.
 
 ## Pendiente de ingerir en detalle
 

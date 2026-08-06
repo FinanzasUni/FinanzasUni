@@ -35,6 +35,10 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[conceptos/deuda-buena-vs-deuda-mala|Deuda buena vs. deuda mala]] — de fuente externa, tema nuevo sin cubrir
 - [[conceptos/tipos-de-interes-explicados|Tipos de interés explicados]] — de fuente externa, cultura financiera básica
 - [[conceptos/cartera-60-40-e-indexacion|Cartera 60/40 e indexación]] — de fuente externa, candidato fuerte Bloque 03
+- [[conceptos/bitcoin-activo-no-mutable|Bitcoin como activo no mutable / oro digital]] — de fuente externa, candidato Bloque 04
+- [[conceptos/institucional-vs-retail-bitcoin|Ciclo de adopción: retail vs. institucional]] — de fuente externa, candidato Bloque 04
+- [[conceptos/mica-regulacion-cripto|MiCA: regulación europea de cripto]] — de fuente externa, candidato fuerte Bloque 04
+- [[conceptos/como-detectar-estafas-cripto|Cómo detectar a alguien mintiendo sobre Bitcoin]] — de fuente externa, ángulo ligero Bloque 04
 
 ## Contenido (estado de bloques y posts)
 
