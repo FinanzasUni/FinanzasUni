@@ -98,3 +98,11 @@ pendiente con Diego: empezar a publicar el Bloque 02 (ya completo) o preparar pr
 un reel corto a partir de un concepto de fuente externa (candidatos:
 [[conceptos/fuck-you-money]] o [[conceptos/los-tres-escalones-de-ahorro]]).
 → [[contenido/bloque-01-cimientos]]
+
+## [2026-07-29] entrega | Guion del reel "El dinero no es para comprar. Es para decir que no."
+Diego eligió el ángulo de [[conceptos/fuck-you-money]] entre 4 opciones presentadas
+(deuda buena/mala, fuck you money, tres escalones de ahorro, day trading) por conectar
+mejor con la audiencia joven. Guion completo escrito con hook, estructura de 4 partes y
+caption. Reencuadra el fondo de emergencia ya publicado como "tu no guardado en una
+cuenta". Pendiente: grabar y decidir si lleva overlays de texto en HTML.
+→ [[contenido/reel-fuck-you-money]], [[conceptos/fuck-you-money]]

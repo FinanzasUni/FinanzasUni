@@ -45,6 +45,7 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[contenido/bloque-01-cimientos|Bloque 01 — Cimientos]] — posts 00-03 publicados, 04-05 listos para publicar
 - [[contenido/bloque-02-ahorro-real|Bloque 02 — Ahorro Real]] — 10 posts completos, listos para publicar
 - [[contenido/formato-carrusel|Formato estándar de carrusel]]
+- [[contenido/reel-fuck-you-money|Reel — "El dinero no es para comprar. Es para decir que no."]] 📝 guion listo, pendiente de grabar
 
 ## Tecnología
 

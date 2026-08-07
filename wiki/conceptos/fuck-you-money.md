@@ -3,7 +3,7 @@ tipo: concepto
 fecha_creacion: 2026-07-29
 fecha_actualizacion: 2026-07-29
 fuentes: [entrevista podcast a economista "Joan" sobre dinero/inversión, 2026 — pegada por Diego, sin URL de referencia]
-publicado_en: null (candidato para post nuevo, tono más reflexivo/psicología del dinero)
+publicado_en: [[../contenido/reel-fuck-you-money]] (guion escrito 2026-07-29, pendiente de grabar)
 ---
 
 # "Fuck you money": la utilidad inversa del dinero
