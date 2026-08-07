@@ -90,3 +90,11 @@ contradecir el principio de marca "sin hype, sin promesas de rentabilidad". →
 [[conceptos/bitcoin-activo-no-mutable]], [[conceptos/institucional-vs-retail-bitcoin]],
 [[conceptos/mica-regulacion-cripto]], [[conceptos/como-detectar-estafas-cripto]],
 [[fuentes/registro]]
+
+## [2026-07-29] programacion | Post 05 — Los gastos hormiga
+Programado para publicarse hoy a las 18:00. Es el último post del Bloque 01 — al
+confirmarse en vivo, el bloque queda completo (6 de 6 posts). Siguiente decisión
+pendiente con Diego: empezar a publicar el Bloque 02 (ya completo) o preparar primero
+un reel corto a partir de un concepto de fuente externa (candidatos:
+[[conceptos/fuck-you-money]] o [[conceptos/los-tres-escalones-de-ahorro]]).
+→ [[contenido/bloque-01-cimientos]]

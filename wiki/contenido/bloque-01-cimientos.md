@@ -9,7 +9,8 @@ fuentes: [files/arquitectura-financiera-5posts.html, files/post-cero-corregido.h
 
 Estado real a 2026-07-29 (confirmado con Diego): **Posts 00, 01, 02, 03 y 04 ya están
 publicados en Instagram.** Post 04 ("La regla 50/30/20") se publicó el 2026-07-29. Post
-05 (gastos hormiga) tiene imágenes finales listas y es **el siguiente a publicar.**
+05 (gastos hormiga) está **programado para publicarse hoy 2026-07-29 a las 18:00** —
+confirmar cuando esté ya en vivo para marcar el Bloque 01 como completo.
 
 **Carpeta canónica de imágenes: `posts-instagram/`**, no `posts/`. Ambas contienen las
 mismas 11 subcarpetas, pero `posts-instagram/` es una revisión posterior (misma fecha,
