@@ -28,8 +28,12 @@ Educación → Finanzas personales
 
 ENLACE EN BIO
 ──────────────
-(De momento: tu email o un Linktree vacío)
-Cuando tengas newsletter activa en Beehiiv, pon ese link aquí.
+https://finanzasuni.github.io/FinanzasUni/
+
+(Actualizado 2026-08-08. Si más adelante se limpia la URL a
+https://finanzasuni.github.io/ sin el "/FinanzasUni/" final, cambiar aquí también.
+Cuando la newsletter esté conectada a Beehiiv, este mismo enlace sigue valiendo —
+la web ya tiene el bloque de newsletter integrado, no hace falta un enlace aparte.)
 
 CONFIGURACIÓN RECOMENDADA
 ──────────────────────────

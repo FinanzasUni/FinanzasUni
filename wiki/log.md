@@ -190,3 +190,12 @@ tienen ya su concepto completo — el bloque esta listo para pasar a redactar co
 generar slides, mismo proceso que Bloque 01/02.
 → [[contenido/bloque-03-inversion-indexada]], [[conceptos/etfs-y-fondos-indexados]],
 [[conceptos/brokers-espana-comparativa]], [[conceptos/irpf-e-inversiones]]
+
+## [2026-08-08] infraestructura | Traslado a organizacion de GitHub, URL sin usuario personal
+Diego traslado el repositorio a la organizacion "finanzasuni". Nueva URL confirmada
+en vivo: https://finanzasuni.github.io/FinanzasUni/ (ya no aparece el usuario
+personal diegomorenov44-dotcom). Pendiente opcional: renombrar el repo dentro de la
+organizacion a exactamente "finanzasuni.github.io" para eliminar tambien el sufijo
+"/FinanzasUni/" y quedarse con la URL raiz limpia. Remoto de git local actualizado.
+Bio de Instagram (branding/perfil-instagram.txt) actualizada con el enlace real.
+→ [[tecnologia/web-finanzasuni]]
