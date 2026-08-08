@@ -253,3 +253,12 @@ que mirar antes de elegir. Tambien se confirmo que el sistema de noticias automa
 si esta funcionando (commits del bot cada vez que se hace push; el cron diario aun no
 ha tenido su primera ejecucion real porque el workflow se creo hoy).
 → [[tecnologia/web-finanzasuni]], [[conceptos/brokers-espana-comparativa]]
+
+## [2026-08-08] contenido | Anadida Imagine a Comparativas (en evaluacion)
+Diego pide anadir la app "Imagine" a las Comparativas de la web de cara a una posible
+colaboracion de afiliacion futura. Anadida como 4a tarjeta, marcada explicitamente
+"en evaluacion", sin reutilizar el codigo promocional del anuncio del podcast ni
+cifras no verificadas de forma independiente — solo lo que se puede describir con
+honestidad (que es una app de inversion con formacion previa). Actualizada la nota
+de fuentes/registro.md que originalmente restringia reutilizar esta mencion.
+→ [[tecnologia/web-finanzasuni]], [[fuentes/registro]]

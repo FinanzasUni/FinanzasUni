@@ -67,6 +67,15 @@ producto ni el código promocional** en contenido de la cuenta — las cinco pá
 concepto creadas a partir de esta fuente son solo la parte educativa, independiente del
 patrocinio.
 
+> **Actualización 2026-08-08**: Diego decidió añadir Imagine como cuarta opción en la
+> sección "Comparativas" de la web, de cara a una posible colaboración de afiliación
+> futura con ellos. Se añadió (ver [[../tecnologia/web-finanzasuni]]) pero **sin
+> reutilizar el código promocional del anuncio ni ninguna cifra concreta** que solo
+> conocemos por ese anuncio (no verificada de forma independiente) — la tarjeta está
+> marcada explícitamente como "en evaluación", sin afirmar que exista ya un acuerdo.
+> Si en el futuro hay un acuerdo real, sustituir esta descripción por datos verificados
+> directamente con Imagine, no por lo que decía el anuncio del podcast.
+
 ## Nota sobre la entrevista al experto en Bitcoin (2026-07-29)
 
 ⚠️ Esta fuente es la más alcista/con más carga de opinión de las tres ingeridas hasta
