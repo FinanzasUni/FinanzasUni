@@ -7,10 +7,10 @@ fuentes: [files/arquitectura-financiera-5posts.html, files/post-cero-corregido.h
 
 # Bloque 01 — Cimientos
 
-Estado real a 2026-07-29 (confirmado con Diego): **Posts 00, 01, 02, 03 y 04 ya están
-publicados en Instagram.** Post 04 ("La regla 50/30/20") se publicó el 2026-07-29. Post
-05 (gastos hormiga) está **programado para publicarse hoy 2026-07-29 a las 18:00** —
-confirmar cuando esté ya en vivo para marcar el Bloque 01 como completo.
+Estado: ✅ **Bloque completo — los 6 posts (00-05) están publicados en Instagram.**
+Post 05 (gastos hormiga), programado para el 2026-07-29 a las 18:00, confirmado en vivo
+por Diego. Siguiente bloque: [[bloque-02-ahorro-real]] (ya listo, pendiente de arrancar
+publicación) y en paralelo se empieza a diseñar [[bloque-03-inversion-indexada]].
 
 **Carpeta canónica de imágenes: `posts-instagram/`**, no `posts/`. Ambas contienen las
 mismas 11 subcarpetas, pero `posts-instagram/` es una revisión posterior (misma fecha,

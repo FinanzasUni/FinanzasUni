@@ -13,8 +13,8 @@ Cada bloque tiene 5-7 posts + un reel de resumen.
 | Bloque | Nombre | Temas | Fase | Estado (2026-07-29) |
 |--------|--------|-------|------|----------------------|
 | 01 | Cimientos | Educación financiera básica, 50/30/20, gastos hormiga, ahorro | 1 | ✅ Publicado — ver [[../contenido/bloque-01-cimientos]] |
-| 02 | Ahorro Real | Fondo de emergencia, automatización, cuentas remuneradas españolas | 1 | 🟡 Copy listo, imágenes por confirmar — ver [[../contenido/bloque-02-ahorro-real]] |
-| 03 | Inversión Indexada | ETFs, fondos indexados, DEGIRO y MyInvestor, IRPF | 2 | ⬜ Pendiente |
+| 02 | Ahorro Real | Fondo de emergencia, automatización, cuentas remuneradas españolas | 1 | ✅ Listo para publicar (10 posts completos) — ver [[../contenido/bloque-02-ahorro-real]] |
+| 03 | Inversión Indexada | ETFs, fondos indexados, DEGIRO y MyInvestor, IRPF | 2 | 🎨 En diseño — ver [[../contenido/bloque-03-inversion-indexada]] |
 | 04 | Cripto sin Hype | Bitcoin, Ethereum, Bit2Me, declaración de criptos en Hacienda | 2 | ⬜ Pendiente |
 | 05 | Patrimonio Avanzado | Diversificación, objetivos largo plazo, FIRE adaptado a España | 3 | ⬜ Pendiente |
 

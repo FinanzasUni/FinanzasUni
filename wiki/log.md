@@ -146,3 +146,17 @@ fetch JS + script Node de RSS + GitHub Action diaria), y el workflow de desplieg
 GitHub Pages. Pendiente de Diego: confirmar/crear cuenta de GitHub, crear el
 repositorio remoto y activar Pages.
 → [[tecnologia/web-finanzasuni]], [[estrategia/finanzasuni]]
+
+## [2026-08-07] publicacion | Post 05 confirmado — Bloque 01 completo
+Diego confirma que el Post 05 (gastos hormiga) se publico correctamente a las 18:00.
+Bloque 01 queda cerrado: 6/6 posts publicados. → [[contenido/bloque-01-cimientos]]
+
+## [2026-08-07] diseno | Estructura del Bloque 03 — Inversion Indexada
+Se disena la secuencia de 7 posts (11-17) combinando 4 conceptos ya ingeridos de
+fuentes externas (tres escalones de ahorro, day trading, cartera 60/40 e indexacion,
+mercado privado vs bolsa) con 3 temas nuevos por desarrollar (ETFs y fondos indexados,
+comparativa DEGIRO vs MyInvestor, IRPF e inversiones). Orden pensado para ir de lo
+psicologico (limpiar mitos de trading) a lo tecnico (vehiculos de inversion) a lo
+practico (broker espanol, fiscalidad). Sin copy de posts todavia — siguiente paso es
+crear las 3 paginas de concepto que faltan.
+→ [[contenido/bloque-03-inversion-indexada]], [[estrategia/pilares-contenido]]
