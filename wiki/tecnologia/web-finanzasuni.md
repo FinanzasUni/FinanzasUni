@@ -18,11 +18,19 @@ Actualidad (estructura de ejemplo, marcada como "en construcción") → Comparat
 (con aviso de transparencia sobre afiliación ya integrado desde el diseño, no añadido
 después) → Manifiesto → Newsletter → Footer con enlaces legales (placeholder).
 
-**Identidad visual**: fondo azul marino oscuro (#0f1524), acento dorado (#c9a961),
-titulares en serif (Source Serif 4) + cuerpo en sans (Inter) + detalles en monoespaciada
-(JetBrains Mono) — mismo lenguaje visual que los posts de Instagram en
-`posts-instagram/`, para que la web se sienta del mismo proyecto que la cuenta (ver
-[[../marca/arquitectura-financiera]]).
+**Identidad visual (v2, 2026-08-07)**: Diego pidió explícitamente alejarse del navy/dorado
+de Instagram — "algo más profesional y original", con más color. Paleta nueva,
+independiente de la de Arquitectura Financiera: fondo crema cálido (#FBF3E6), acento
+principal coral (#FF5A3C), violeta profundo (#4E2E8C) para secciones de contraste,
+mostaza (#F5B942) y verde menta (#17A387) como acentos secundarios — cada categoría de
+artículo tiene su propio color (violeta=psicología, menta=ahorro, coral=deuda,
+mostaza=inversión) en vez de un único color genérico. Tipografía: Fraunces (serif
+expresiva, con cursiva) para titulares + Sora (sans moderna) para cuerpo. Formas
+orgánicas ("blobs") de fondo en hero, manifiesto y newsletter para dar personalidad.
+**Nota**: esto desacopla la identidad visual de la web de la del Instagram — es una
+decisión consciente de Diego, no un descuido; si en el futuro se decide el rebrand
+completo (ver [[../estrategia/finanzasuni]]), habrá que decidir si Instagram adopta esta
+paleta o si se mantienen como dos lenguajes visuales distintos dentro del mismo proyecto.
 
 Los 4 artículos destacados de la sección "Aprende" no son contenido de relleno: son
 [[../conceptos/fuck-you-money]], [[../conceptos/gastos-hormiga]],

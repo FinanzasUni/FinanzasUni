@@ -6,147 +6,203 @@
 <title>FinanzasUni — Aprende a manejar tu dinero, sin gurús</title>
 <meta name="description" content="Educación financiera real para jóvenes: ahorro, inversión, cripto y actualidad económica, sin hype y con contexto español.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f1524;
-    --bg-elevated: #161e33;
-    --bg-card: #1a2338;
-    --gold: #c9a961;
-    --gold-dim: #8a7444;
-    --text: #f2ede3;
-    --text-dim: #9aa4bd;
-    --border: #2a3450;
-    --serif: 'Source Serif 4', Georgia, serif;
-    --sans: 'Inter', -apple-system, sans-serif;
-    --mono: 'JetBrains Mono', monospace;
+    --cream: #FBF3E6;
+    --cream-alt: #F4E9D8;
+    --ink: #1E1233;
+    --ink-soft: #4A3F63;
+    --text-soft: #6B5D75;
+    --coral: #FF5A3C;
+    --coral-deep: #E23F22;
+    --violet: #4E2E8C;
+    --violet-deep: #3A2168;
+    --mustard: #F5B942;
+    --mint: #17A387;
+    --line: rgba(30,18,51,0.12);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Sora', -apple-system, sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    background: var(--bg);
-    color: var(--text);
+    background: var(--cream);
+    color: var(--ink);
     font-family: var(--sans);
     line-height: 1.6;
+    overflow-x: hidden;
   }
   a { color: inherit; text-decoration: none; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; position: relative; }
+  ::selection { background: var(--coral); color: var(--cream); }
 
   /* Header */
   header {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(15,21,36,0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(251,243,230,0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
   }
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; }
-  .logo { font-family: var(--serif); font-weight: 700; font-size: 1.3rem; letter-spacing: 0.02em; }
-  .logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 32px; font-size: 0.92rem; color: var(--text-dim); }
-  .nav-links a:hover { color: var(--gold); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 28px; max-width: 1160px; margin: 0 auto; }
+  .logo { font-family: var(--serif); font-weight: 700; font-size: 1.4rem; letter-spacing: -0.01em; }
+  .logo span { color: var(--coral); font-style: italic; font-weight: 600; }
+  .nav-links { display: flex; gap: 36px; font-size: 0.94rem; font-weight: 500; color: var(--ink-soft); }
+  .nav-links a { position: relative; padding-bottom: 4px; }
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0;
+    background: var(--coral); transition: width 0.2s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a:hover { color: var(--ink); }
   .nav-cta {
-    background: var(--gold); color: #1a1408; padding: 9px 18px; border-radius: 4px;
-    font-weight: 600; font-size: 0.88rem;
+    background: var(--ink); color: var(--cream); padding: 11px 22px; border-radius: 100px;
+    font-weight: 600; font-size: 0.88rem; transition: background 0.2s, transform 0.15s;
   }
+  .nav-cta:hover { background: var(--coral); transform: translateY(-1px); }
 
   /* Hero */
-  .hero { padding: 100px 24px 80px; text-align: center; }
+  .hero { position: relative; padding: 110px 28px 100px; text-align: center; overflow: hidden; }
+  .blob {
+    position: absolute; border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+    filter: blur(2px); z-index: 0; opacity: 0.85;
+  }
+  .blob-1 { width: 340px; height: 340px; background: var(--mustard); top: -80px; left: -100px; opacity: 0.55; }
+  .blob-2 { width: 260px; height: 260px; background: var(--mint); bottom: -60px; right: -60px; opacity: 0.4; border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  .blob-3 { width: 180px; height: 180px; background: var(--violet); top: 40%; right: 6%; opacity: 0.18; border-radius: 50%; }
+  .hero > .wrap { position: relative; z-index: 1; }
   .eyebrow {
-    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--gold); font-size: 0.78rem; margin-bottom: 24px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: var(--cream);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    font-size: 0.72rem; font-weight: 600; padding: 8px 16px; border-radius: 100px;
+    margin-bottom: 32px;
   }
+  .eyebrow::before { content: '●'; color: var(--coral); font-size: 0.6rem; }
   .hero h1 {
-    font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.6rem);
-    font-weight: 700; max-width: 780px; margin: 0 auto 24px; line-height: 1.15;
+    font-family: var(--serif); font-size: clamp(2.6rem, 6vw, 4.4rem);
+    font-weight: 600; max-width: 840px; margin: 0 auto 28px; line-height: 1.08;
+    letter-spacing: -0.02em;
   }
-  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero h1 .hl {
+    font-style: italic; font-weight: 500; color: var(--coral);
+    position: relative; white-space: nowrap;
+  }
   .hero p {
-    color: var(--text-dim); font-size: 1.1rem; max-width: 560px; margin: 0 auto 40px;
+    color: var(--text-soft); font-size: 1.15rem; max-width: 560px; margin: 0 auto 44px;
   }
   .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   .btn-primary {
-    background: var(--gold); color: #1a1408; padding: 14px 28px; border-radius: 4px;
-    font-weight: 600; font-size: 0.95rem;
+    background: var(--coral); color: var(--cream); padding: 16px 30px; border-radius: 100px;
+    font-weight: 700; font-size: 0.96rem; box-shadow: 0 8px 24px -8px rgba(255,90,60,0.6);
+    transition: transform 0.15s, box-shadow 0.15s;
   }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -8px rgba(255,90,60,0.7); }
   .btn-secondary {
-    border: 1px solid var(--border); padding: 14px 28px; border-radius: 4px;
-    font-weight: 600; font-size: 0.95rem; color: var(--text);
+    border: 1.5px solid var(--ink); padding: 16px 30px; border-radius: 100px;
+    font-weight: 700; font-size: 0.96rem; color: var(--ink);
+    transition: background 0.15s, color 0.15s;
   }
-  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-secondary:hover { background: var(--ink); color: var(--cream); }
 
   /* Section shared */
-  section { padding: 72px 24px; }
-  .section-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 12px; }
-  .section-head h2 { font-family: var(--serif); font-size: 1.9rem; }
-  .section-head .see-all { font-size: 0.88rem; color: var(--gold); }
+  section { padding: 88px 28px; position: relative; }
+  .section-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; flex-wrap: wrap; gap: 12px; }
+  .section-head h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 600; letter-spacing: -0.01em; }
+  .section-head .see-all { font-size: 0.9rem; font-weight: 600; color: var(--coral); }
   .section-label {
-    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--text-dim); font-size: 0.72rem; display: block; margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--text-soft); font-size: 0.74rem; font-weight: 700; display: block; margin-bottom: 10px;
   }
 
   /* Article grid */
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
   .card {
-    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
-    padding: 24px; display: flex; flex-direction: column; gap: 12px;
-    transition: border-color 0.15s;
+    background: var(--cream-alt); border-radius: 20px;
+    padding: 28px; display: flex; flex-direction: column; gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-top: 5px solid var(--card-color, var(--coral));
   }
-  .card:hover { border-color: var(--gold-dim); }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px -16px rgba(30,18,51,0.25); }
   .card-tag {
-    font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase;
-    color: var(--gold); letter-spacing: 0.08em;
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    color: var(--card-color, var(--coral)); letter-spacing: 0.06em;
   }
-  .card h3 { font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }
-  .card p { color: var(--text-dim); font-size: 0.9rem; }
-  .card-meta { font-size: 0.78rem; color: var(--text-dim); margin-top: auto; padding-top: 8px; }
+  .card h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; line-height: 1.3; }
+  .card p { color: var(--text-soft); font-size: 0.92rem; }
+  .card-meta { font-size: 0.78rem; color: var(--text-soft); margin-top: auto; padding-top: 8px; font-weight: 600; }
 
-  /* News section (distinct visual treatment) */
-  .news-section { background: var(--bg-elevated); }
+  .c-violet { --card-color: var(--violet); }
+  .c-mint { --card-color: var(--mint); }
+  .c-coral { --card-color: var(--coral); }
+  .c-mustard { --card-color: #C98A1E; }
+
+  /* News section (distinct visual treatment — dark) */
+  .news-section { background: var(--ink); color: var(--cream); }
+  .news-section .section-label { color: rgba(251,243,230,0.55); }
+  .news-section .section-head h2 { color: var(--cream); }
   .news-row {
     display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border);
+    gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(251,243,230,0.14);
   }
   .news-row:last-child { border-bottom: none; }
-  .news-row h4 { font-family: var(--serif); font-size: 1.05rem; margin-bottom: 6px; }
-  .news-row p { color: var(--text-dim); font-size: 0.88rem; max-width: 620px; }
-  .news-source { font-family: var(--mono); font-size: 0.75rem; color: var(--gold); white-space: nowrap; }
-  .placeholder-badge {
-    display: inline-block; background: rgba(201,169,97,0.12); color: var(--gold);
-    font-family: var(--mono); font-size: 0.68rem; padding: 3px 8px; border-radius: 3px;
-    margin-bottom: 24px; letter-spacing: 0.04em;
+  .news-row h4 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+  .news-row p { color: rgba(251,243,230,0.62); font-size: 0.9rem; max-width: 620px; }
+  .news-source {
+    font-size: 0.76rem; font-weight: 700; color: var(--ink);
+    background: var(--mustard); padding: 5px 12px; border-radius: 100px; white-space: nowrap;
   }
+  .placeholder-badge {
+    display: inline-block; background: rgba(255,90,60,0.12); color: var(--coral-deep);
+    font-size: 0.7rem; font-weight: 700; padding: 5px 12px; border-radius: 100px;
+    margin-bottom: 28px; letter-spacing: 0.03em;
+  }
+  .news-section .placeholder-badge { background: rgba(245,185,66,0.16); color: var(--mustard); }
 
   /* Comparativas / afiliados */
   .disclosure {
-    background: rgba(201,169,97,0.08); border: 1px solid var(--gold-dim);
-    border-radius: 6px; padding: 14px 18px; font-size: 0.85rem; color: var(--text-dim);
-    margin-bottom: 32px;
+    background: rgba(23,163,135,0.1); border: 1.5px solid var(--mint);
+    border-radius: 14px; padding: 18px 22px; font-size: 0.88rem; color: var(--ink-soft);
+    margin-bottom: 36px;
   }
-  .disclosure strong { color: var(--gold); }
+  .disclosure strong { color: var(--mint); }
 
   /* Manifesto */
-  .manifesto { background: var(--bg-elevated); }
-  .manifesto-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-  .manifesto p { font-family: var(--serif); font-size: 1.35rem; line-height: 1.6; color: var(--text); }
-  .manifesto .signature { margin-top: 28px; color: var(--text-dim); font-size: 0.9rem; font-family: var(--sans); }
+  .manifesto { background: var(--violet); color: var(--cream); overflow: hidden; }
+  .manifesto-inner { max-width: 720px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .manifesto p {
+    font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem); font-style: italic;
+    font-weight: 500; line-height: 1.5; color: var(--cream);
+  }
+  .manifesto .signature { margin-top: 32px; color: rgba(251,243,230,0.7); font-size: 0.92rem; font-family: var(--sans); font-weight: 600; }
+  .manifesto .blob { background: var(--coral); opacity: 0.25; width: 300px; height: 300px; top: -100px; right: -80px; }
 
   /* Newsletter */
-  .newsletter { text-align: center; }
-  .newsletter h2 { font-family: var(--serif); font-size: 1.9rem; margin-bottom: 12px; }
-  .newsletter p { color: var(--text-dim); margin-bottom: 28px; }
-  .newsletter-form { display: flex; gap: 10px; justify-content: center; max-width: 420px; margin: 0 auto; flex-wrap: wrap; }
+  .newsletter { text-align: center; overflow: hidden; }
+  .newsletter .blob { background: var(--mustard); opacity: 0.35; width: 260px; height: 260px; bottom: -80px; left: -60px; }
+  .newsletter > .wrap { position: relative; z-index: 1; }
+  .newsletter h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 600; margin-bottom: 14px; }
+  .newsletter p { color: var(--text-soft); margin-bottom: 32px; }
+  .newsletter-form { display: flex; gap: 10px; justify-content: center; max-width: 440px; margin: 0 auto; flex-wrap: wrap; }
   .newsletter-form input {
-    flex: 1; min-width: 200px; background: var(--bg-card); border: 1px solid var(--border);
-    color: var(--text); padding: 13px 16px; border-radius: 4px; font-family: var(--sans);
+    flex: 1; min-width: 220px; background: var(--cream); border: 1.5px solid var(--line);
+    color: var(--ink); padding: 15px 20px; border-radius: 100px; font-family: var(--sans); font-size: 0.95rem;
   }
+  .newsletter-form input:focus { outline: none; border-color: var(--coral); }
+  .newsletter-form .btn-primary { padding: 15px 28px; }
 
   footer {
-    border-top: 1px solid var(--border); padding: 40px 24px; margin-top: 40px;
+    background: var(--ink); color: var(--cream); padding: 48px 28px 32px;
   }
   .footer-inner {
+    max-width: 1160px; margin: 0 auto;
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;
   }
-  .footer-links { display: flex; gap: 24px; font-size: 0.82rem; color: var(--text-dim); flex-wrap: wrap; }
-  .footer-note { font-size: 0.78rem; color: var(--text-dim); margin-top: 20px; max-width: 640px; }
+  footer .logo { color: var(--cream); }
+  .footer-links { display: flex; gap: 26px; font-size: 0.84rem; color: rgba(251,243,230,0.65); flex-wrap: wrap; }
+  .footer-links a:hover { color: var(--coral); }
+  .footer-note { font-size: 0.78rem; color: rgba(251,243,230,0.5); margin-top: 22px; max-width: 640px; }
 
   @media (max-width: 720px) {
     .nav-links { display: none; }
@@ -169,9 +225,12 @@
 </header>
 
 <section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
   <div class="wrap">
     <span class="eyebrow">Educación financiera para jóvenes españoles</span>
-    <h1>Nadie va a venir a <em>salvarte</em>. Aprende a manejar tu dinero tú.</h1>
+    <h1>Nadie va a venir a <span class="hl">salvarte</span>. Aprende a manejar tu dinero tú.</h1>
     <p>Sin gurús, sin promesas de rentabilidad, sin complicarlo. Ahorro, inversión, cripto y actualidad económica explicados como te lo contaría un amigo.</p>
     <div class="hero-actions">
       <a href="#aprende" class="btn-primary">Empieza por lo básico</a>
@@ -190,25 +249,25 @@
       <a href="#" class="see-all">Ver todos los artículos →</a>
     </div>
     <div class="grid">
-      <a class="card" href="#">
+      <a class="card c-violet" href="#">
         <span class="card-tag">Psicología del dinero</span>
         <h3>El dinero no es para comprar. Es para decir que no.</h3>
         <p>La utilidad que nadie te explica: un colchón ahorrado no compra cosas, compra la capacidad de rechazar lo que no quieres.</p>
         <span class="card-meta">6 min de lectura</span>
       </a>
-      <a class="card" href="#">
+      <a class="card c-mint" href="#">
         <span class="card-tag">Ahorro</span>
         <h3>Los gastos hormiga: el enemigo silencioso de tus ahorros</h3>
         <p>€3 al día parecen nada. En 10 años son €10.800. Consciencia, no sacrificio.</p>
         <span class="card-meta">4 min de lectura</span>
       </a>
-      <a class="card" href="#">
+      <a class="card c-coral" href="#">
         <span class="card-tag">Deuda</span>
         <h3>Deuda buena vs. deuda mala: la diferencia que nadie te enseña</h3>
         <p>Financiar un máster no es lo mismo que financiar una camiseta a 12 plazos. Aquí está la diferencia.</p>
         <span class="card-meta">5 min de lectura</span>
       </a>
-      <a class="card" href="#">
+      <a class="card c-mustard" href="#">
         <span class="card-tag">Inversión</span>
         <h3>Los tres escalones de ahorro: 1.000€, 10.000€, 100.000€</h3>
         <p>Cada etapa pide una estrategia distinta. Aquí está el mapa completo, paso a paso.</p>
@@ -264,12 +323,12 @@
       <strong>Transparencia:</strong> algunos enlaces de esta sección son de afiliado — si abres una cuenta a través de ellos, podemos recibir una comisión sin coste extra para ti. Nunca recomendamos un producto por la comisión que paga: el orden de esta comparativa se basa en condiciones reales (TAE, comisiones, cobertura FGD), no en lo que nos paguen.
     </div>
     <div class="grid">
-      <div class="card">
+      <div class="card c-mint">
         <span class="card-tag">Cuenta remunerada</span>
         <h3>Ejemplo de entidad</h3>
         <p>TAE, comisiones y cobertura — estructura de comparativa, pendiente de datos reales y acuerdo de afiliación.</p>
       </div>
-      <div class="card">
+      <div class="card c-violet">
         <span class="card-tag">Broker</span>
         <h3>Ejemplo de entidad</h3>
         <p>Comisiones por operación, fondos disponibles, fiscalidad española — pendiente de contenido real.</p>
@@ -279,6 +338,7 @@
 </section>
 
 <section id="manifesto" class="manifesto">
+  <div class="blob"></div>
   <div class="wrap manifesto-inner">
     <p>"No hablo desde arriba. Aprendo en público, con errores y aciertos reales, desde la misma realidad que tú. Esto no va de hacerte rico rápido — va de entender las reglas del juego antes de que el juego te coma a ti."</p>
     <div class="signature">— Diego, fundador de FinanzasUni</div>
@@ -286,6 +346,7 @@
 </section>
 
 <section id="newsletter" class="newsletter">
+  <div class="blob"></div>
   <div class="wrap">
     <h2>Una idea a la semana, sin spam</h2>
     <p>Lo que aprendo sobre dinero, directo a tu correo. Sin promesas imposibles.</p>
@@ -297,7 +358,7 @@
 </section>
 
 <footer>
-  <div class="wrap footer-inner">
+  <div class="footer-inner">
     <div>
       <div class="logo">Finanzas<span>Uni</span></div>
       <p class="footer-note">Contenido con fines educativos. No es asesoramiento financiero individualizado. Algunos enlaces pueden ser de afiliado — siempre marcados como tal.</p>

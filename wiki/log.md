@@ -117,3 +117,11 @@ en las imágenes). Se construyó un prototipo real de la home en `web/index.html
 reutilizando 4 conceptos ya escritos en el wiki como artículos destacados. Pendiente:
 recibir la presentación que Diego mencionó pero no llegó a compartir.
 → [[estrategia/finanzasuni]], [[tecnologia/web-finanzasuni]]
+
+## [2026-08-07] revision | Rediseño visual de la web FinanzasUni
+Diego rechazó la paleta navy/dorado (heredada de Instagram) por no sentirla profesional
+ni original. Rediseño completo: fondo crema cálido, coral como acento principal,
+violeta/mostaza/menta como acentos secundarios con color por categoría de artículo,
+tipografía Fraunces (serif expresiva) + Sora (sans), formas orgánicas de fondo. Decisión
+consciente de desacoplar la identidad visual de la web de la de Instagram.
+→ [[tecnologia/web-finanzasuni]]
