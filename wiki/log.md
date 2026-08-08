@@ -227,3 +227,12 @@ Diego elige la version larga de las 3 propuestas para la descripcion de la
 newsletter/publicacion en Beehiiv. Guardada como copy oficial reutilizable en
 cualquier perfil futuro (web "Sobre mi", Beehiiv, etc.).
 → [[estrategia/finanzasuni]]
+
+## [2026-08-08] tecnico | Anadidas etiquetas Open Graph / Twitter Card
+La web no tenia meta tags de vista previa social — al compartir el enlace en
+WhatsApp/Twitter/Facebook no aparecia tarjeta con imagen ni descripcion. Anadidas
+etiquetas og:* y twitter:* en index.html, usando de imagen provisional el PNG del
+logo que Diego ya habia exportado (web/social-preview.png, formato vertical, no
+ideal 1200x630 pero funcional). Pendiente: crear una tarjeta social apaisada
+propiamente dimensionada como mejora futura.
+→ [[tecnologia/web-finanzasuni]]
