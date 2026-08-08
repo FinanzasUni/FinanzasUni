@@ -32,12 +32,15 @@ universidad de verdad (no solo un monograma abstracto). Cuatro propuestas en
    de las páginas, verde esmeralda (#0B3D2E) + menta. Conecta aprender con crecer.
 3. **`concepto-3-columnas.svg`** — fachada clásica de columnas y frontón (como un
    sello universitario), burdeos (#5C1A32) + crema/dorado. El más "prestigio académico".
-4. **`concepto-4-campus-moderno.svg`** — skyline simplificado de campus con una
-   pequeña bandera, turquesa (#0E7C7B) + coral. El más joven y actual de los cuatro,
-   más cercano al espíritu "jóvenes emprendedores" que pedía Diego.
+4. **`concepto-4-campus-moderno.svg`** — skyline simplificado de campus, turquesa
+   (#0E7C7B) + coral. El más joven y actual de los cuatro, más cercano al espíritu
+   "jóvenes emprendedores" que pedía Diego.
 
-Sin decisión tomada todavía sobre cuál usar — pendiente de que Diego elija uno (o pida
-ajustes/mezclas entre ellos).
+**Elegido por Diego (2026-08-08): el concepto 4 (Campus moderno)**, con un ajuste —
+se quitó la bandera que llevaba el edificio central (quedaba innecesaria). Sigue
+pendiente decidir si se adopta como logo/favicon definitivo o se sigue iterando sobre
+él (por ejemplo, aplicarlo también como avatar cuadrado independiente sin el wordmark
+debajo, para usos donde no cabe el texto).
 
 ## Concepto (versión anterior — monograma "Fu")
 

@@ -209,3 +209,9 @@ chispa (coral/dorado, conectado con la paleta de la web, ya usado como favicon e
 universitaria real (birrete, libro con flecha de crecimiento, columnas clasicas,
 skyline de campus con bandera). Sin decision tomada — pendiente de que Diego elija.
 → [[marca/logo-finanzasuni]]
+
+## [2026-08-08] diseno | Elegido concepto 4 (Campus moderno), sin bandera
+Diego elige el concepto 4 de los 4 propuestos (turquesa+coral, skyline de campus) y
+pide quitar la bandera del edificio central. Aplicado. Pendiente: decidir si se
+convierte en el logo/favicon definitivo (sustituyendo al monograma "Fu" actual).
+→ [[marca/logo-finanzasuni]]
