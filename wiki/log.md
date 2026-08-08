@@ -243,3 +243,13 @@ no reflejaba el trabajo real hecho: traslado de organizacion, logo, favicon, OG 
 fix de RSS). Consolidado en una seccion de estado actual y una lista de pendientes
 real y vigente.
 → [[tecnologia/web-finanzasuni]]
+
+## [2026-08-08] contenido | Comparativas de la web completadas con datos reales
+Rellenada la seccion "Comparativas" de web/index.html con las 3 entidades ya
+documentadas en wiki/conceptos/brokers-espana-comparativa.md (MyInvestor, DEGIRO,
+Trade Republic), enlaces reales a cada web oficial (sin afiliacion todavia — texto de
+transparencia corregido para no afirmar afiliacion que no existe), y el checklist de
+que mirar antes de elegir. Tambien se confirmo que el sistema de noticias automaticas
+si esta funcionando (commits del bot cada vez que se hace push; el cron diario aun no
+ha tenido su primera ejecucion real porque el workflow se creo hoy).
+→ [[tecnologia/web-finanzasuni]], [[conceptos/brokers-espana-comparativa]]
