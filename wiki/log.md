@@ -160,3 +160,13 @@ psicologico (limpiar mitos de trading) a lo tecnico (vehiculos de inversion) a l
 practico (broker espanol, fiscalidad). Sin copy de posts todavia — siguiente paso es
 crear las 3 paginas de concepto que faltan.
 → [[contenido/bloque-03-inversion-indexada]], [[estrategia/pilares-contenido]]
+
+## [2026-08-08] fix | Feeds RSS rotos en la primera ejecucion real
+Primera ejecucion del workflow en GitHub Actions revelo que 2 de los 3 feeds RSS
+fallaban: Cinco Dias (404, URL ya no existe) y El Economista (403, bloqueo anti-bot).
+Expansion funciono correctamente. Sustituidos los dos rotos por busquedas de Google
+News (verificadas como validas), mas resistentes a bloqueos que depender de que cada
+medio mantenga su URL de RSS estable. La ejecucion tambien mostro "Error: The
+operation was canceled" tras escribir noticias.json — causa no confirmada, pendiente
+de reintentar tras el fix y revisar el log completo si vuelve a pasar.
+→ [[tecnologia/web-finanzasuni]]

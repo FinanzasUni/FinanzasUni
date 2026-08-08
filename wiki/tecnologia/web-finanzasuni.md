@@ -73,10 +73,10 @@ por ahora (no automatizada), Beehiiv para newsletter (pendiente de que cree la c
   por `fetch()`. Con fallback a los 3 ejemplos fijos si el fetch falla (pasa siempre
   que se abre el archivo con `file://` en vez de servido por HTTP — limitación del
   navegador, no un bug).
-- **`scripts/fetch-noticias.js`**: script Node que lee RSS de Expansión, Cinco Días y
-  El Economista y regenera `noticias.json`. ⚠️ No se ha podido probar en este entorno
-  (sin acceso a red real) — las URLs de los feeds son las públicas conocidas de cada
-  medio a fecha de escritura, pero hay que verificarlas la primera vez que se ejecute.
+- **`scripts/fetch-noticias.js`**: script Node que lee RSS y regenera `noticias.json`.
+  ⚠️ Primera ejecución real (2026-08-08) confirmó que Cinco Días (404) y El Economista
+  (403, bloqueo anti-bot) no funcionaban — sustituidos por dos búsquedas de Google News
+  (más resistentes a bloqueos). Expansión sí funcionó a la primera y se mantiene.
 - **`.github/workflows/actualizar-web.yml`**: GitHub Action que corre cada día a las
   06:00 UTC — regenera `noticias.json`, lo commitea si cambió, y despliega `web/`
   entero a GitHub Pages. También se dispara en cada push a `master`.

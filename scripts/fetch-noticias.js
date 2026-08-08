@@ -20,12 +20,21 @@ const MAX_TOTAL = 9;
 const RESUMEN_MAX_CHARS = 180;
 
 // Feeds RSS gratuitos y públicos de economía en español.
-// Si alguno deja de funcionar (los medios cambian sus URLs de RSS de vez en
-// cuando), quítalo de la lista o busca el nuevo endpoint en la web del medio.
+//
+// Historial: la primera versión de esta lista incluía Cinco Días y El Economista
+// directamente, pero fallaron en la primera ejecución real en GitHub Actions
+// (Cinco Días: 404, la URL de RSS cambió o ya no existe; El Economista: 403,
+// bloquea peticiones automatizadas con protección anti-bot). Expansión sí
+// funcionó. Se sustituyen las dos fuentes rotas por búsquedas en Google News,
+// que son mucho más resistentes a bloqueos y no dependen de que cada medio
+// mantenga su URL de RSS estable.
+//
+// Si Expansión también deja de funcionar algún día, quítala de la lista — el
+// script sigue funcionando igual con las fuentes que respondan.
 const FEEDS = [
   { nombre: 'Expansión', url: 'https://e00-expansion.uecdn.es/rss/portada.xml' },
-  { nombre: 'Cinco Días', url: 'https://cincodias.elpais.com/rss/economia/portada.xml' },
-  { nombre: 'El Economista', url: 'https://www.eleconomista.es/rss/rss-economia.php' },
+  { nombre: 'Google News — Economía España', url: 'https://news.google.com/rss/search?q=econom%C3%ADa%20espa%C3%B1a%20when:2d&hl=es-ES&gl=ES&ceid=ES:es' },
+  { nombre: 'Google News — Finanzas personales', url: 'https://news.google.com/rss/search?q=finanzas%20personales%20OR%20ahorro%20OR%20inversi%C3%B3n%20espa%C3%B1a%20when:2d&hl=es-ES&gl=ES&ceid=ES:es' },
 ];
 
 function limpiarResumen(texto) {
