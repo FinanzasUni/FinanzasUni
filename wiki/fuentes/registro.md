@@ -67,14 +67,14 @@ producto ni el código promocional** en contenido de la cuenta — las cinco pá
 concepto creadas a partir de esta fuente son solo la parte educativa, independiente del
 patrocinio.
 
-> **Actualización 2026-08-08**: Diego decidió añadir Imagine como cuarta opción en la
-> sección "Comparativas" de la web, de cara a una posible colaboración de afiliación
-> futura con ellos. Se añadió (ver [[../tecnologia/web-finanzasuni]]) pero **sin
-> reutilizar el código promocional del anuncio ni ninguna cifra concreta** que solo
-> conocemos por ese anuncio (no verificada de forma independiente) — la tarjeta está
-> marcada explícitamente como "en evaluación", sin afirmar que exista ya un acuerdo.
-> Si en el futuro hay un acuerdo real, sustituir esta descripción por datos verificados
-> directamente con Imagine, no por lo que decía el anuncio del podcast.
+> **Corrección 2026-08-08**: se añadió por error una tarjeta "Imagine" en la web
+> asumiendo que Diego se refería a esta app del anuncio — error de esta sesión. Diego
+> se refería en realidad a **"imagin"** (sin e final), la marca digital de CaixaBank
+> para jóvenes, una entidad totalmente distinta y sin relación con el tramo publicitario
+> de esta entrevista. Corregido en [[../tecnologia/web-finanzasuni]]. La restricción de
+> "no reutilizar la mención a Imagine/Imagine Academy" de esta fuente sigue vigente tal
+> cual estaba — no aplica a "imagin"/CaixaBank, que es información pública independiente
+> del anuncio.
 
 ## Nota sobre la entrevista al experto en Bitcoin (2026-07-29)
 

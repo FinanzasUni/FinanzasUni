@@ -262,3 +262,12 @@ cifras no verificadas de forma independiente — solo lo que se puede describir 
 honestidad (que es una app de inversion con formacion previa). Actualizada la nota
 de fuentes/registro.md que originalmente restringia reutilizar esta mencion.
 → [[tecnologia/web-finanzasuni]], [[fuentes/registro]]
+
+## [2026-08-08] fix | Correccion: era "imagin" (CaixaBank), no "Imagine" (app del podcast)
+Error de esta sesion: se anadio por error la tarjeta de Comparativas asumiendo que
+Diego se referia a "Imagine", la app del anuncio patrocinado en una entrevista
+ingerida. Diego se referia en realidad a "imagin" (sin e), la marca digital de
+CaixaBank para jovenes — entidad real, publica, sin relacion con el anuncio.
+Corregido el contenido de la tarjeta en web/index.html y la nota en
+wiki/fuentes/registro.md que aplicaba mal la restriccion de esa fuente.
+→ [[tecnologia/web-finanzasuni]], [[fuentes/registro]]
