@@ -125,3 +125,13 @@ violeta/mostaza/menta como acentos secundarios con color por categoría de artí
 tipografía Fraunces (serif expresiva) + Sora (sans), formas orgánicas de fondo. Decisión
 consciente de desacoplar la identidad visual de la web de la de Instagram.
 → [[tecnologia/web-finanzasuni]]
+
+## [2026-08-07] revision | Fusion de estilos v3: oscuro elegante + color + movimiento
+Diego pidio una mezcla de las dos versiones anteriores: elegante, cercano, moderno,
+con transiciones y video de fondo. Se volvio a la base oscura casi negra-violeta (mas
+elegante que el crema) pero manteniendo la paleta multicolor por categoria (dorado
+como color lider + coral/violeta/menta/mostaza). Se anadio scroll-reveal real
+(IntersectionObserver) y un fondo animado en el hero que simula movimiento tipo video
+mediante gradientes animados, con el codigo ya preparado para sustituirse por un
+video real cuando Diego tenga grabacion propia.
+→ [[tecnologia/web-finanzasuni]]

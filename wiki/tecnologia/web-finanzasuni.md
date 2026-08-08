@@ -18,19 +18,30 @@ Actualidad (estructura de ejemplo, marcada como "en construcción") → Comparat
 (con aviso de transparencia sobre afiliación ya integrado desde el diseño, no añadido
 después) → Manifiesto → Newsletter → Footer con enlaces legales (placeholder).
 
-**Identidad visual (v2, 2026-08-07)**: Diego pidió explícitamente alejarse del navy/dorado
-de Instagram — "algo más profesional y original", con más color. Paleta nueva,
-independiente de la de Arquitectura Financiera: fondo crema cálido (#FBF3E6), acento
-principal coral (#FF5A3C), violeta profundo (#4E2E8C) para secciones de contraste,
-mostaza (#F5B942) y verde menta (#17A387) como acentos secundarios — cada categoría de
-artículo tiene su propio color (violeta=psicología, menta=ahorro, coral=deuda,
-mostaza=inversión) en vez de un único color genérico. Tipografía: Fraunces (serif
-expresiva, con cursiva) para titulares + Sora (sans moderna) para cuerpo. Formas
-orgánicas ("blobs") de fondo en hero, manifiesto y newsletter para dar personalidad.
-**Nota**: esto desacopla la identidad visual de la web de la del Instagram — es una
-decisión consciente de Diego, no un descuido; si en el futuro se decide el rebrand
-completo (ver [[../estrategia/finanzasuni]]), habrá que decidir si Instagram adopta esta
-paleta o si se mantienen como dos lenguajes visuales distintos dentro del mismo proyecto.
+**Identidad visual — historial de iteraciones**:
+- v1 (07:XX 2026-08-07): fondo navy/dorado, heredado 1:1 de Instagram.
+- v2: Diego pidió alejarse de eso — fondo crema cálido, coral como acento principal,
+  violeta/mostaza/menta como secundarios, tipografía Fraunces + Sora.
+- **v3 (actual, 2026-08-07)**: Diego pidió "mezcla de las dos", elegante y cercano,
+  moderno, con transiciones y vídeo de fondo. Fusión: vuelve la base oscura elegante de
+  v1 (fondo casi negro-violeta `#0E0B18`) pero con la paleta multicolor de v2 como
+  acentos (dorado `#D9AE64` como color líder, + coral `#FF6B4A`, violeta `#8B6DE0`,
+  menta `#2FCBA0`, mostaza `#F0C24B` por categoría de artículo). Se mantiene
+  Fraunces + Sora. Añadido:
+  - **Scroll reveal**: las secciones y tarjetas aparecen con fade+slide al entrar en
+    viewport (IntersectionObserver + CSS, script inline al final de `index.html`).
+  - **Fondo animado en el hero simulando vídeo**: gradientes radiales multicolor con
+    animación `drift` (18s, moviéndose y rotando lentamente) — placeholder hasta que
+    Diego tenga grabación propia. El HTML incluye un comentario explicando exactamente
+    cómo sustituirlo por un `<video>` real (autoplay/muted/loop) cuando exista el
+    archivo.
+  - Microinteracciones: brillo de color por categoría al hacer hover en las tarjetas,
+    degradado dorado→coral en el título y la firma del manifiesto, pulso animado en el
+    punto del eyebrow.
+
+**Nota sobre el vídeo de fondo**: no existe todavía ningún archivo de vídeo — cuando
+Diego grabe contenido propio (ver el reel en [[reel-fuck-you-money|../contenido/reel-fuck-you-money]]),
+ese material es buen candidato para convertirse en el fondo real del hero.
 
 Los 4 artículos destacados de la sección "Aprende" no son contenido de relleno: son
 [[../conceptos/fuck-you-money]], [[../conceptos/gastos-hormiga]],
