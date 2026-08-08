@@ -179,3 +179,14 @@ articulos/ (4 paginas completas con enlaces cruzados funcionando), legal/
 generadas automaticamente por el workflow) confirmados operativos. El sistema de
 noticias automaticas diarias funciona en produccion, no solo en teoria.
 → [[tecnologia/web-finanzasuni]]
+
+## [2026-08-08] contenido | Bloque 03 completo a nivel de concepto
+Creados los 3 conceptos que faltaban: ETFs y fondos indexados (nivel basico, decidido
+con Diego), comparativa DEGIRO/MyInvestor/Trade Republic (incluye Trade Republic por
+decision de Diego, marcado para reutilizar tambien en la seccion Comparativas de la
+web), e IRPF e inversiones (deliberadamente sin cifras/tramos exactos, decidido con
+Diego para evitar publicar datos fiscales que caduquen). Los 7 posts del Bloque 03
+tienen ya su concepto completo — el bloque esta listo para pasar a redactar copy y
+generar slides, mismo proceso que Bloque 01/02.
+→ [[contenido/bloque-03-inversion-indexada]], [[conceptos/etfs-y-fondos-indexados]],
+[[conceptos/brokers-espana-comparativa]], [[conceptos/irpf-e-inversiones]]

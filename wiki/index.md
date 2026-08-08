@@ -36,6 +36,9 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[conceptos/deuda-buena-vs-deuda-mala|Deuda buena vs. deuda mala]] — de fuente externa, tema nuevo sin cubrir
 - [[conceptos/tipos-de-interes-explicados|Tipos de interés explicados]] — de fuente externa, cultura financiera básica
 - [[conceptos/cartera-60-40-e-indexacion|Cartera 60/40 e indexación]] — de fuente externa, candidato fuerte Bloque 03
+- [[conceptos/etfs-y-fondos-indexados|ETFs y fondos indexados (nivel básico)]] — Post 13 Bloque 03
+- [[conceptos/brokers-espana-comparativa|DEGIRO vs. MyInvestor vs. Trade Republic]] — Post 15 Bloque 03, también para "Comparativas" de la web
+- [[conceptos/irpf-e-inversiones|IRPF e inversiones (sin cifras exactas)]] — Post 16 Bloque 03
 - [[conceptos/bitcoin-activo-no-mutable|Bitcoin como activo no mutable / oro digital]] — de fuente externa, candidato Bloque 04
 - [[conceptos/institucional-vs-retail-bitcoin|Ciclo de adopción: retail vs. institucional]] — de fuente externa, candidato Bloque 04
 - [[conceptos/mica-regulacion-cripto|MiCA: regulación europea de cripto]] — de fuente externa, candidato fuerte Bloque 04
@@ -45,7 +48,7 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 
 - [[contenido/bloque-01-cimientos|Bloque 01 — Cimientos]] — posts 00-03 publicados, 04-05 listos para publicar
 - [[contenido/bloque-02-ahorro-real|Bloque 02 — Ahorro Real]] — 10 posts completos, listos para publicar
-- [[contenido/bloque-03-inversion-indexada|Bloque 03 — Inversión Indexada]] 🎨 en diseño, estructura de 7 posts propuesta
+- [[contenido/bloque-03-inversion-indexada|Bloque 03 — Inversión Indexada]] ✅ estructura y 7 conceptos completos, falta copy/slides
 - [[contenido/formato-carrusel|Formato estándar de carrusel]]
 - [[contenido/reel-fuck-you-money|Reel — "El dinero no es para comprar. Es para decir que no."]] 📝 guion listo, pendiente de grabar
 
