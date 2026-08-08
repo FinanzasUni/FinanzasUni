@@ -199,3 +199,13 @@ organizacion a exactamente "finanzasuni.github.io" para eliminar tambien el sufi
 "/FinanzasUni/" y quedarse con la URL raiz limpia. Remoto de git local actualizado.
 Bio de Instagram (branding/perfil-instagram.txt) actualizada con el enlace real.
 → [[tecnologia/web-finanzasuni]]
+
+## [2026-08-08] diseno | Logos de FinanzasUni: monograma + 4 conceptos universitarios
+Diego pidio logos para FinanzasUni con estetica de comunidad universitaria (aprender +
+conocer gente, ambiente de jovenes emprendedores). Sin herramienta de generacion de
+imagenes disponible, se construyeron en SVG (vectorial): primero un monograma "Fu" con
+chispa (coral/dorado, conectado con la paleta de la web, ya usado como favicon en las
+9 paginas), y despues 4 conceptos alternativos con paletas distintas e imagineria
+universitaria real (birrete, libro con flecha de crecimiento, columnas clasicas,
+skyline de campus con bandera). Sin decision tomada — pendiente de que Diego elija.
+→ [[marca/logo-finanzasuni]]

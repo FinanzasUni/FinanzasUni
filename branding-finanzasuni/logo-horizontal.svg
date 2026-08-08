@@ -1,0 +1,20 @@
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B4A"/>
+      <stop offset="100%" stop-color="#D9AE64"/>
+    </linearGradient>
+  </defs>
+  <!-- icono -->
+  <rect x="10" y="10" width="200" height="200" rx="44" fill="url(#bg2)"/>
+  <text x="110" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-weight="700" font-size="105" fill="#0E0B18"
+        letter-spacing="-3">Fu</text>
+  <path d="M 158 46 L 163 58 L 175 63 L 163 68 L 158 80 L 153 68 L 141 63 L 153 58 Z" fill="#0E0B18"/>
+
+  <!-- wordmark -->
+  <text x="248" y="140" font-family="Georgia, 'Times New Roman', serif" font-weight="700"
+        font-size="88" fill="#F7F1E4" letter-spacing="-2">Finanzas<tspan font-style="italic" font-weight="600" fill="#D9AE64">Uni</tspan></text>
+  <text x="250" y="178" font-family="Arial, sans-serif" font-weight="600" font-size="26"
+        letter-spacing="3" fill="#A79FC0">COMUNIDAD · APRENDE · CONECTA</text>
+</svg>

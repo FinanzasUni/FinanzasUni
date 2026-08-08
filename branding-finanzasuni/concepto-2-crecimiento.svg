@@ -1,0 +1,22 @@
+<svg width="500" height="600" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="600" rx="36" fill="#0B3D2E"/>
+  <!-- libro abierto -->
+  <path d="M 250 165 C 200 145, 140 150, 120 165 L 120 235 C 140 220, 200 215, 250 235 Z" fill="#BFE6D4"/>
+  <path d="M 250 165 C 300 145, 360 150, 380 165 L 380 235 C 360 220, 300 215, 250 235 Z" fill="#DFF5E9"/>
+  <line x1="250" y1="165" x2="250" y2="235" stroke="#0B3D2E" stroke-width="3"/>
+  <!-- lineas de texto en las paginas -->
+  <line x1="145" y1="180" x2="220" y2="190" stroke="#0B3D2E" stroke-width="3" stroke-linecap="round"/>
+  <line x1="145" y1="200" x2="215" y2="208" stroke="#0B3D2E" stroke-width="3" stroke-linecap="round"/>
+  <line x1="280" y1="190" x2="355" y2="180" stroke="#0B3D2E" stroke-width="3" stroke-linecap="round"/>
+  <line x1="285" y1="208" x2="355" y2="200" stroke="#0B3D2E" stroke-width="3" stroke-linecap="round"/>
+  <!-- flecha de crecimiento saliendo del libro -->
+  <polyline points="160,140 200,105 235,125 290,70" fill="none" stroke="#5FD3A0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="290,70 265,75 285,95" fill="#5FD3A0"/>
+  <!-- texto -->
+  <text x="250" y="330" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-weight="700" font-size="56" fill="#F5F0E1">Finanzas</text>
+  <text x="250" y="390" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-weight="600" font-size="56" fill="#5FD3A0">Uni</text>
+  <text x="250" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600"
+        font-size="18" letter-spacing="4" fill="#8FBFA8">APRENDE · CRECE · CONECTA</text>
+</svg>

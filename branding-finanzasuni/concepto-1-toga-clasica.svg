@@ -1,0 +1,19 @@
+<svg width="500" height="600" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="600" rx="36" fill="#16213E"/>
+  <!-- birrete: plato -->
+  <polygon points="250,150 380,205 250,260 120,205" fill="#C9A227"/>
+  <!-- banda inferior del birrete -->
+  <rect x="205" y="205" width="90" height="55" rx="10" fill="#E4C455"/>
+  <!-- boton central -->
+  <circle cx="250" cy="205" r="10" fill="#16213E"/>
+  <!-- borla -->
+  <line x1="250" y1="205" x2="330" y2="255" stroke="#E4C455" stroke-width="4"/>
+  <circle cx="333" cy="262" r="12" fill="#E4C455"/>
+  <!-- texto -->
+  <text x="250" y="380" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-weight="700" font-size="56" fill="#F5F0E1">Finanzas</text>
+  <text x="250" y="440" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-weight="600" font-size="56" fill="#C9A227">Uni</text>
+  <text x="250" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600"
+        font-size="18" letter-spacing="4" fill="#8A93A8">COMUNIDAD UNIVERSITARIA</text>
+</svg>

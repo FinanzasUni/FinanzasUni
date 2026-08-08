@@ -1,0 +1,22 @@
+<svg width="500" height="600" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="600" rx="36" fill="#5C1A32"/>
+  <!-- fronton triangular -->
+  <polygon points="250,100 350,160 150,160" fill="#EFD9A8"/>
+  <!-- friso -->
+  <rect x="135" y="160" width="230" height="16" fill="#EFD9A8"/>
+  <!-- columnas -->
+  <rect x="150" y="176" width="20" height="80" fill="#EFD9A8"/>
+  <rect x="197" y="176" width="20" height="80" fill="#EFD9A8"/>
+  <rect x="240" y="176" width="20" height="80" fill="#EFD9A8"/>
+  <rect x="283" y="176" width="20" height="80" fill="#EFD9A8"/>
+  <rect x="330" y="176" width="20" height="80" fill="#EFD9A8"/>
+  <!-- base -->
+  <rect x="135" y="256" width="230" height="16" fill="#EFD9A8"/>
+  <!-- texto -->
+  <text x="250" y="345" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-weight="700" font-size="56" fill="#F7ECE0">Finanzas</text>
+  <text x="250" y="405" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-weight="600" font-size="56" fill="#EFD9A8">Uni</text>
+  <text x="250" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600"
+        font-size="18" letter-spacing="4" fill="#C89AA8">EDUCACIÓN · COMUNIDAD</text>
+</svg>
