@@ -271,3 +271,12 @@ CaixaBank para jovenes — entidad real, publica, sin relacion con el anuncio.
 Corregido el contenido de la tarjeta en web/index.html y la nota en
 wiki/fuentes/registro.md que aplicaba mal la restriccion de esa fuente.
 → [[tecnologia/web-finanzasuni]], [[fuentes/registro]]
+
+## [2026-08-08] fix | Corregidos datos de imagin en la tarjeta (verificados en imagin.com)
+Diego senalo que la tarjeta de imagin no correspondia con el banco real (se habia
+inventado "imaginCafe", que no existe). Verificado directamente contra imagin.com:
+es una marca operada por imaginersGen S.A. como agente de CaixaBank (cubierta por
+FGD), con cuenta sin comisiones, tarjetas gratis, Bizum, cuentas imaginTeens/imaginKids
+y el programa imaginPlanet. Corregido el contenido de la tarjeta en la web y anadida
+seccion en wiki/conceptos/brokers-espana-comparativa.md con los datos verificados.
+→ [[tecnologia/web-finanzasuni]], [[conceptos/brokers-espana-comparativa]]

@@ -6,7 +6,7 @@ fuentes: [conocimiento general de brokers operando en España, cruzado con [[cue
 publicado_en: null (Post 15, [[../contenido/bloque-03-inversion-indexada]]); también candidato para la sección "Comparativas" de [[../tecnologia/web-finanzasuni]]
 ---
 
-# DEGIRO vs. MyInvestor vs. Trade Republic: dónde invertir desde España
+# DEGIRO vs. MyInvestor vs. Trade Republic (+ imagin): dónde invertir desde España
 
 Comparativa de tres opciones populares entre inversores particulares en España, cada
 una con un enfoque distinto. ⚠️ **Las comisiones, fondos disponibles y condiciones
@@ -40,6 +40,20 @@ Neobroker alemán, con app muy simple, conocido por sus **planes de ahorro en ET
 una cuenta remunerada sobre el efectivo no invertido (ver detalle de TAE en
 [[cuentas-remuneradas-espana]]). Buena opción para quien quiere automatizar aportaciones
 pequeñas y recurrentes sin complicarse.
+
+## imagin (en evaluación — candidato a afiliación futura, no un broker de inversión)
+
+Marca digital operada por imaginersGen, S.A. como agente de **CaixaBank** (cubierta por
+el FGD al depender de un banco español). No es un broker de inversión como los tres
+anteriores — es una cuenta bancaria joven: sin comisiones de mantenimiento, tarjetas
+sin coste de emisión, Bizum/pagos móviles integrados, cuentas específicas para menores
+(imaginTeens, imaginKids) y un programa de sostenibilidad propio (imaginPlanet).
+Verificado directamente contra `imagin.com` el 2026-08-08 (no asumir datos de memoria).
+⚠️ Las promociones de bienvenida (bonos por nómina domiciliada, referidos) cambian con
+frecuencia — verificar vigencia antes de publicar cualquier cifra concreta. Diego lo
+añadió pensando en una futura colaboración de afiliación, no como comparativa de
+inversión — encaja mejor como "primera cuenta bancaria joven" que como alternativa a
+DEGIRO/MyInvestor/Trade Republic.
 
 ## Qué mirar antes de elegir (checklist)
 
