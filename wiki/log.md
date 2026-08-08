@@ -221,3 +221,9 @@ Diego confirma: el concepto 4 (campus turquesa+coral, sin bandera) sustituye al
 monograma "Fu" como logo oficial de FinanzasUni. icon.svg y logo-horizontal.svg
 actualizados a esta version; favicon de las 9 paginas de web/ reemplazado.
 → [[marca/logo-finanzasuni]]
+
+## [2026-08-08] copy | Descripcion oficial de FinanzasUni elegida
+Diego elige la version larga de las 3 propuestas para la descripcion de la
+newsletter/publicacion en Beehiiv. Guardada como copy oficial reutilizable en
+cualquier perfil futuro (web "Sobre mi", Beehiiv, etc.).
+→ [[estrategia/finanzasuni]]

@@ -70,6 +70,22 @@ Código real en `web/` dentro de este mismo repositorio (no un mockup desechable
 - Sistema de publicación de artículos (por ahora, HTML estático; evaluar un CMS o
   generador estático cuando haya volumen de contenido).
 
+## Copy oficial — descripción de la newsletter/publicación (elegida 2026-08-08)
+
+Diego eligió esta versión (de tres propuestas) como descripción oficial de FinanzasUni
+para Beehiiv y cualquier otro perfil ("Sobre nosotros", bio larga):
+
+> Nadie nos enseñó a manejar el dinero. En FinanzasUni lo aprendemos juntos: ahorro,
+> inversión, cripto y actualidad económica explicados sin rodeos, sin promesas
+> imposibles y siempre con contexto español real. No es una cátedra — es una comunidad
+> de gente que está empezando, como tú, y que prefiere entender las cosas antes de
+> lanzarse. Cada semana, una idea que puedes aplicar de verdad.
+
+Reutilizar este texto (no reescribirlo) en cualquier sitio donde se necesite una
+descripción larga de FinanzasUni — perfil de Beehiiv, página "Sobre mí" de la web
+(ver [[../tecnologia/web-finanzasuni]]), futuras plataformas. Coherente con
+[[../marca/voz-y-tono]] y con el logo de campus elegido en [[../marca/logo-finanzasuni]].
+
 ## Pendiente
 
 - Diego mencionó una presentación propia sobre su visión de las finanzas y la
