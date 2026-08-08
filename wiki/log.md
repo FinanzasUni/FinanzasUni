@@ -170,3 +170,12 @@ medio mantenga su URL de RSS estable. La ejecucion tambien mostro "Error: The
 operation was canceled" tras escribir noticias.json — causa no confirmada, pendiente
 de reintentar tras el fix y revisar el log completo si vuelve a pasar.
 → [[tecnologia/web-finanzasuni]]
+
+## [2026-08-08] verificacion | Web publicada y confirmada funcionando en produccion
+Verificado en vivo (fetch real a la URL publica, no solo revision de codigo):
+https://diegomorenov44-dotcom.github.io/FinanzasUni/ carga correctamente. Home,
+articulos/ (4 paginas completas con enlaces cruzados funcionando), legal/
+(paginas con aviso de borrador visible) y data/noticias.json (9 noticias reales,
+generadas automaticamente por el workflow) confirmados operativos. El sistema de
+noticias automaticas diarias funciona en produccion, no solo en teoria.
+→ [[tecnologia/web-finanzasuni]]

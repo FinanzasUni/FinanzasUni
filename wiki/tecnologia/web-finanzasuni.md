@@ -81,6 +81,20 @@ por ahora (no automatizada), Beehiiv para newsletter (pendiente de que cree la c
   06:00 UTC — regenera `noticias.json`, lo commitea si cambió, y despliega `web/`
   entero a GitHub Pages. También se dispara en cada push a `master`.
 
+## ✅ Publicada y verificada (2026-08-08)
+
+**URL en vivo**: https://diegomorenov44-dotcom.github.io/FinanzasUni/
+
+Verificado directamente (fetch real, no solo revisión de código): home carga con
+contenido real, los 4 artículos de `web/articulos/` cargan completos y con sus enlaces
+cruzados funcionando, las páginas legales cargan con su aviso de borrador visible, y
+`data/noticias.json` en producción contiene 9 noticias reales generadas por el
+workflow (actualizado 2026-08-08 14:17) — el sistema de noticias automáticas
+**funciona de verdad**, no solo en teoría.
+
+La ejecución que se había cancelado antes quedó superada por una ejecución posterior
+(disparada automáticamente al hacer push del fix de los feeds RSS rotos).
+
 ## Pendiente (explícitamente no hecho todavía)
 
 - **Publicar en GitHub**: el repositorio es local, no tiene remoto todavía. Ver
