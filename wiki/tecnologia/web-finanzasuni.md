@@ -83,7 +83,8 @@ por ahora (no automatizada), Beehiiv para newsletter (pendiente de que cree la c
 
 ## ✅ Publicada y verificada (2026-08-08)
 
-**URL en vivo**: https://diegomorenov44-dotcom.github.io/FinanzasUni/
+**URL en vivo (histórica en este apartado — ver "Estado consolidado" más abajo para la
+URL actual tras el traslado a la organización)**: ~~https://diegomorenov44-dotcom.github.io/FinanzasUni/~~
 
 Verificado directamente (fetch real, no solo revisión de código): home carga con
 contenido real, los 4 artículos de `web/articulos/` cargan completos y con sus enlaces
@@ -95,17 +96,41 @@ workflow (actualizado 2026-08-08 14:17) — el sistema de noticias automáticas
 La ejecución que se había cancelado antes quedó superada por una ejecución posterior
 (disparada automáticamente al hacer push del fix de los feeds RSS rotos).
 
+## Estado consolidado (actualizado 2026-08-08, tarde)
+
+- ✅ Publicada en GitHub Pages, **URL actual**: https://finanzasuni.github.io/FinanzasUni/
+  (traslado del repo a la organización `FinanzasUni` — ya no aparece el usuario
+  personal de Diego). Nota: para tener la URL 100% limpia sin el `/FinanzasUni/` final
+  habría que renombrar el repo dentro de la organización a exactamente
+  `finanzasuni.github.io` — posible, no hecho, no urgente.
+- ✅ Noticias automáticas diarias funcionando de verdad en producción (feeds RSS
+  corregidos tras el primer fallo — ver más abajo).
+- ✅ Logo oficial: concepto "Campus moderno" (turquesa/coral), aplicado como favicon
+  en las 9 páginas. Ver [[../marca/logo-finanzasuni]].
+- ✅ Open Graph / Twitter Card añadidas — al compartir el enlace en WhatsApp/redes ya
+  sale tarjeta con imagen y descripción (imagen provisional, ver pendientes).
+- ✅ Bio de Instagram con el enlace correcto (`branding/perfil-instagram.txt`
+  actualizado — pendiente que Diego lo pegue también dentro de la app, eso no lo puedo
+  hacer yo).
+- 🔧 Newsletter: cuenta de Beehiiv creada, nombre/logo/descripción ya configurados.
+  Diego está usando la extensión Claude para Chrome para terminar de configurar tema
+  visual y textos de forma autónoma — **pendiente conectar el formulario real de
+  `web/index.html` a Beehiiv** en cuanto exista el embed/URL de suscripción.
+
 ## Pendiente (explícitamente no hecho todavía)
 
-- **Publicar en GitHub**: el repositorio es local, no tiene remoto todavía. Ver
-  instrucciones de despliegue más abajo.
-- **Activar GitHub Pages** en la configuración del repositorio (Settings → Pages →
-  Source: GitHub Actions) — paso manual único de Diego, una vez el repo esté en GitHub.
-- Verificar que las URLs de RSS del script siguen siendo válidas (pueden cambiar).
-- Datos reales en Comparativas (ahora mismo son tarjetas vacías de ejemplo).
-- Conectar el formulario de newsletter a Beehiiv en cuanto Diego cree la cuenta.
-- Revisión legal real de las páginas de `web/legal/`.
-- Decisión de dominio propio (por ahora sería `<usuario>.github.io/<repo>`).
+- **Conectar el formulario de newsletter** de `web/index.html` al embed/URL real de
+  Beehiiv (el bloqueador activo ahora mismo).
+- Datos reales en la sección "Comparativas" (ahora mismo son tarjetas vacías de
+  ejemplo) — el contenido ya existe en [[../conceptos/brokers-espana-comparativa]],
+  falta maquetarlo en la web.
+- Revisión legal real de las páginas de `web/legal/` (siguen siendo borrador).
+- Imagen social (Open Graph) provisional — mejorarla a una tarjeta 1200×630 diseñada
+  específicamente, no solo el logo vertical reutilizado.
+- Verificar periódicamente que las URLs de RSS del script sigan siendo válidas.
+- Decisión pendiente: renombrar el repo a `finanzasuni.github.io` para limpiar la URL
+  del todo (opcional).
+- Decisión de rebrand Instagram ↔ FinanzasUni sigue abierta (ver [[../estrategia/finanzasuni]]).
 
 ## Sincronización con Instagram — proceso manual (decidido 2026-08-07)
 

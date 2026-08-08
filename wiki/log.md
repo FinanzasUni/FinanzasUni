@@ -236,3 +236,10 @@ logo que Diego ya habia exportado (web/social-preview.png, formato vertical, no
 ideal 1200x630 pero funcional). Pendiente: crear una tarjeta social apaisada
 propiamente dimensionada como mejora futura.
 → [[tecnologia/web-finanzasuni]]
+
+## [2026-08-08] mantenimiento | Limpieza de wiki/tecnologia/web-finanzasuni.md
+La pagina tenia informacion desactualizada (URL antigua, seccion "pendiente" que ya
+no reflejaba el trabajo real hecho: traslado de organizacion, logo, favicon, OG tags,
+fix de RSS). Consolidado en una seccion de estado actual y una lista de pendientes
+real y vigente.
+→ [[tecnologia/web-finanzasuni]]
