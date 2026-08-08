@@ -1,15 +1,12 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF6B4A"/>
-      <stop offset="100%" stop-color="#D9AE64"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
-  <text x="50%" y="59%" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
-        font-style="italic" font-weight="700" font-size="268" fill="#0E0B18"
-        letter-spacing="-8">Fu</text>
-  <!-- chispa / idea, en vez de un punto normal sobre la "u" -->
-  <path d="M 388 118 L 400 148 L 430 160 L 400 172 L 388 202 L 376 172 L 346 160 L 376 148 Z"
-        fill="#0E0B18"/>
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" rx="88" fill="#0E7C7B"/>
+  <!-- skyline de campus: edificio central con cupula + dos laterales -->
+  <rect x="65" y="150" width="60" height="76" fill="#EAF7F6"/>
+  <rect x="275" y="150" width="60" height="76" fill="#EAF7F6"/>
+  <rect x="140" y="105" width="110" height="121" fill="#FFFFFF"/>
+  <path d="M 140 105 A 55 55 0 0 1 250 105 Z" fill="#FF6B4A"/>
+  <!-- puerta -->
+  <rect x="178" y="180" width="34" height="46" fill="#0E7C7B"/>
+  <!-- base -->
+  <rect x="55" y="226" width="290" height="16" fill="#EAF7F6"/>
 </svg>

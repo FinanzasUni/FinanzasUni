@@ -36,11 +36,18 @@ universidad de verdad (no solo un monograma abstracto). Cuatro propuestas en
    (#0E7C7B) + coral. El más joven y actual de los cuatro, más cercano al espíritu
    "jóvenes emprendedores" que pedía Diego.
 
-**Elegido por Diego (2026-08-08): el concepto 4 (Campus moderno)**, con un ajuste —
-se quitó la bandera que llevaba el edificio central (quedaba innecesaria). Sigue
-pendiente decidir si se adopta como logo/favicon definitivo o se sigue iterando sobre
-él (por ejemplo, aplicarlo también como avatar cuadrado independiente sin el wordmark
-debajo, para usos donde no cabe el texto).
+**✅ Logo oficial definitivo (2026-08-08): el concepto 4 (Campus moderno), sin bandera.**
+`icon.svg` y `logo-horizontal.svg` se actualizaron para ser esta versión (sustituyendo
+al monograma "Fu" que tenían antes) — son ahora los archivos canónicos del logo:
+
+- `icon.svg` — versión cuadrada, solo el icono del campus, sin texto. Pensada para
+  favicon y avatares (Beehiiv, Instagram si se unifica identidad).
+- `logo-horizontal.svg` — icono + wordmark "FinanzasUni" en horizontal, con el
+  subtítulo "CAMPUS · IDEAS · FUTURO".
+- `concepto-4-campus-moderno.svg` — versión vertical (icono arriba, wordmark debajo),
+  se mantiene como archivo de referencia del diseño original elegido.
+
+Ya aplicado como favicon en las 9 páginas de `web/` (sustituye al favicon anterior).
 
 ## Concepto (versión anterior — monograma "Fu")
 

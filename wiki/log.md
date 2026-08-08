@@ -215,3 +215,9 @@ Diego elige el concepto 4 de los 4 propuestos (turquesa+coral, skyline de campus
 pide quitar la bandera del edificio central. Aplicado. Pendiente: decidir si se
 convierte en el logo/favicon definitivo (sustituyendo al monograma "Fu" actual).
 → [[marca/logo-finanzasuni]]
+
+## [2026-08-08] diseno | Concepto 4 (Campus) confirmado como logo oficial definitivo
+Diego confirma: el concepto 4 (campus turquesa+coral, sin bandera) sustituye al
+monograma "Fu" como logo oficial de FinanzasUni. icon.svg y logo-horizontal.svg
+actualizados a esta version; favicon de las 9 paginas de web/ reemplazado.
+→ [[marca/logo-finanzasuni]]
