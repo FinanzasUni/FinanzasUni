@@ -49,21 +49,61 @@ Los 4 artículos destacados de la sección "Aprende" no son contenido de relleno
 — la idea es que cada tarjeta se convierta en un artículo real a partir de la página de
 concepto correspondiente, sin partir de cero.
 
-## Pendiente (explícitamente no hecho todavía, ver [[../estrategia/finanzasuni]])
+## Infraestructura añadida (2026-08-07, sesión de "profundizar en el funcionamiento")
 
-- Contenido real de la sección Actualidad (ahora mismo son 3 noticias de ejemplo,
-  inventadas para mostrar la estructura).
+Diego pidió: publicar gratis, que todos los enlaces funcionen, noticias que se
+actualicen solas cada día, sincronización con Instagram, y newsletter. Decisiones
+tomadas con él: RSS gratuitos para noticias, sincronización con Instagram **manual**
+por ahora (no automatizada), Beehiiv para newsletter (pendiente de que cree la cuenta).
+
+- **CSS extraído** a `web/styles.css`, compartido por todas las páginas (antes estaba
+  duplicado inline en `index.html`).
+- **Enlaces reales**: las 4 tarjetas de "Aprende" y "Ver todos los artículos" ya
+  apuntan a páginas de artículo reales en `web/articulos/` (ya no van a `#`).
+- **4 artículos completos escritos** (no teasers): `dinero-para-decir-que-no.html`,
+  `gastos-hormiga.html`, `deuda-buena-vs-deuda-mala.html`,
+  `tres-escalones-de-ahorro.html` — contenido original basado en
+  [[../conceptos/fuck-you-money]], [[../conceptos/gastos-hormiga]],
+  [[../conceptos/deuda-buena-vs-deuda-mala]] y [[../conceptos/los-tres-escalones-de-ahorro]],
+  enlazados entre sí.
+- **Páginas legales placeholder** en `web/legal/` (aviso legal, política de afiliados,
+  cookies) — marcadas explícitamente como borrador, pendientes de revisión legal real
+  antes de activar AdSense o afiliación.
+- **Noticias dinámicas**: `web/data/noticias.json` + JS en `index.html` que lo carga
+  por `fetch()`. Con fallback a los 3 ejemplos fijos si el fetch falla (pasa siempre
+  que se abre el archivo con `file://` en vez de servido por HTTP — limitación del
+  navegador, no un bug).
+- **`scripts/fetch-noticias.js`**: script Node que lee RSS de Expansión, Cinco Días y
+  El Economista y regenera `noticias.json`. ⚠️ No se ha podido probar en este entorno
+  (sin acceso a red real) — las URLs de los feeds son las públicas conocidas de cada
+  medio a fecha de escritura, pero hay que verificarlas la primera vez que se ejecute.
+- **`.github/workflows/actualizar-web.yml`**: GitHub Action que corre cada día a las
+  06:00 UTC — regenera `noticias.json`, lo commitea si cambió, y despliega `web/`
+  entero a GitHub Pages. También se dispara en cada push a `master`.
+
+## Pendiente (explícitamente no hecho todavía)
+
+- **Publicar en GitHub**: el repositorio es local, no tiene remoto todavía. Ver
+  instrucciones de despliegue más abajo.
+- **Activar GitHub Pages** en la configuración del repositorio (Settings → Pages →
+  Source: GitHub Actions) — paso manual único de Diego, una vez el repo esté en GitHub.
+- Verificar que las URLs de RSS del script siguen siendo válidas (pueden cambiar).
 - Datos reales en Comparativas (ahora mismo son tarjetas vacías de ejemplo).
-- Páginas legales (aviso legal, política de afiliados, cookies) — enlazadas en el
-  footer pero sin contenido todavía. **Obligatorias antes de activar AdSense o
-  afiliación real.**
-- Formulario de newsletter sin backend conectado (ahora mismo no envía a ningún sitio).
-- Decisión de hosting/dominio: no hay todavía dónde desplegar esto en producción.
-- Decidir si el resto del sitio (artículos individuales, páginas de comparativa) se
-  construye como HTML estático adicional o se pasa a un generador estático /
-  CMS cuando haya más volumen de contenido.
+- Conectar el formulario de newsletter a Beehiiv en cuanto Diego cree la cuenta.
+- Revisión legal real de las páginas de `web/legal/`.
+- Decisión de dominio propio (por ahora sería `<usuario>.github.io/<repo>`).
 
-## Cómo verlo
+## Sincronización con Instagram — proceso manual (decidido 2026-08-07)
 
-Abrir `web/index.html` directamente en el navegador (doble clic) — no necesita
-servidor para esta fase de prototipo.
+No hay automatización con la API de Instagram todavía (requiere crear una app en
+Meta for Developers — Diego prefirió empezar simple). **Proceso actual**: cuando Diego
+publica un post nuevo en Instagram, lo dice en la conversación y se actualiza a mano
+el contenido correspondiente en `web/` (por ejemplo, añadiendo el artículo relacionado
+o mencionándolo en la home). Revisar [[../estrategia/finanzasuni]] cuando se quiera
+evaluar automatizarlo.
+
+## Cómo verlo en local
+
+Abrir `web/index.html` directamente en el navegador (doble clic). Nota: en local, la
+sección de noticias muestra los 3 ejemplos fijos (el `fetch()` a `data/noticias.json`
+no funciona bajo `file://`) — funcionará dinámicamente en cuanto esté publicada.

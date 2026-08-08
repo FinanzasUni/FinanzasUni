@@ -1,0 +1,73 @@
+name: Actualizar noticias y publicar la web
+
+on:
+  schedule:
+    # 06:00 UTC todos los días (~08:00 hora española en verano, ~07:00 en invierno)
+    - cron: '0 6 * * *'
+  push:
+    branches: [master, main]
+  workflow_dispatch: {} # permite lanzarlo a mano desde la pestaña Actions de GitHub
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  actualizar-noticias:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias del script de noticias
+        working-directory: scripts
+        run: npm install
+
+      - name: Generar web/data/noticias.json desde RSS
+        working-directory: scripts
+        run: node fetch-noticias.js
+
+      - name: Commitear noticias.json si ha cambiado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- web/data/noticias.json; then
+            git add web/data/noticias.json
+            git commit -m "Actualizar noticias automáticamente [skip ci]"
+            git push
+          else
+            echo "Sin cambios en noticias.json"
+          fi
+
+  publicar:
+    needs: actualizar-noticias
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Preparar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir contenido de web/ como artefacto de Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

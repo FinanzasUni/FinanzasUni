@@ -135,3 +135,14 @@ como color lider + coral/violeta/menta/mostaza). Se anadio scroll-reveal real
 mediante gradientes animados, con el codigo ya preparado para sustituirse por un
 video real cuando Diego tenga grabacion propia.
 → [[tecnologia/web-finanzasuni]]
+
+## [2026-08-07] desarrollo | Infraestructura real de la web: articulos, noticias RSS, deploy
+Diego pidio profundizar en el funcionamiento: publicar gratis, enlaces que funcionen,
+noticias automaticas diarias, sincronizacion con Instagram y newsletter. Decisiones:
+RSS gratuitos (no API de pago), Instagram manual por ahora (no automatizado), Beehiiv
+para newsletter. Se construyo: CSS compartido, 4 articulos reales con contenido
+completo, paginas legales borrador, sistema de noticias dinamico (noticias.json +
+fetch JS + script Node de RSS + GitHub Action diaria), y el workflow de despliegue a
+GitHub Pages. Pendiente de Diego: confirmar/crear cuenta de GitHub, crear el
+repositorio remoto y activar Pages.
+→ [[tecnologia/web-finanzasuni]], [[estrategia/finanzasuni]]

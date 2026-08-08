@@ -1,0 +1,13 @@
+{
+  "name": "finanzasuni-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Scripts de automatización para la web de FinanzasUni (noticias por RSS, etc.)",
+  "scripts": {
+    "noticias": "node fetch-noticias.js"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  }
+}

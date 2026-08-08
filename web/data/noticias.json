@@ -1,0 +1,23 @@
+{
+  "actualizado": "2026-08-07 (ejemplo inicial, aún no generado por el script automático)",
+  "noticias": [
+    {
+      "titulo": "El BCE mantiene los tipos de interés: qué significa para tu hipoteca y tu cuenta remunerada",
+      "resumen": "Resumen y análisis propio de la decisión — no reproducción del artículo original.",
+      "fuente": "Expansión",
+      "enlace": "https://www.expansion.com/economia.html"
+    },
+    {
+      "titulo": "Bitcoin cae un 15% en una semana: por qué el institucional sigue comprando",
+      "resumen": "Contexto y lectura propia de la noticia, con enlace a la fuente original.",
+      "fuente": "Cointelegraph",
+      "enlace": "https://es.cointelegraph.com/"
+    },
+    {
+      "titulo": "La vivienda en España vuelve a marcar máximos: los datos del último trimestre",
+      "resumen": "Qué dicen los números y qué significan para alguien que ahorra para su primera casa.",
+      "fuente": "INE",
+      "enlace": "https://www.ine.es/"
+    }
+  ]
+}
