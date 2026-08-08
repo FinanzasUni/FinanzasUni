@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinanzasUni — Aprende a manejar tu dinero, sin gurús</title>
+<meta name="description" content="Educación financiera real para jóvenes: ahorro, inversión, cripto y actualidad económica, sin hype y con contexto español.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1524;
+    --bg-elevated: #161e33;
+    --bg-card: #1a2338;
+    --gold: #c9a961;
+    --gold-dim: #8a7444;
+    --text: #f2ede3;
+    --text-dim: #9aa4bd;
+    --border: #2a3450;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(15,21,36,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; }
+  .logo { font-family: var(--serif); font-weight: 700; font-size: 1.3rem; letter-spacing: 0.02em; }
+  .logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; font-size: 0.92rem; color: var(--text-dim); }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: #1a1408; padding: 9px 18px; border-radius: 4px;
+    font-weight: 600; font-size: 0.88rem;
+  }
+
+  /* Hero */
+  .hero { padding: 100px 24px 80px; text-align: center; }
+  .eyebrow {
+    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--gold); font-size: 0.78rem; margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700; max-width: 780px; margin: 0 auto 24px; line-height: 1.15;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero p {
+    color: var(--text-dim); font-size: 1.1rem; max-width: 560px; margin: 0 auto 40px;
+  }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: #1a1408; padding: 14px 28px; border-radius: 4px;
+    font-weight: 600; font-size: 0.95rem;
+  }
+  .btn-secondary {
+    border: 1px solid var(--border); padding: 14px 28px; border-radius: 4px;
+    font-weight: 600; font-size: 0.95rem; color: var(--text);
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Section shared */
+  section { padding: 72px 24px; }
+  .section-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 12px; }
+  .section-head h2 { font-family: var(--serif); font-size: 1.9rem; }
+  .section-head .see-all { font-size: 0.88rem; color: var(--gold); }
+  .section-label {
+    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--text-dim); font-size: 0.72rem; display: block; margin-bottom: 8px;
+  }
+
+  /* Article grid */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 24px; display: flex; flex-direction: column; gap: 12px;
+    transition: border-color 0.15s;
+  }
+  .card:hover { border-color: var(--gold-dim); }
+  .card-tag {
+    font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase;
+    color: var(--gold); letter-spacing: 0.08em;
+  }
+  .card h3 { font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }
+  .card p { color: var(--text-dim); font-size: 0.9rem; }
+  .card-meta { font-size: 0.78rem; color: var(--text-dim); margin-top: auto; padding-top: 8px; }
+
+  /* News section (distinct visual treatment) */
+  .news-section { background: var(--bg-elevated); }
+  .news-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border);
+  }
+  .news-row:last-child { border-bottom: none; }
+  .news-row h4 { font-family: var(--serif); font-size: 1.05rem; margin-bottom: 6px; }
+  .news-row p { color: var(--text-dim); font-size: 0.88rem; max-width: 620px; }
+  .news-source { font-family: var(--mono); font-size: 0.75rem; color: var(--gold); white-space: nowrap; }
+  .placeholder-badge {
+    display: inline-block; background: rgba(201,169,97,0.12); color: var(--gold);
+    font-family: var(--mono); font-size: 0.68rem; padding: 3px 8px; border-radius: 3px;
+    margin-bottom: 24px; letter-spacing: 0.04em;
+  }
+
+  /* Comparativas / afiliados */
+  .disclosure {
+    background: rgba(201,169,97,0.08); border: 1px solid var(--gold-dim);
+    border-radius: 6px; padding: 14px 18px; font-size: 0.85rem; color: var(--text-dim);
+    margin-bottom: 32px;
+  }
+  .disclosure strong { color: var(--gold); }
+
+  /* Manifesto */
+  .manifesto { background: var(--bg-elevated); }
+  .manifesto-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .manifesto p { font-family: var(--serif); font-size: 1.35rem; line-height: 1.6; color: var(--text); }
+  .manifesto .signature { margin-top: 28px; color: var(--text-dim); font-size: 0.9rem; font-family: var(--sans); }
+
+  /* Newsletter */
+  .newsletter { text-align: center; }
+  .newsletter h2 { font-family: var(--serif); font-size: 1.9rem; margin-bottom: 12px; }
+  .newsletter p { color: var(--text-dim); margin-bottom: 28px; }
+  .newsletter-form { display: flex; gap: 10px; justify-content: center; max-width: 420px; margin: 0 auto; flex-wrap: wrap; }
+  .newsletter-form input {
+    flex: 1; min-width: 200px; background: var(--bg-card); border: 1px solid var(--border);
+    color: var(--text); padding: 13px 16px; border-radius: 4px; font-family: var(--sans);
+  }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 40px 24px; margin-top: 40px;
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+  }
+  .footer-links { display: flex; gap: 24px; font-size: 0.82rem; color: var(--text-dim); flex-wrap: wrap; }
+  .footer-note { font-size: 0.78rem; color: var(--text-dim); margin-top: 20px; max-width: 640px; }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Finanzas<span>Uni</span></div>
+    <nav class="nav-links">
+      <a href="#aprende">Aprende</a>
+      <a href="#actualidad">Actualidad</a>
+      <a href="#comparativas">Comparativas</a>
+      <a href="#manifesto">Sobre mí</a>
+    </nav>
+    <a href="#newsletter" class="nav-cta">Únete gratis</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Educación financiera para jóvenes españoles</span>
+    <h1>Nadie va a venir a <em>salvarte</em>. Aprende a manejar tu dinero tú.</h1>
+    <p>Sin gurús, sin promesas de rentabilidad, sin complicarlo. Ahorro, inversión, cripto y actualidad económica explicados como te lo contaría un amigo.</p>
+    <div class="hero-actions">
+      <a href="#aprende" class="btn-primary">Empieza por lo básico</a>
+      <a href="#newsletter" class="btn-secondary">Suscríbete a la newsletter</a>
+    </div>
+  </div>
+</section>
+
+<section id="aprende">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-label">Aprende</span>
+        <h2>Conceptos, sin rodeos</h2>
+      </div>
+      <a href="#" class="see-all">Ver todos los artículos →</a>
+    </div>
+    <div class="grid">
+      <a class="card" href="#">
+        <span class="card-tag">Psicología del dinero</span>
+        <h3>El dinero no es para comprar. Es para decir que no.</h3>
+        <p>La utilidad que nadie te explica: un colchón ahorrado no compra cosas, compra la capacidad de rechazar lo que no quieres.</p>
+        <span class="card-meta">6 min de lectura</span>
+      </a>
+      <a class="card" href="#">
+        <span class="card-tag">Ahorro</span>
+        <h3>Los gastos hormiga: el enemigo silencioso de tus ahorros</h3>
+        <p>€3 al día parecen nada. En 10 años son €10.800. Consciencia, no sacrificio.</p>
+        <span class="card-meta">4 min de lectura</span>
+      </a>
+      <a class="card" href="#">
+        <span class="card-tag">Deuda</span>
+        <h3>Deuda buena vs. deuda mala: la diferencia que nadie te enseña</h3>
+        <p>Financiar un máster no es lo mismo que financiar una camiseta a 12 plazos. Aquí está la diferencia.</p>
+        <span class="card-meta">5 min de lectura</span>
+      </a>
+      <a class="card" href="#">
+        <span class="card-tag">Inversión</span>
+        <h3>Los tres escalones de ahorro: 1.000€, 10.000€, 100.000€</h3>
+        <p>Cada etapa pide una estrategia distinta. Aquí está el mapa completo, paso a paso.</p>
+        <span class="card-meta">7 min de lectura</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="actualidad" class="news-section">
+  <div class="wrap">
+    <span class="placeholder-badge">Sección en construcción — estructura de ejemplo</span>
+    <div class="section-head">
+      <div>
+        <span class="section-label">Actualidad</span>
+        <h2>Lo que está pasando, explicado</h2>
+      </div>
+    </div>
+    <div class="news-row">
+      <div>
+        <h4>El BCE mantiene los tipos de interés: qué significa para tu hipoteca y tu cuenta remunerada</h4>
+        <p>Resumen y análisis propio de la decisión — no reproducción del artículo original.</p>
+      </div>
+      <span class="news-source">Fuente: Expansión ↗</span>
+    </div>
+    <div class="news-row">
+      <div>
+        <h4>Bitcoin cae un 15% en una semana: por qué el institucional sigue comprando</h4>
+        <p>Contexto y lectura propia de la noticia, con enlace a la fuente original.</p>
+      </div>
+      <span class="news-source">Fuente: Cointelegraph ↗</span>
+    </div>
+    <div class="news-row">
+      <div>
+        <h4>La vivienda en España vuelve a marcar máximos: los datos del último trimestre</h4>
+        <p>Qué dicen los números y qué significan para alguien que ahorra para su primera casa.</p>
+      </div>
+      <span class="news-source">Fuente: INE ↗</span>
+    </div>
+  </div>
+</section>
+
+<section id="comparativas">
+  <div class="wrap">
+    <span class="placeholder-badge">Sección en construcción — pendiente de acuerdos reales</span>
+    <div class="section-head">
+      <div>
+        <span class="section-label">Comparativas</span>
+        <h2>Dónde poner tu dinero mientras espera</h2>
+      </div>
+    </div>
+    <div class="disclosure">
+      <strong>Transparencia:</strong> algunos enlaces de esta sección son de afiliado — si abres una cuenta a través de ellos, podemos recibir una comisión sin coste extra para ti. Nunca recomendamos un producto por la comisión que paga: el orden de esta comparativa se basa en condiciones reales (TAE, comisiones, cobertura FGD), no en lo que nos paguen.
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag">Cuenta remunerada</span>
+        <h3>Ejemplo de entidad</h3>
+        <p>TAE, comisiones y cobertura — estructura de comparativa, pendiente de datos reales y acuerdo de afiliación.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">Broker</span>
+        <h3>Ejemplo de entidad</h3>
+        <p>Comisiones por operación, fondos disponibles, fiscalidad española — pendiente de contenido real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="manifesto" class="manifesto">
+  <div class="wrap manifesto-inner">
+    <p>"No hablo desde arriba. Aprendo en público, con errores y aciertos reales, desde la misma realidad que tú. Esto no va de hacerte rico rápido — va de entender las reglas del juego antes de que el juego te coma a ti."</p>
+    <div class="signature">— Diego, fundador de FinanzasUni</div>
+  </div>
+</section>
+
+<section id="newsletter" class="newsletter">
+  <div class="wrap">
+    <h2>Una idea a la semana, sin spam</h2>
+    <p>Lo que aprendo sobre dinero, directo a tu correo. Sin promesas imposibles.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="tu@email.com" required>
+      <button type="submit" class="btn-primary">Suscribirme</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div class="logo">Finanzas<span>Uni</span></div>
+      <p class="footer-note">Contenido con fines educativos. No es asesoramiento financiero individualizado. Algunos enlaces pueden ser de afiliado — siempre marcados como tal.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Aviso legal</a>
+      <a href="#">Política de afiliados</a>
+      <a href="#">Cookies</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

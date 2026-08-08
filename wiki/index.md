@@ -15,6 +15,7 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[estrategia/kpis|KPIs]] — métricas de Instagram, newsletter, monetización
 - [[estrategia/pilares-contenido|Pilares de contenido]] — 5 bloques temáticos y su estado
 - [[estrategia/principios|Principios]] — 4 principios que guían decisiones
+- [[estrategia/finanzasuni|FinanzasUni — expansión a web]] — nueva marca/web, decisión de rebrand abierta, modelo de contenido y monetización
 
 ## Conceptos financieros (reutilizables entre posts)
 
@@ -50,6 +51,7 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 ## Tecnología
 
 - [[tecnologia/agente-ia|Agente IA]] — endpoints, stack, roadmap
+- [[tecnologia/web-finanzasuni|Web de FinanzasUni]] — prototipo real en `web/`, estructura y pendientes
 
 ## Fuentes
 
@@ -64,3 +66,6 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - No existe todavía página de "competencia" ni de "ideas de post pendientes" — crear
   cuando se empiece a hacer benchmark de otras cuentas del nicho.
 - `files/post-cero-corregido.html` no se ha leído en detalle todavía.
+- Presentación de Diego sobre su visión de finanzas/actualidad económica — anunciada
+  el 2026-08-07, no recibida todavía. Ver [[estrategia/finanzasuni]].
+- Decisión de rebrand Instagram → FinanzasUni: abierta, no tomada. Ver [[estrategia/finanzasuni]].

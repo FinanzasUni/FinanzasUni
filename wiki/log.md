@@ -106,3 +106,14 @@ mejor con la audiencia joven. Guion completo escrito con hook, estructura de 4 p
 caption. Reencuadra el fondo de emergencia ya publicado como "tu no guardado en una
 cuenta". Pendiente: grabar y decidir si lleva overlays de texto en HTML.
 → [[contenido/reel-fuck-you-money]], [[conceptos/fuck-you-money]]
+
+## [2026-08-07] estrategia | Arranque de FinanzasUni (expansión a web)
+Diego anuncia el siguiente paso: convertir el proyecto en una marca paraguas
+"FinanzasUni" con varias ramas (Instagram + web), con blog de conceptos, sección de
+actualidad económica (curación de medios + IA), comparativas de bancos con afiliación,
+y AdSense a futuro. Posible cambio de nombre de la cuenta de Instagram — dejado como
+decisión abierta, no ejecutada (los posts ya publicados llevan el handle actual grabado
+en las imágenes). Se construyó un prototipo real de la home en `web/index.html`,
+reutilizando 4 conceptos ya escritos en el wiki como artículos destacados. Pendiente:
+recibir la presentación que Diego mencionó pero no llegó a compartir.
+→ [[estrategia/finanzasuni]], [[tecnologia/web-finanzasuni]]
