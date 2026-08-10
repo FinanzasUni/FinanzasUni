@@ -1,12 +1,61 @@
 {
-  "actualizado": "2026-08-09 06:48",
+  "actualizado": "2026-08-10 07:22",
   "noticias": [
     {
-      "titulo": "España bate récord turístico, pero no todo el gasto se queda aquí - Economía 3",
-      "resumen": "España bate récord turístico, pero no todo el gasto se queda aquí Economía 3",
+      "titulo": "La fábrica de la china SAIC en Galicia enciende las alarmas en el Ministerio de Defensa",
+      "resumen": "\"Informes del Ejército alertan del riesgo para la seguridad\" de la instalación de la fábrica del grupo chino \"a escasa distancia de un arsenal militar\" en Ferrol y base de varias f…",
+      "fuente": "Expansión",
+      "enlace": "https://www.expansion.com/empresas/motor/2026/08/10/6a796e5b468aeb96048b459a.html",
+      "fecha": "2026-08-10T06:24:09.000Z"
+    },
+    {
+      "titulo": "El eclipse de sol aportará 347 M € a la economía española y 446.700 turistas más esta semana - Hosteltur",
+      "resumen": "El eclipse de sol aportará 347 M € a la economía española y 446.700 turistas más esta semana Hosteltur",
       "fuente": "Google News — Economía España",
-      "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMU5iWG9NXzNLSXQwNngzOXZaX1dCWGFxWVJzOHF1ekdRbGFpOGFON3JYNXhYb2U4cW85Qm5UTHZycmFTNW5xLU1JOXBLQmxZUDF3ZkN4alhnNEYxcnM3Mk53TkpVQXFJS3d0V2RQNXdvdlA5ZmhnbG5rOFNuMXprejJNRmd1U2txMG0wcGxZMXhUOUdjNExNcFZMZE1NeGx6cXlFYXEwNFkteTNTQUNzbTlYZw?oc=5",
-      "fecha": "2026-08-09T06:04:10.000Z"
+      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQOU1iZjBlQ0REbVRwNjR4eE5yUWNkMmxCa0VQeHdfTkJncEF4V0VreXRvdUtOYWFDYkpzNnRUQk5vbkZETGZRNmhXZFliUmJnVGtYbVBVSlZSQ2RtX3doVGh5bm5MMnZoZng2S0ZRdTc3ekQydVl2aEEzWjV4M1JDd2xmdFRtQ3RSMGlMT1VrLWt3VzY3VS10QUNkOEF5ZDBIdHgxSDNtT2hGUjAzQ3IyeG1uUl93dElYUVJLZmVBOEFVNjlEMGc?oc=5",
+      "fecha": "2026-08-10T05:42:37.000Z"
+    },
+    {
+      "titulo": "La vivienda ahoga a los hogares más jóvenes de Galicia y su presupuesto se desploma a los niveles de los pensionistas - Faro de Vigo",
+      "resumen": "La vivienda ahoga a los hogares más jóvenes de Galicia y su presupuesto se desploma a los niveles de los pensionistas Faro de Vigo",
+      "fuente": "Google News — Finanzas personales",
+      "enlace": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNHljY0s2ZWNKR003ZlhCQWtDX2pLYm5OYlhlM0hhdDFENDJKMUMwQ3l2alBOS0hDWmtqcHVwUnAyVVByLW1xTV9senoyTXVaOFRDWm9LR1BlTXFtY3lxbW85Y2FMNmsycnZJLTRtNUZ1NmV0eFJWSldyY3JJX0ZSbGlPUDZEM0xWZmoyMmtPRW1YU0hYRDRNWlpOUTc0UVNvTFNnLXJObUHSAa4BQVVfeXFMTTB5T251MTJ2VW55aERzQlI2elhqUjJIWGNwbUUyWFBic3ZjTG5qZFdmdXViU1o2RWJHalg1TXVibTY2WUdZYmF4a19WV1hrczQtcGoxYXJBVlJjWjFKZkU5dHpVRDdXb19pWjhKZjZXaHdsZFpjLW5YZzJOcnhpRVFOazA5NGotRHNBZEs3ZzZLTGxXTFE1b084VjhJM001Um9jd3A0ZFhaS19CVEdR?oc=5",
+      "fecha": "2026-08-10T04:10:58.000Z"
+    },
+    {
+      "titulo": "La presión fiscal y la inseguridad jurídica empujan a los empresarios a buscar un ‘plan B’ fuera de España... - OkDiario",
+      "resumen": "La presión fiscal y la inseguridad jurídica empujan a los empresarios a buscar un ‘plan B’ fuera de España... OkDiario",
+      "fuente": "Google News — Economía España",
+      "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQVzZ5ZW9aNnFFSGxyc3R0dUZudkVid1hpbXJKRDluMDBFaGZYWmJUV3dUVnAwaEtCc1gwbzRUS3VNZ1pQYzlIYVhGeVZGYlJjUDRrZURyNlhTS3dWNV8xbExKZ0JYblV1R0hvcTZiUEdiQVZSTWRYYWdvcjBsVVI1dHZqb3VWbUNXX0xZNXVFZC1jLXFoWlM4elFuUEJLNFl3Rzl5ZTl2SU00OFVzMU1ta0xiVXAwUHc5Y2dKblZB0gHDAUFVX3lxTE1fTzducXhrRmFUN1VTd091Qko0R0lkNDBEOXcxWnZfaTQ2cnFLSUlsSllRRmhBYktlX0k5S2EwUDloSTh2cEU2alVSVDhLUWlGWmtpM2pmOV82VVBtRl8ybGFUcEhNV3pPTlRlandqckxXN1RrNk10UFFuaUhnbTBieHVNVjZadmNXM1hUNzZPdC10OWoxc21LV19TZE1mdndGVnF6WVpuaE9EZXFmQVRSSUVBT3pqMVVYV3RiTFFHSWJGNA?oc=5",
+      "fecha": "2026-08-10T03:45:50.000Z"
+    },
+    {
+      "titulo": "El éxito (y la insólita popularidad) del SMI en España - ABC",
+      "resumen": "El éxito (y la insólita popularidad) del SMI en España ABC",
+      "fuente": "Google News — Economía España",
+      "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQkQ4YXRteE1SRFp1ODBvRkU5NjZzQjd6THZwcGhmUVJFV2ItWEZDVDJUeHRhdDl1RUtpaENOcHhGaEVoXzR2VEw0S2tOZ0RrcEJQQUdURHRZMndJY3IzU1J2TzhhZ3E5U1NDc0R6WGtvUldVaV8tOVlaWG1WNTFwSGxGb3I4WktCX0lPS240Yk1BRkRWRkdJVTdWcTFFbV9QZkHSAacBQVVfeXFMTWlKZmRyLXozeXA1b2ZiX2o2SnZSTElzMVBQRzRzWEFndDU1bTdtNU1XTE1wTkZ6cHZDLXY5My1wcmlma0hsVVYwTU5hUGVQemU2dU5hREFMZEFOZm9jUUhEZ1JhZWJUbnNOYUtJUDJXWW9KM2dXTDR5ZXgybU43TTFFYkktWmFXbml5UTV2b3lETFJ5WWpJQ0h2OGw4eHJPWHhEM2tqdHc?oc=5",
+      "fecha": "2026-08-09T23:23:22.000Z"
+    },
+    {
+      "titulo": "BBVA aglutina a 4.000 empleados para impulsar su estrategia en IA",
+      "resumen": "El banco concentra en la dirección global de 'AI Transformation' a todos los empleados con perfil tecnológico con independencia del mercado en el que estén localizados. Leer",
+      "fuente": "Expansión",
+      "enlace": "https://www.expansion.com/empresas/banca/2026/08/10/6a78c6f3e5fdeab5108b457d.html",
+      "fecha": "2026-08-09T22:00:25.000Z"
+    },
+    {
+      "titulo": "El Supremo prohíbe a Hacienda usar un 'plan B' en las inspecciones por si falla",
+      "resumen": "El Alto Tribunal impide a la Agencia Tributaria diseñar un plan alternativo dentro de un mismo acto administrativo para mantener un ajuste fiscal en el caso de que la justicia anul…",
+      "fuente": "Expansión",
+      "enlace": "https://www.expansion.com/economia/2026/08/09/6a78cce5468aeb066a8b4570.html",
+      "fecha": "2026-08-09T18:57:32.000Z"
+    },
+    {
+      "titulo": "Los expertos coinciden: según tu edad, este es el dinero que deberías tener ahorrado - Vanitatis",
+      "resumen": "Los expertos coinciden: según tu edad, este es el dinero que deberías tener ahorrado Vanitatis",
+      "fuente": "Google News — Finanzas personales",
+      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxONTIzbkVjWVVIclpBZUhjRXh3X1Q2QzN5dGN5SmpzOVROMjRSRFE4cWxRZjFaQUR1aUlsb1RRa0ZocHJIUnhkXzhOTm9mWHRTU0VXVW1xQnVEczgtRHVKdjVESWVRSlB6YVIyakVhbnhUdWxGZEh6OE9JNkZuZzVNdXBobW5uMWMtelNkWWlHNGVVU191WFhnMWRSVzVWQndkdFZZVGlRbkg4cTQ2cktJWlZiRTFfemhUMGdOSHJwdXctQmdZZzJSWTNZODhNN0FaN0QtQWoybVRjUDJDRHRZ?oc=5",
+      "fecha": "2026-08-09T10:09:00.000Z"
     },
     {
       "titulo": "De país de vividores a país de ahorradores, así han cambiado las finanzas del hogar español - El Blog Salmón",
@@ -14,55 +63,6 @@
       "fuente": "Google News — Finanzas personales",
       "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNVItOGRJNmwyUHRSNjhaQWQ0YmpvWjBUYmhnbk9zSUxCV183QlhlSzJUUExKVzAzS3JGLVZvMXRaTjkxR3N6SGozY25zWklrLU4xbmR3Vmk0VTl1WldNdU1JVW5MWDU5MjF6aUl0bDV3bDNoUVdiM3JvcXg3dFRkRnZEOGVWNHVuM0d3R1EwS0FpZkRibWprNlg2MFAwdmpjMXU3Zi1fNHljWGNZMGRIWnJYajdCeUFWaGlUU3lzdl9MYk56emJWStIBzgFBVV95cUxQTklqUUw0N2F0a3N1bG1uV2h0ZlNRdXB4SlFJUVVRaUdFYVdDX3NtLTQwcXlxSE9IWHduX2NjcUdHTHBUemFZU0phUHFmcmc5dEhnVzhCTURTVWRUWWtfZTBhMWxqWWZNVHZnQzB4ZTBlSDBqcl9aOTA1TDF1ci1veDZGNXlaV2hmUW9VMHI2cWdwNTh6THVNaWYxMjQ3Y2VaRDFHa2JneWx1S05tVEhRNUdVUWZFX19FdnVUUWlUS2FBTXl3NVJjbjRFYVo3Zw?oc=5",
       "fecha": "2026-08-09T06:01:15.000Z"
-    },
-    {
-      "titulo": "Alicante-Elche, una de las seis áreas innovadoras más atractivas de España - Información",
-      "resumen": "Alicante-Elche, una de las seis áreas innovadoras más atractivas de España Información",
-      "fuente": "Google News — Finanzas personales",
-      "enlace": "https://news.google.com/rss/articles/CBMisgFBVV95cUxONFFnSmI4aG9EYmJEYjY1ZVNOd3lVaDM3M1hoWUl4YU96SjQzRGxJUEVDZEdiSVRLd3FYU2RhVEM3N0lhT04tRjVaMEdDZU85cnFhQjRwQTJDUG5fOXRLZnE5aHlWZVBFNGJUSktTWDBiRmlFeVZVT2hyTUszY29YdkVNSHdCLVJmZkFGNHBscjItTUY2b0NJM2NGZmVXZm1wZlMzeVJKNUYtdjVFaGIyMWp30gG3AUFVX3lxTE1pMEZnQVAtSlZHM2pVYko5MDgySXc2TjBSUzVPY2pKUm14aFRoQmRZR095SExHOGxreFlOU3FERTY1aWdpbUdCX0lZXzZSX19sSmFmVWVIdDRsdi1IaXZ6Mm1qdVBTcGpYclFjZXdQT1AwbHlRcndyNERlbnRpSnZYbVB6QUpNVnFHOF9GeTNCU05vZjZzZUdGbnk3ZldyMlRQT2EwcG1sNE8wQTd1SDVQSUtNeXkxdw?oc=5",
-      "fecha": "2026-08-09T04:00:42.000Z"
-    },
-    {
-      "titulo": "La 'silver economy', o como el envejecimiento en España abre la puerta a un mercado laboral que recibirá el 1,8% del PIB - eleconomista.es",
-      "resumen": "La 'silver economy', o como el envejecimiento en España abre la puerta a un mercado laboral que recibirá el 1,8% del PIB eleconomista.es",
-      "fuente": "Google News — Economía España",
-      "enlace": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQZ2RGS2c2dFV1UnNvNHJnNmJLSzB0TUMwWW5kSFd2eDkyeEk5eTNDd1ZxYlhKZTU5enFRM3B6MV9DbjZ6ZHhvWUJYaW5zeDNsSHhJTEhpMXQwaFdDUWRqd2E1RjExeU04U29iY0JrdUVIVjZPR1ZTdzFZcHZUc0ctVnhVZnFXejFseW9LTFpySElOVGlYNHducERFM3dJLUJneEE2S3hGeEF1NDNVU0ZLLVVKZGhJZjJSRGp3WlppOTMxY0dTRG9XLWs2LWNQbmtQaEdZN01nWDdpbU85TTNjZERzR0h0WGxZTFdyRkRrbjlPLW9nemcxQXQ4VE9Ha25jRmxEc0NKeXlJM29QQlE?oc=5",
-      "fecha": "2026-08-09T04:00:24.000Z"
-    },
-    {
-      "titulo": "Subidas de precios y calor extremo: por qué caen las cifras de franceses y alemanes que veranean en España - elpais.com",
-      "resumen": "Subidas de precios y calor extremo: por qué caen las cifras de franceses y alemanes que veranean en España elpais.com",
-      "fuente": "Google News — Economía España",
-      "enlace": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOM1BfanlBbUJZRlpHanhTTVBPMnN5MlotWEJ3eEZvcHV0dUxPcDBkNUNLaUkzNFRuQ3JtMFJJeWJtc1Z0YV9SVjhhMWVDRlNRVXdxbmFVV2c0TUpLdWgwQjFESnhjODB0ODRTam5CdFpidmZsMFRma1g3UkFmMlRnR3hpNTJscWlHNmpDTmVYRDI1Skwya1V1SFNfQXNQQnRWY00wYTl3ZWFHeF8xWWJrdWlkdXM2NXluclZ2X0xjUzJlNlBFMWFNWG5YRUhuNENQRUdkX1c4ZTkyUDRUTmx5MGZ0d9IB9wFBVV95cUxQZnFlWVp3dFk5TG9xb184RmlNVXYza2dsWXU0b0pzLVpPTVRIeVZLSVBucFE3aU9tSjdfQ3lLMWo4VGR0T0hpVXdCdFQyM0lGYXpicjNORVJNdkhBaENrZlU4RFBUbWo0eEkyVVBQdWkySUZsaFJNdnZZZ0Q2cWtkbFZEN3VjUjdsMHhwV1c4eUdIYkdid2FhVW54X1pBS0hDOEV4TkFhMkE3c2NSV2lZQmlYWGIyWW1yTGpwRWFfM1FuaGdsenR3ajY2OXpHTU5GZ21oazIwWW5jNmx3bE1ETE1Tdjk1UTNQZV85NnZnTWxSb1VySWFr?oc=5",
-      "fecha": "2026-08-09T03:45:01.000Z"
-    },
-    {
-      "titulo": "Luis Olazábal (Julius Baer): “La valoración no es hoy un problema general del mercado” - Cinco Días",
-      "resumen": "Luis Olazábal (Julius Baer): “La valoración no es hoy un problema general del mercado” Cinco Días",
-      "fuente": "Google News — Finanzas personales",
-      "enlace": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNaW10NmpzaEtUX1ZwNG1uV0RZb3gtX3RXdDF0bzRRX09fTllhQjlYRXJxNW5ZbGd0cThsa0JOSmE5NUNyNTRNbmxQNFJzZDVHNjdudVZkbUFVSXNwS29QNlRuQmVacnpMR2FQTlFqeFBfS0NJVXRreWtBV0JHeWFCQUdQWWJEWGRzQUp0YklBS1VHb21MVkN1TmxDb2JhWlVER0FiVVlrNnBESU85aVdJM1NyaFpPNFZfR3MwS1RZV0UzS1h1WW5fNllLN08yZDZKX2oyMVVoQkw4dGhzNS11MTZHYTczYUMwNnFKdjA1b1QtcXcx0gH0AUFVX3lxTE1pbXQ2anNoS1RfVnA0bW5XRFlveC1fdFd0MXRvNFFfT19OWWFCOVhFcnE1bllsZ3RxOGxrQk5KYTk1Q3I1NE1ubFA0UnNkNUc2N251VmRtQVVJc3BLb1A2VG5CZVpyekxHYVBOUWp4UF9LQ0lVdGt5a0FXQkd5YUJBR1BZYkRYZHNBSnRiSUFLVUdvbUxWQ3VObENvYmFaVURHQWJVWWs2cERJTzlpV0kzU3JoWk80Vl9HczBLVFlXRTNLWHVZbl82WUs3TzJkNkpfajIxVWhCTDh0aHM1LXUxNkdhNzNhQzA2cUp2MDVvVC1xdzE?oc=5",
-      "fecha": "2026-08-09T03:30:00.000Z"
-    },
-    {
-      "titulo": "Compras de viviendas: qué provincias lideran las subidas y dónde se reducen",
-      "resumen": "Las transacciones siguen subiendo con fuerza en las provincias de interior y en los pequeños mercados como Teruel, Cuenca, Ciudad Real o Ávila, y caen con fuerza en grandes plazas…",
-      "fuente": "Expansión",
-      "enlace": "https://www.expansion.com/inmobiliario/2026/08/08/6a7716b1468aeb8c1b8b456e.html",
-      "fecha": "2026-08-08T19:25:58.000Z"
-    },
-    {
-      "titulo": "Greg Abel pone por fin a trabajar la montaña de efectivo de Warren Buffett",
-      "resumen": "El máximo responsable de Berkshire Hathaway pone fin a una racha de ventas de más de tres años al invertir 20.000 millones de dólares netos en acciones. Leer",
-      "fuente": "Expansión",
-      "enlace": "https://www.expansion.com/economia/2026/08/08/6a773693468aeb85698b4592.html",
-      "fecha": "2026-08-08T17:25:53.000Z"
-    },
-    {
-      "titulo": "Así han creado su fortuna los abogados más ricos del mundo",
-      "resumen": "Los asesores de 'M&A' ocupan el Olimpo de la profesión, pero quienes más dinero ganan son quienes lideran los grandes litigios, los divorcios de los famosos y los abogados de las g…",
-      "fuente": "Expansión",
-      "enlace": "https://www.expansion.com/economia/2026/08/07/6a7629a2468aeb24308b4583.html",
-      "fecha": "2026-08-07T21:53:26.000Z"
     }
   ]
 }
