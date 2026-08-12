@@ -1,47 +1,61 @@
 {
-  "actualizado": "2026-08-11 06:58",
+  "actualizado": "2026-08-12 07:17",
   "noticias": [
     {
-      "titulo": "Cómo las cuentas remuneradas impactan la economía personal y el ahorro en agosto de 2026 - Confidencial Digital",
-      "resumen": "Cómo las cuentas remuneradas impactan la economía personal y el ahorro en agosto de 2026 Confidencial Digital",
+      "titulo": "La caída de reservas anticipa un crudo a 140 dólares en otoño",
+      "resumen": "Los analistas avisan de que si el cierre del estrecho de Ormuz se prolonga la falta de petróleo y refinados en los mercados será cada vez más evidente y la escalada de precios se i…",
+      "fuente": "Expansión",
+      "enlace": "https://www.expansion.com/economia/2026/08/11/6a7b7d6ee5fdea26788b458f.html",
+      "fecha": "2026-08-12T06:53:31.000Z"
+    },
+    {
+      "titulo": "Precio de la gasolina y diésel hoy, 12 de agosto en España: consulta el precio de los carburantes - El Periódico",
+      "resumen": "Precio de la gasolina y diésel hoy, 12 de agosto en España: consulta el precio de los carburantes El Periódico",
+      "fuente": "Google News — Economía España",
+      "enlace": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSDNoX2VrZzFKRVU4NS1IakUxZkxNd202cWRGelZfOXBFMDlCVzBBUnZOSTRzLWZzdC1mOHF6VERZRGNaMUM1ZjBBMDJ2NGRsSDlnS1dpUUJGejlsdncyY2JvMUFZbGdMWEpEQ2gzSjlaNVYzcWItbnJfUWVRS1FOVG5JMHpuUDNxN0FCMzEweEJESFFhZ3A1MmdGOFFUQTBIUXVsdHo1dEdYWXE2REFR0gGvAUFVX3lxTFBwMkh1OHZQSVVuanVyVTRwZHhJWXFWNzZWazVib3BFX0RJUGpvQ05zQUtTdFpJci1QdnJNb0tMS0FEcFk1UUtXOWdobUltNm1mbFB5NnFXTEJ1UEw0N0VJMU5vLThoclFuQXo0T0dDMVJIU0xkd1VseUNpSkRYdk9DVHdhaTBNOVlCS1BxQjVVcEpyQm1RdHVvWlVJdXcxanhMNWtBMFVOLUt1bU1QeE0?oc=5",
+      "fecha": "2026-08-12T06:04:51.000Z"
+    },
+    {
+      "titulo": "La Primera de Expansión sobre Indra, \"data center\", CaixaBank  y Santander",
+      "resumen": "Indra estudia comprar una empresa de satélites para crecer en espacio. La nueva cúpula directiva de Indra, que ha aparcado la fusión con EM&E, sigue analizando operaciones inorgáni…",
+      "fuente": "Expansión",
+      "enlace": "https://www.expansion.com/podcasts/la-primera-de-expansion/2026/08/12/6a7c0a95e5fdeae96f8b4580.html",
+      "fecha": "2026-08-12T05:54:38.000Z"
+    },
+    {
+      "titulo": "Alfabetización financiera en España: el paso urgente del ahorro pasivo a la inversión con criterio - Citywire",
+      "resumen": "Alfabetización financiera en España: el paso urgente del ahorro pasivo a la inversión con criterio Citywire",
       "fuente": "Google News — Finanzas personales",
-      "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTV9pVzBpMFRxU3poZWlrbHpKYVFPbGE4VUdta1RQUGRSODJqZ01QLS0yQW45X3FVc3o4OFpaOHRtaE9qUmRscjFOQVVWNFdQSTBQTjQyUkwzeVQxV1RBX0RVSG5FWENMaTBSdkpwN2ZEOEptSUltb2RVbEFLZTQ0ODNETGp6RDk0R1F4Z3U3N2hfdHdta1V6Wks2bnFJWWZCTTBRSzNkdVg1QXFKOEViUWdlSG1ERXNPWDNHWDlzQ2JMR1cyYU5VX3FaaWFYazkxbFFmSzFhbDEwNTZXX0JpS1VaSVYwQdIB6wFBVV95cUxPbEdHdjlia25hb3FDTE9LenBubDYzMmdwbmFGdi13SGVkaldBSzVoQm80S3VpQ3RhMWVZTF9Za1VtODFGOFJiRlJSejBBRjZUZjFxU3l6WjcxRER5ci0zVVBMQlVqd1NKUjNyX1NTZlNEZnRGbGVwb3pTWWo0dlJHSUViWU9MRWZpLWJvYU5jcXM1ZjFKeXR5V3RwZ2Y5Qnp0dkdDUEt3TUlxNjJBSGROWWgzVlNieG5KQS1mZEkyY0JmOVFPT2Z4emNuMTFvV1RIeVV0NjRWQ1ZDWjllM2NSa2doUXEza2RZYTZZ?oc=5",
-      "fecha": "2026-08-11T06:52:08.000Z"
+      "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQeC1TNmJsMUZFZVRjeURhZkttQ25ZU3dYLXR0a1Zob21aVzBGUWRELVVTbWtwaDRFQkNQWTQ4MFNqcWV1d0RVTkxicjE5aGtQb3JYM0dsNHQtQWoxWlJ0NmVyOTB5V0g3VDFsWUFGcjBrcE9IWDF4SG1ITzFaS3JTTHQ5ekxaMEZxZnBNa3g2elNRLW5TMHNtQ1hLU1lXaHhXSjN6Uk9ZTzgwV2VxeGhlcjlDUXpHR0YyRGJHenFBSm92RWFWdlAzQUt0MlVaZGxnS0pNMXc4WUlsV3dwam94ai1QMkQ?oc=5",
+      "fecha": "2026-08-12T04:59:55.000Z"
     },
     {
-      "titulo": "Los rumanos y los ucranianos se van de España ante el deterioro de las condiciones económicas para gran parte de los hogares - eleconomista.es",
-      "resumen": "Los rumanos y los ucranianos se van de España ante el deterioro de las condiciones económicas para gran parte de los hogares eleconomista.es",
+      "titulo": "El espejismo económico de España: líder de Europa en crecimiento pero a la cola en riqueza por habitante - El Economista",
+      "resumen": "El espejismo económico de España: líder de Europa en crecimiento pero a la cola en riqueza por habitante El Economista",
       "fuente": "Google News — Economía España",
-      "enlace": "https://news.google.com/rss/articles/CBMimgJBVV95cUxPanNFSENFd3YzWTN1WjZIc3VoQlRZeWtMd0QwS3RZaWQ0bXFfekpCbC03MlNGZ29HSjlkelFJbmVLellhQmFoWmVIaEFaVER4MmVsVUN2WExiU2labjNhc0xYNktWdG9BLXpON3pZclRGZUJlM0RSM2F6R3prVXZxX1JnTU1XaUN4UTZsamxoTFJtSGJza3pTdGJrUTFjcGdtUmZ3UVhoYWIyek9pdGhPYTJuMGViT0hEcV82Wjhqc3Q5TlZBNmhTaW0yVkRESXNDNTJfb28tRXJCcFNTaFpoWjFTWDlSOHg0QlA1cmlSaURwOENMYUtLaE41WmN1WENVOEdmVURsLTk3cTlLVEVKWTBCRm5wN3JhbVE?oc=5",
-      "fecha": "2026-08-11T05:33:24.000Z"
+      "enlace": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPQUFrVDg1SnNWYzlwZDNqTXpFQUdNSlVSdWgxcWIwRFlZdHhaS0tkM19oWmRlVnBDNEtENGtxaHE4SDBTenpfQ1RlREIzRmFzMHhKTGtyMklZNjVoYzMtUGpfSjBRZnd3R2VsNW1laExEZGU1VmRaYkJjSnM5V3FsWG1WTmxYb2Fxa3BaSFFnclhTc3F6T0dTY2ZXdVJ4YnFibTZINll1ZjVBckZXbzFGN3VVdG1PRDMzZUsxc0VmZmM0NVJIX3NOMWdOQUdBb1Q3V1lEOUF2Qm1hQTRCaGlQUm03LVFlUFMwaDFuZVNqT1VUZFZ2bThsY1F0VFVvdw?oc=5",
+      "fecha": "2026-08-12T04:00:28.000Z"
     },
     {
-      "titulo": "El seguro digital gana cuota en España: así ha cambiado la contratación de pólizas de coche - Economía 3",
-      "resumen": "El seguro digital gana cuota en España: así ha cambiado la contratación de pólizas de coche Economía 3",
+      "titulo": "De la hucha a la Bolsa: la Generación Z cambia su forma de entender el dinero - Business Insider España",
+      "resumen": "De la hucha a la Bolsa: la Generación Z cambia su forma de entender el dinero Business Insider España",
+      "fuente": "Google News — Finanzas personales",
+      "enlace": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUDBkelpPem9RNllWZmttN1VYYUxWNUUtRVljMnB1cERDeVZPampBcGdfUWFwalVFRVQ4TzI0QlZXeWJtUWFHVm5Pa0phMUNlQllBdVR2bzZrVzFycmE3ODktRG9WMzlQOUo1NmJ5cGhKQ2RKM0ZrRU1kVWRjVy1hUUFzM1RqM3pTb3d6TmFGelRaUXV1a1VNYXBCTnJ0Y3E0VGY1REVlaHgzQVo0Q3I0ZE1YdnFoUdIBtgFBVV95cUxPUDBkelpPem9RNllWZmttN1VYYUxWNUUtRVljMnB1cERDeVZPampBcGdfUWFwalVFRVQ4TzI0QlZXeWJtUWFHVm5Pa0phMUNlQllBdVR2bzZrVzFycmE3ODktRG9WMzlQOUo1NmJ5cGhKQ2RKM0ZrRU1kVWRjVy1hUUFzM1RqM3pTb3d6TmFGelRaUXV1a1VNYXBCTnJ0Y3E0VGY1REVlaHgzQVo0Q3I0ZE1YdnFoUQ?oc=5",
+      "fecha": "2026-08-12T03:30:00.000Z"
+    },
+    {
+      "titulo": "El declive económico del País Vasco - El Confidencial",
+      "resumen": "El declive económico del País Vasco El Confidencial",
       "fuente": "Google News — Economía España",
-      "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQb0Fia2pDV0lLRGx3VHJPb2dWV1d5dzhwVFhNUjI1RG9XOGlQbmlLMFNabGs0dk5GajhqQ1VHUTRQSmpScjdOTTFwOWFiQVZfTE1rbDFIeVF3ejVSZ0ZMZTNBUUVpQ25Xby1wT1RGaW0yWXZURERtZUk0ZWxINEFLN2xMS0h2UTFnMWNqNDVhMGZBRk5rREx3aElvMnBJM2txZV9zTE5hSTRCVmZDUzg2eV9HV1hTdy1LUktZVmY3YUM2YVEzZE5wd2Ytbw?oc=5",
-      "fecha": "2026-08-11T04:30:00.000Z"
+      "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOd1FFRlN4OEZwRk56UnFSaG5vUWNodmRMdEhFZ0EwNG5LdUZnMUpmZFF2a0dUUUVWWXRCQ0NvMWpIbzJMZVZlS09JWmVpeWVMQXFBTktFN25vaDBPcmNZcDgxeDlDRDhFU08yVkliYmd3WWl1MHllU21QanQtdnV4b3F6X0xDVjlueHlaVDE1bmpHX2QwYTNR?oc=5",
+      "fecha": "2026-08-12T03:00:00.000Z"
     },
     {
-      "titulo": "El plan de la china SAIC en España que preocupa al CNI: 120.000 coches ‘made in Ferrol’ para esquivar los aranceles - EL PAÍS",
-      "resumen": "El plan de la china SAIC en España que preocupa al CNI: 120.000 coches ‘made in Ferrol’ para esquivar los aranceles EL PAÍS",
-      "fuente": "Google News — Economía España",
-      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOSUppRWtHTzB2WjBRaGd2bmRwM0RNS3VCdHpVZjQwWFVhX2ZCV0IyR1BITzlPN05feThzX3p5MlVTN0c3endIOGlTbE1YblJOV09odnN3RjJKME9oV2QtYWdZbmNkalp4ckI3SGlZbmVrTVF0TVZvbjRtNnU0UkV3emhfUlI4S1RqRm9sQnIxSzJVNEhTaHFZcVBONkxCZ05Sb1FIVjV6bDlXR0xaT0Zfb09zTUhXSVpYRHFTVEZleFdDUUNETXkzXzZySHZtVTJvT3N3OGNFM0JLMFUzUXpYQ0lJc3Y1a1NwcmFv0gH_AUFVX3lxTE5CMUFPMEFJQ0ZFb2Q5SWt3MUZNUy1pX09NV19YcjZmWVFNNVRuWURqQi1WTGRwa05DdDlLWWJWOElqdnY3bFpYcXFiWlBpNUV5MFcwMExqOEZRZkFac2JoZzhibGl2ZW1yZmV3TnZHajhWQmJzZW5kWHdwLXg5UjBlWVpfTTdmS3pjbFE3anJtRE9ZdDI4cmUwQWF3VWJlcU85c1VneUszazdIbjBHbkxfOTFYVk5Ddzlja3F3RUx1c0N5OTN5cjYwU2lmck5kVXRXZ09JZk5idzlfNDJtcENMUnlMNlloUkt5NElJMEhEQTlOSVJINTg1MUFoaHhRYw?oc=5",
-      "fecha": "2026-08-11T03:45:00.000Z"
-    },
-    {
-      "titulo": "El eclipse solar aportará 350 millones extra al gasto turístico",
-      "resumen": "El fenómeno dispara el turismo en España, que recibe esta semana casi medio millón más de visitantes. Las búsquedas de alojamiento crecen hasta un 500%, con Soria y León a la cabez…",
+      "titulo": "El 'boom' de los centros de datos duplicará el negocio de los seguros en 2030",
+      "resumen": "La necesidad de blindar la infraestructura crítica de la IA disparará el mercado de seguros en centros de datos hasta los 24.000 millones de dólares para el año 2030. Leer",
       "fuente": "Expansión",
-      "enlace": "https://www.expansion.com/empresas/transporte/2026/08/11/6a7a0bdf468aebc6058b4598.html",
-      "fecha": "2026-08-11T00:14:05.000Z"
-    },
-    {
-      "titulo": "Inquietud entre las hoteleras por el control de turistas procedentes de Italia",
-      "resumen": "Las hoteleras piden limitar los controles para evitar daños al turismo y alertan de que la incertidumbre en los desplazamientos puede impactar en el sector en plena temporada alta.…",
-      "fuente": "Expansión",
-      "enlace": "https://www.expansion.com/empresas/transporte/2026/08/11/6a7a07b1e5fdeac1588b457b.html",
-      "fecha": "2026-08-11T00:14:04.000Z"
+      "enlace": "https://www.expansion.com/empresas/tecnologia/2026/08/12/6a7b5982468aeb29698b458b.html",
+      "fecha": "2026-08-11T23:58:12.000Z"
     },
     {
       "titulo": "Las 10 ‘apps’ para gestionar y compartir gastos - BBVA",
@@ -49,20 +63,6 @@
       "fuente": "Google News — Finanzas personales",
       "enlace": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY0NZcmcwTmlzZmNmUXBOb25fbXhBS19XaEFlUEdOUUVWalczUm8ycG1fZ1R6eWI0VTB2QTJqZHlQdjRxSU05dnNfUldkTDVtYVQtZ1loTWpjQnhCaHM0MnhFWGNfSjVIYlBQUkNMcmdLV0ppcEFVenZLcGZuV1BEZGROM1A2T28xdlUzZjg2MEVNSjg1RVE?oc=5",
       "fecha": "2026-08-10T22:49:36.000Z"
-    },
-    {
-      "titulo": "El 70% de la vivienda de lujo en venta está en Madrid, Málaga, Baleares y Barcelona",
-      "resumen": "España cuenta con 46.454 inmuebles a la venta por más de un millón de euros, de acuerdo con los datos de Idealista, repartidos de forma muy desigual entre todas las provincias, sal…",
-      "fuente": "Expansión",
-      "enlace": "https://www.expansion.com/inmobiliario/2026/08/11/6a7a37fc468aeb9b1e8b45ab.html",
-      "fecha": "2026-08-10T22:05:02.000Z"
-    },
-    {
-      "titulo": "La Cuenta Bienvenida de Raisin, entre las más rentables, pero a corto plazo: 3,10% TAE y hasta 465 euros - roams.es",
-      "resumen": "La Cuenta Bienvenida de Raisin, entre las más rentables, pero a corto plazo: 3,10% TAE y hasta 465 euros roams.es",
-      "fuente": "Google News — Finanzas personales",
-      "enlace": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdWJsMEhuLVFvNVVNeVhsQl9JM04wUkJMRmtrOWx0dEIzX3R1RGswRmV2QU9pd1pFV21WSTNxRzVnZzNETTNiS3FsMTZFa0hfWS1IZVhoaTIxTzZQeWZUczd6dlJ2Mk9jWHFSVHpXcENxa25Cc21LX2dyX1gtUGU0aWttaHowS1U?oc=5",
-      "fecha": "2026-08-10T13:30:49.000Z"
     }
   ]
 }
