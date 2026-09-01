@@ -15,7 +15,8 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[estrategia/kpis|KPIs]] — métricas de Instagram, newsletter, monetización
 - [[estrategia/pilares-contenido|Pilares de contenido]] — 5 bloques temáticos y su estado
 - [[estrategia/principios|Principios]] — 4 principios que guían decisiones
-- [[estrategia/finanzasuni|FinanzasUni — expansión a web]] — nueva marca/web, decisión de rebrand abierta, modelo de contenido y monetización
+- [[estrategia/finanzasuni|FinanzasUni — expansión a web]] — proyecto conjunto con un amigo de Diego, rama independiente de Arquitectura Financiera, modelo de contenido y monetización
+- [[estrategia/feec-finanzasuni|FinanzasUni como foro universitario]] — expansión del formato FEEC de Caminos, candidatos a invitar, temas por sector
 
 ## Conceptos financieros (reutilizables entre posts)
 
@@ -72,4 +73,8 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - `files/post-cero-corregido.html` no se ha leído en detalle todavía.
 - Presentación de Diego sobre su visión de finanzas/actualidad económica — anunciada
   el 2026-08-07, no recibida todavía. Ver [[estrategia/finanzasuni]].
-- Decisión de rebrand Instagram → FinanzasUni: abierta, no tomada. Ver [[estrategia/finanzasuni]].
+- Resultado de la conversación de Diego con su amigo sobre el proyecto FinanzasUni
+  (roles, reparto, prioridades) — pendiente, prevista para la tarde del 2026-08-08.
+  Ver [[estrategia/feec-finanzasuni]].
+- Primer contacto dentro de una universidad para lanzar el foro FEEC-FinanzasUni —
+  pendiente. Ver [[estrategia/feec-finanzasuni]].

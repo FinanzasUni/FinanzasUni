@@ -46,9 +46,8 @@ Diego, con quien todavía está cerrando los detalles del proyecto conjunto.
   institucional para poder lanzar el foro facultad a facultad — **pendiente de
   conseguir el primer contacto**.
 
-Ver desarrollo de invitados y temas propuestos en la conversación del 2026-08-08
-(pendiente de convertir en página de wiki dedicada cuando Diego cierre el plan con su
-amigo).
+Ver desarrollo completo (puntos a cerrar con el socio, candidatos a invitar, temas por
+sector) en [[feec-finanzasuni]].
 
 ## ⚠️ Pendiente de definir con el socio
 

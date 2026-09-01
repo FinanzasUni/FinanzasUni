@@ -290,3 +290,17 @@ intencion de expandirlo a otras universidades de Madrid. No es fusion de marcas,
 dos proyectos distintos. Pendiente: cerrar acuerdo de socios con el amigo, conseguir
 contacto de profesor dentro de alguna universidad para el lanzamiento institucional.
 → [[estrategia/finanzasuni]]
+
+## [2026-08-08] estrategia | FinanzasUni como foro universitario (formato FEEC)
+Diego desarrolla el alcance de FinanzasUni: entrevistas/foro con profesionales de
+distintos sectores (finanzas, ingenieria, derecho, sanidad) para estudiantes,
+inspirado en el FEEC (Foro Economico Empresarial Caminos), con intencion de
+expandirlo a otras universidades de Madrid. Aclaracion importante de Diego: aunque
+es un proyecto conjunto con un amigo, "la voz cantante la tengo porque la idea ha
+sido mia" — tratar a Diego como lider/decisor del proyecto, no como socio 50/50 por
+defecto. Documentados: puntos a cerrar con el socio antes de arrancar, como abordar
+el contacto universitario, 3 candidatos con conexion ya existente (Ramiro, Sergi
+Andres, economista "Joan"), brainstorm de nombres por sector (sin confirmar), y
+temas de conversacion propuestos por sector. Pendiente: resultado de la conversacion
+de Diego con su amigo esta tarde.
+→ [[estrategia/feec-finanzasuni]], [[estrategia/finanzasuni]]
