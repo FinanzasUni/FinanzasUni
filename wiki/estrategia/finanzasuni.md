@@ -12,27 +12,50 @@ arquitectura firme" con varias ramas (Instagram + web), bajo el nombre **Finanza
 — más cercano y pensado para jóvenes que empiezan a interesarse por las finanzas y
 quieren compartirlo con amigos, no un nombre "de experto".
 
-## ⚠️ Decisión abierta — ¿rebrand completo o marca nueva en paralelo?
+## ✅ Decisión de marca resuelta (2026-08-08)
 
-Diego dijo explícitamente "quizás cambie el nombre de la cuenta de Instagram... para
-que todo se convierta en un único proyecto". **No decidido todavía.** No se ha tocado
-Instagram ni ningún asset de Arquitectura Financiera.
+Dos ramas **independientes**, no un rebrand único:
 
-Pros/contras a poner sobre la mesa cuando se decida:
-- **A favor del rebrand único**: coherencia total marca web + Instagram, un solo
-  nombre que recordar, más fácil de posicionar como "un proyecto, varias ramas".
-- **En contra**: los 5 posts ya publicados en Instagram llevan `@arquitectura_financieralife`
-  grabado literalmente en las imágenes (no es solo el handle de la cuenta, está en el
-  diseño de cada slide — ver [[../fuentes/registro]]) y los hashtags `#arquitecturafinanciera`
-  están en todas las captions ya publicadas. Cambiar el handle de Instagram no reescribe
-  esas imágenes ni esas captions — quedaría una inconsistencia visual salvo que se
-  rehagan los posts ya publicados.
-- **Alternativa intermedia**: FinanzasUni como nombre de la web/comunidad, Arquitectura
-  Financiera se mantiene como el Instagram (incluso podría presentarse como "la cuenta
-  de Instagram de FinanzasUni", igual que una empresa tiene marca corporativa y nombres
-  de producto). Evita rehacer contenido ya publicado.
+1. **Arquitectura Financiera** (Instagram, `@arquitectura_financieralife`) — marca
+   personal de Diego en solitario. Sigue su propio plan de bloques (ver
+   [[../estrategia/pilares-contenido]]).
+2. **FinanzasUni** — proyecto **conjunto con un amigo** de Diego, de mayor ambición:
+   web + newsletter + entrevistas/foros universitarios (ver sección siguiente). No es
+   la cuenta de Instagram de Diego "con otro nombre" — es un proyecto distinto, con
+   otro socio, aunque el contenido de fondo (educación financiera) sea similar y pueda
+   haber reutilización de conceptos entre ambos.
 
-**No actuar sobre esto hasta que Diego lo decida explícitamente.**
+Motivo del cambio de rumbo: FinanzasUni ha crecido en alcance (entrevistas, foro
+universitario, un socio) hasta ser un proyecto propio, no una sombrilla para
+Instagram. Los 6 posts ya publicados en `@arquitectura_financieralife` se quedan tal
+cual, sin necesidad de rehacer nada — el problema de handle/hashtags grabados en las
+imágenes (ver [[../fuentes/registro]]) ya no aplica porque no hay fusión de marcas.
+
+## 🎓 FinanzasUni como foro universitario (nuevo alcance, 2026-08-08)
+
+Diego quiere expandir el formato **FEEC (Foro Económico Empresarial Caminos)** de la
+Escuela de Caminos a otras universidades/facultades de Madrid. Socio: un amigo de
+Diego, con quien todavía está cerrando los detalles del proyecto conjunto.
+
+**Piezas del proyecto**:
+- Web (`web/`, ya publicada) + newsletter (Beehiiv, en configuración).
+- Entrevistas/conversaciones con profesionales de distintos sectores (sanidad,
+  finanzas/economía, ingeniería, derecho) para dar su visión de la actualidad a
+  estudiantes universitarios.
+- Contacto con profesores dentro de las universidades como vía de entrada
+  institucional para poder lanzar el foro facultad a facultad — **pendiente de
+  conseguir el primer contacto**.
+
+Ver desarrollo de invitados y temas propuestos en la conversación del 2026-08-08
+(pendiente de convertir en página de wiki dedicada cuando Diego cierre el plan con su
+amigo).
+
+## ⚠️ Pendiente de definir con el socio
+
+Diego va a hablar con su amigo todos los puntos del proyecto conjunto antes de
+arrancar a trabajar codo con codo — **no hay todavía acuerdo de reparto de roles,
+marca compartida ni modelo de decisión conjunta**. No asumir en contenido futuro que
+esto ya está cerrado.
 
 ## Modelo de contenido
 

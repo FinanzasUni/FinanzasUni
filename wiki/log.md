@@ -280,3 +280,13 @@ FGD), con cuenta sin comisiones, tarjetas gratis, Bizum, cuentas imaginTeens/ima
 y el programa imaginPlanet. Corregido el contenido de la tarjeta en la web y anadida
 seccion en wiki/conceptos/brokers-espana-comparativa.md con los datos verificados.
 → [[tecnologia/web-finanzasuni]], [[conceptos/brokers-espana-comparativa]]
+
+## [2026-08-08] decision | Resuelta la decision de marca: dos ramas independientes
+Diego decide: Arquitectura Financiera (Instagram) sigue como su marca personal en
+solitario. FinanzasUni pasa a ser un proyecto conjunto con un amigo, de mayor
+ambicion: web + newsletter + foro universitario de entrevistas, inspirado en el
+formato FEEC (Foro Economico Empresarial Caminos) de la Escuela de Caminos, con
+intencion de expandirlo a otras universidades de Madrid. No es fusion de marcas, son
+dos proyectos distintos. Pendiente: cerrar acuerdo de socios con el amigo, conseguir
+contacto de profesor dentro de alguna universidad para el lanzamiento institucional.
+→ [[estrategia/finanzasuni]]
