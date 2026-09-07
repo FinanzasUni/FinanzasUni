@@ -52,6 +52,8 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[contenido/bloque-02-ahorro-real|Bloque 02 — Ahorro Real]] — 10 posts completos, listos para publicar
 - [[contenido/bloque-03-inversion-indexada|Bloque 03 — Inversión Indexada]] ✅ estructura y 7 conceptos completos, falta copy/slides
 - [[contenido/formato-carrusel|Formato estándar de carrusel]]
+- [[contenido/post-presentacion-diego-moreno|Post de presentación — Diego Moreno]] — semana 1 de la marca ampliada, listo para publicar
+- [[contenido/guion-primera-entrevista|Guion de la primera entrevista]] — plantilla del formato "Conversaciones", falta elegir invitado
 - [[contenido/reel-fuck-you-money|Reel — "El dinero no es para comprar. Es para decir que no."]] 📝 guion listo, pendiente de grabar
 
 ## Tecnología

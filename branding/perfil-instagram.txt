@@ -2,6 +2,13 @@
   ARQUITECTURA FINANCIERA — PERFIL INSTAGRAM
 ═══════════════════════════════════════════════
 
+⚠️ HISTÓRICO (2026-08-09): este fue el perfil de lanzamiento original de la cuenta,
+ya ejecutado en su momento. Desde el 2026-08-09 la cuenta se renombra a la marca
+personal ampliada "Diego Moreno" (@soydiegomoreno) — ver
+branding/perfil-diego-moreno.txt para el perfil nuevo y wiki/marca/diego-moreno.md
+para el porqué. Este archivo se conserva como registro histórico, no lo uses para
+configurar nada a partir de ahora.
+
 NOMBRE DE USUARIO (handle)
 ──────────────────────────
 @arquitectura_financieralife

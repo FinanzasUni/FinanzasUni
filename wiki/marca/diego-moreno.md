@@ -94,10 +94,7 @@ escrito cualquiera con IA en 30 segundos, no se publica.
   (no se crea una cuenta nueva) — se conservan seguidores e historial. Los 6 posts ya
   publicados quedan tal cual (el handle antiguo grabado en esas imágenes es solo
   estético, no se corrige retroactivamente).
-- **Nuevo handle**: ⚠️ pendiente de confirmar — candidatos propuestos
-  `@diegomorenov`, `@soydiegomoreno`, `@diegomoreno.build`. Diego debe comprobar
-  disponibilidad real en Instagram (no verificable desde este wiki) y confirmar cuál
-  usa.
+- **Nuevo handle confirmado (2026-08-09): `@soydiegomoreno`.**
 - Arquitectura Financiera sigue publicando sus propios bloques de contenido (ver
   [[../estrategia/pilares-contenido]]) como parte del pilar "Criterio" — no se
   interrumpe su plan de bloques por este cambio de identidad.
@@ -112,13 +109,14 @@ escrito cualquiera con IA en 30 segundos, no se publica.
 
 ## Pendiente inmediato
 
-- Confirmar handle de Instagram.
 - Decidir Beehiiv compartido con FinanzasUni o cuenta separada.
 - Avisar al amigo con quien se había hablado de FinanzasUni de que ese proyecto
   conjunto queda en pausa (no se había cerrado nada en firme, pero es cortesía
   avisarle) — ver [[../estrategia/finanzasuni]].
-- Escribir el post de presentación de la semana 1 y el guion de la primera
-  entrevista (siguiente paso en esta misma conversación).
+- ✅ Post de presentación de la semana 1 escrito — ver [[../contenido/post-presentacion-diego-moreno]].
+- ✅ Guion de la primera entrevista escrito (plantilla genérica) — ver
+  [[../contenido/guion-primera-entrevista]]. Falta elegir invitado real.
+- Decidir foto de perfil nueva (ver `branding/perfil-diego-moreno.txt`).
 
 Ver también [[arquitectura-financiera]], [[../estrategia/finanzasuni]],
 [[../estrategia/feec-finanzasuni]].

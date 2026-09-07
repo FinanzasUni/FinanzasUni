@@ -1,0 +1,63 @@
+═══════════════════════════════════════════════
+  DIEGO MORENO — PERFIL INSTAGRAM (renombrado)
+═══════════════════════════════════════════════
+
+Este es el perfil para RENOMBRAR la cuenta ya existente @arquitectura_financieralife
+(no crear una cuenta nueva — se conservan seguidores, historial y los 6 posts ya
+publicados). Ver wiki/marca/diego-moreno.md para el contexto completo de esta decisión.
+
+NOMBRE DE USUARIO (handle)
+──────────────────────────
+@soydiegomoreno
+
+NOMBRE A MOSTRAR
+─────────────────
+Diego Moreno
+
+BIO (150 caracteres máximo — copia y pega esto tal cual, cuenta caracteres antes de pegar)
+─────────────────────────────────────────────────────────
+21 años construyendo: negocios, herramientas y personas.
+Te cuento lo que descubro, sin adornarlo. 🏗️
+
+(Esta bio tiene ~105 caracteres, deja margen. Si Instagram no te deja pegar el
+emoji o algo similar, quítalo primero antes que recortar texto.)
+
+FOTO DE PERFIL
+──────────────
+⚠️ Pendiente de decidir — el avatar actual (logo-af-avatar.png) es el logo de
+Arquitectura Financiera, ya no representa la marca ampliada. Opciones: una foto tuya
+real (más coherente con "marca personal", recomendado) o un logo nuevo si prefieres
+mantener cierta capa de diseño. Dime cuál prefieres y seguimos desde ahí.
+
+CATEGORÍA SUGERIDA
+───────────────────
+Educación → Creador de contenido (ya no "Finanzas personales" en exclusiva, ahora
+cubre criterio/herramientas/carácter en general)
+
+ENLACE EN BIO
+──────────────
+Pendiente de decidir: ¿sigue apuntando a la web de FinanzasUni
+(https://finanzasuni.github.io/FinanzasUni/), o quieres una landing propia para
+Diego Moreno? Mientras no exista una landing propia, mantener el enlace actual no
+rompe nada.
+
+CONFIGURACIÓN A REVISAR AL RENOMBRAR
+──────────────────────────────────────
+□ Cambiar nombre de usuario a @soydiegomoreno
+□ Cambiar nombre a mostrar a "Diego Moreno"
+□ Actualizar bio (texto de arriba)
+□ Decidir y subir nueva foto de perfil
+□ Revisar historias destacadas — las actuales (🏛 Quién soy, 📚 Cimientos, 💰 Ahorro,
+  📈 Inversión, 🔐 Cripto) siguen teniendo sentido como sub-serie de Arquitectura
+  Financiera (pilar "Criterio"); considera añadir carpetas nuevas para Herramientas
+  y Carácter cuando haya contenido
+□ Los posts ya publicados (00-05) NO se tocan — el handle antiguo grabado en esas
+  imágenes se queda así, es solo estético
+
+═══════════════════════════════════════════════
+  HISTORIAL DE MARCA
+═══════════════════════════════════════════════
+Esta cuenta nació como "Arquitectura Financiera" (ver branding/perfil-instagram.txt
+para el lanzamiento original). El 2026-08-09 se convirtió en la cuenta de la marca
+personal ampliada de Diego, con Arquitectura Financiera como uno de sus pilares
+("Criterio"). Ver wiki/marca/diego-moreno.md y wiki/marca/arquitectura-financiera.md.

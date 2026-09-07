@@ -333,3 +333,15 @@ Pendiente inmediato: confirmar handle de Instagram nuevo (candidatos propuestos:
 comparte con FinanzasUni o es independiente, y que Diego avise a su amigo de la
 pausa de FinanzasUni.
 → [[marca/diego-moreno]], [[marca/arquitectura-financiera]], [[estrategia/finanzasuni]]
+
+## [2026-08-09] entrega | Handle confirmado (@soydiegomoreno) + post de presentacion + guion de entrevista
+Diego confirma el handle nuevo: @soydiegomoreno. Actualizado wiki/marca/diego-moreno.md.
+Creado branding/perfil-diego-moreno.txt con el checklist de renombrado (bio, foto de
+perfil pendiente de decidir, categoria, destacadas) — branding/perfil-instagram.txt se
+marca como historico/superado, no se borra. Entregados los dos siguientes pasos
+prometidos: post de presentacion de la semana 1 (carrusel 5 slides + caption completa)
+y guion generico de la primera entrevista del formato "Conversaciones" (estructura de
+45 min, pregunta central "que harias distinto", que anotar para los clips). Pendiente:
+elegir invitado real para la primera entrevista y decidir foto de perfil nueva.
+→ [[marca/diego-moreno]], [[contenido/post-presentacion-diego-moreno]],
+[[contenido/guion-primera-entrevista]]
