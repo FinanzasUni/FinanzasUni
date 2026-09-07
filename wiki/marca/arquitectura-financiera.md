@@ -1,14 +1,23 @@
 ---
 tipo: marca
 fecha_creacion: 2026-07-29
-fecha_actualizacion: 2026-07-29
+fecha_actualizacion: 2026-08-09
 fuentes: [Estrategia-Arquitectura-Financiera-2026.docx, branding/perfil-instagram.txt]
 ---
 
 # Arquitectura Financiera
 
-**Handle**: @arquitectura_financieralife (confirmado por Diego el 2026-07-29 — `branding/perfil-instagram.txt`
-tenía por error `@arquitecturafinanciera`, ya corregido).
+⚠️ **Actualización de estructura (2026-08-09)**: Arquitectura Financiera pasa a ser el
+**pilar "Criterio"** dentro de la marca personal ampliada [[diego-moreno]], no una
+marca independiente. Sigue publicando su propio plan de bloques (ver
+[[../estrategia/pilares-contenido]]) sin cambios — lo que cambia es la identidad de
+portada de la cuenta de Instagram, que se renombra dentro de [[diego-moreno]]. El
+contenido de esta página sigue siendo válido como documentación del pilar.
+
+**Handle**: @arquitectura_financieralife hasta el momento del renombrado a la nueva
+identidad — ver [[diego-moreno]] para el handle nuevo (pendiente de confirmar).
+Histórico: confirmado por Diego el 2026-07-29 — `branding/perfil-instagram.txt`
+tenía por error `@arquitecturafinanciera`, ya corregido en su momento.
 **Nombre a mostrar**: Arquitectura Financiera 🏛
 **Fundador**: Diego Moreno — estudiante universitario, emprendedor, 20 años, inversor desde los 18.
 

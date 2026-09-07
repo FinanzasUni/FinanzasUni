@@ -49,12 +49,22 @@ Diego, con quien todavía está cerrando los detalles del proyecto conjunto.
 Ver desarrollo completo (puntos a cerrar con el socio, candidatos a invitar, temas por
 sector) en [[feec-finanzasuni]].
 
-## ⚠️ Pendiente de definir con el socio
+## ⚠️ Proyecto en pausa (2026-08-09)
 
-Diego va a hablar con su amigo todos los puntos del proyecto conjunto antes de
-arrancar a trabajar codo con codo — **no hay todavía acuerdo de reparto de roles,
-marca compartida ni modelo de decisión conjunta**. No asumir en contenido futuro que
-esto ya está cerrado.
+Diego habló con su amigo sobre lanzar FinanzasUni juntos, pero **no llegaron a cerrar
+nada en firme** (ni roles, ni reparto, ni modelo de decisión). Mientras tanto, Diego
+decidió priorizar la construcción de su marca personal [[../marca/diego-moreno]], que
+absorbe conceptualmente parte de lo que iba a ser FinanzasUni (el formato
+"Conversaciones" cubre una ambición similar a la del foro universitario, ver
+[[feec-finanzasuni]]). **FinanzasUni como proyecto conjunto con el amigo queda en
+pausa, no cancelado formalmente** — pendiente de que Diego se lo comunique a su amigo
+explícitamente, ya que sí hubo una conversación real sobre hacerlo juntos. No asumir
+en contenido futuro que este proyecto está activo ni que está cerrado del todo.
+
+La web ya publicada (`web/`, `finanzasuni.github.io/FinanzasUni/`) y el Beehiiv
+configurado siguen existiendo como activos — no se han borrado ni desactivado, solo
+se ha pausado el impulso de construcción activa mientras se prioriza
+[[../marca/diego-moreno]].
 
 ## Modelo de contenido
 

@@ -304,3 +304,32 @@ Andres, economista "Joan"), brainstorm de nombres por sector (sin confirmar), y
 temas de conversacion propuestos por sector. Pendiente: resultado de la conversacion
 de Diego con su amigo esta tarde.
 → [[estrategia/feec-finanzasuni]], [[estrategia/finanzasuni]]
+
+## [2026-08-09] decision | Marca personal "Diego Moreno" como paraguas; AF pasa a pilar
+Diego comparte una conversacion completa de otra sesion de Claude proponiendo un
+"sistema de exito" generico (negocio de servicios B2B + marca personal). Tras
+analisis critico en esta sesion (mezclaba dos sistemas de feedback distintos,
+contradecia su propio "no tires lo construido" con el "olvidate de todo" inicial de
+Diego, y el patron de pivotar constantemente es justo lo que el propio documento
+identifica como causa de fracaso), se aclararon los hechos reales: FinanzasUni con
+el amigo no tenia nada cerrado en firme (queda en pausa, no cancelado, pendiente de
+avisar al amigo); Diego quiere que Arquitectura Financiera siga existiendo; prioriza
+la marca personal de contenido sobre el negocio de servicios, el dinero no es
+prioridad ahora.
+
+Decision final: marca personal con el nombre real de Diego ("Diego Moreno"), con
+Arquitectura Financiera absorbida como el pilar "Criterio" (no eliminada, sigue
+publicando su propio plan de bloques). Se renombra la cuenta de Instagram existente
+@arquitectura_financieralife en vez de crear una nueva (se conservan seguidores e
+historial). Tres pilares: Criterio, Herramientas, Caracter. Cuatro formatos fijos:
+"Lo que aprendi esta semana", "Las cuentas de verdad", "Conversaciones" (converge con
+la ambicion del foro FEEC), "Construyendo en abierto". Presupuesto real: 3-5h/semana.
+Instagram como canal principal, YouTube satelite, newsletter en Beehiiv (se corrigio
+una asuncion erronea de la conversacion importada que mencionaba Substack, que no
+existe en este proyecto).
+
+Pendiente inmediato: confirmar handle de Instagram nuevo (candidatos propuestos:
+@diegomorenov, @soydiegomoreno, @diegomoreno.build), decidir si el Beehiiv se
+comparte con FinanzasUni o es independiente, y que Diego avise a su amigo de la
+pausa de FinanzasUni.
+→ [[marca/diego-moreno]], [[marca/arquitectura-financiera]], [[estrategia/finanzasuni]]

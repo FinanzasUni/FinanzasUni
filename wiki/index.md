@@ -5,7 +5,8 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 
 ## Marca
 
-- [[marca/arquitectura-financiera|Arquitectura Financiera]] — identidad, fundador, propuesta de valor, pilares
+- [[marca/diego-moreno|Diego Moreno — marca personal]] ⭐ **marca paraguas (2026-08-09)**: posicionamiento, 3 pilares (Criterio/Herramientas/Carácter), formatos, cadencia, migración de cuentas
+- [[marca/arquitectura-financiera|Arquitectura Financiera]] — ahora el pilar "Criterio" dentro de [[marca/diego-moreno]]; identidad, fundador, propuesta de valor, pilares temáticos propios
 - [[marca/audiencia|Audiencia]] — jóvenes españoles 18-35, dolor y contexto
 - [[marca/voz-y-tono|Voz y tono]] — reglas de escritura, patrones que funcionan, hashtags
 
@@ -15,8 +16,8 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[estrategia/kpis|KPIs]] — métricas de Instagram, newsletter, monetización
 - [[estrategia/pilares-contenido|Pilares de contenido]] — 5 bloques temáticos y su estado
 - [[estrategia/principios|Principios]] — 4 principios que guían decisiones
-- [[estrategia/finanzasuni|FinanzasUni — expansión a web]] — proyecto conjunto con un amigo de Diego, rama independiente de Arquitectura Financiera, modelo de contenido y monetización
-- [[estrategia/feec-finanzasuni|FinanzasUni como foro universitario]] — expansión del formato FEEC de Caminos, candidatos a invitar, temas por sector
+- [[estrategia/finanzasuni|FinanzasUni — expansión a web]] — ⏸️ proyecto conjunto en pausa (nada cerrado con el amigo); web y Beehiiv siguen existiendo como activos
+- [[estrategia/feec-finanzasuni|FinanzasUni como foro universitario]] — formato FEEC de Caminos; su ambición converge ahora con el pilar "Conversaciones" de [[marca/diego-moreno]]
 
 ## Conceptos financieros (reutilizables entre posts)
 
