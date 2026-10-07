@@ -7,12 +7,13 @@ fuentes: [conversación con Diego 2026-08-09, plan importado de otra sesión de 
 
 # Diego Moreno — marca personal (umbrella)
 
-> ⚠️ **Contradicción / actualización (2026-10-07)**: el plan
-> [[../estrategia/sistema-ingresos]] de Diego habla de "Arquitectura Financiera" como
-> motor de audiencia y de una sub-marca "Finanzas para Empezar", sin mencionar esta
-> marca paraguas ni sus pilares. Pendiente confirmar si el renombrado a
-> `@soydiegomoreno` llegó a ejecutarse o se abandonó. Lo de abajo es la decisión del
-> 2026-08-09, tal como se tomó.
+> ❌ **Abandonada (2026-10-07)**: Diego confirma que el renombrado a
+> `@soydiegomoreno` nunca se ejecutó y que la cuenta sigue siendo **Arquitectura
+> Financiera**. Esta página se conserva como registro histórico de la decisión del
+> 2026-08-09; ya no es la marca vigente. Ver [[arquitectura-financiera]] y
+> [[../estrategia/sistema-ingresos]]. Lo aprovechable que sigue valiendo: los formatos
+> fijos, la regla anti-superficialidad y la entrevista mensual como fábrica de
+> contenido — el plan actual también prevé 1 entrevista/mes en YouTube.
 
 Decisión tomada el 2026-08-09, tras una fase de pérdida de foco: en vez de un rebrand
 que sustituya [[arquitectura-financiera]], Diego construye una **marca personal más

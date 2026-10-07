@@ -5,19 +5,19 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 
 ## Marca
 
-- [[marca/diego-moreno|Diego Moreno — marca personal]] ⭐ **marca paraguas (2026-08-09)**: posicionamiento, 3 pilares (Criterio/Herramientas/Carácter), formatos, cadencia, migración de cuentas
-- [[marca/arquitectura-financiera|Arquitectura Financiera]] — ahora el pilar "Criterio" dentro de [[marca/diego-moreno]]; identidad, fundador, propuesta de valor, pilares temáticos propios
+- [[marca/arquitectura-financiera|Arquitectura Financiera]] ⭐ **marca vigente** — identidad, fundador, propuesta de valor; sub-marca de productos "Finanzas para Empezar"
+- [[marca/diego-moreno|Diego Moreno — marca personal]] — ❌ abandonada sin ejecutar (2026-10-07); se conserva como histórico
 - [[marca/audiencia|Audiencia]] — jóvenes españoles 18-35, dolor y contexto
 - [[marca/voz-y-tono|Voz y tono]] — reglas de escritura, patrones que funcionan, hashtags
 
 ## Estrategia
 
-- [[estrategia/sistema-ingresos|Sistema de ingresos semipasivos v1.0]] ⭐ **documento rector actual (2026-10-07)**: fases con puerta, productos con precio, contenido, KPIs — con 6 contradicciones abiertas frente al wiki anterior
+- [[estrategia/sistema-ingresos|Sistema de ingresos semipasivos v1.0]] ⭐ **documento rector actual (2026-10-07)**: fases con puerta, productos con precio, contenido, KPIs
 - [[estrategia/plan-2026|Plan 2026-2027]] — plan original de mayo, superado en la práctica por el sistema de ingresos
 - [[estrategia/kpis|KPIs]] — métricas de Instagram, newsletter, monetización
 - [[estrategia/pilares-contenido|Pilares de contenido]] — 5 bloques temáticos y su estado
 - [[estrategia/principios|Principios]] — 4 principios que guían decisiones
-- [[estrategia/finanzasuni|FinanzasUni — expansión a web]] — ⏸️ proyecto conjunto en pausa (nada cerrado con el amigo); web y Beehiiv siguen existiendo como activos
+- [[estrategia/finanzasuni|FinanzasUni — expansión a web]] — ⏹️ apagado (2026-10-07); código de `web/` conservado, sin ejecución automática
 - [[estrategia/feec-finanzasuni|FinanzasUni como foro universitario]] — formato FEEC de Caminos; su ambición converge ahora con el pilar "Conversaciones" de [[marca/diego-moreno]]
 
 ## Conceptos financieros (reutilizables entre posts)

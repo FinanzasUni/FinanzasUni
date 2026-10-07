@@ -63,25 +63,26 @@ cripto ni productos complejos**; educación sí, recomendaciones personalizadas 
 Esta semana: publicar el sistema Notion de estudio con formulario de email y dejar
 programada la aportación automática a indexados.
 
-## ⚠️ Contradicciones con el wiki anterior (pendientes de aclarar con Diego)
+## ✅ Contradicciones resueltas con Diego (2026-10-07)
 
-1. **Identidad de marca**: el 2026-08-09 se decidió renombrar la cuenta a
-   `@soydiegomoreno` con 3 pilares (Criterio/Herramientas/Carácter) y AF como un pilar
-   (ver [[../marca/diego-moreno]]). Este plan habla de "Arquitectura Financiera" como
-   motor de audiencia y de una sub-marca "Finanzas para Empezar", sin mencionar
-   Diego Moreno ni los pilares. **No se sabe si el renombrado llegó a hacerse.**
-2. **Newsletter**: el wiki registra Beehiiv configurado (ago 2026); este plan dice
-   "Substack, newsletter activa". **No se sabe si hubo cambio real de plataforma.**
-3. **Cripto**: el plan prohíbe cripto como línea roja. El wiki tiene un Bloque 04
-   "Cripto sin Hype" planificado y 4 conceptos de cripto ingeridos
-   ([[pilares-contenido]]). **Choque directo** — probablemente el Bloque 04 debería
-   cancelarse o reducirse a "por qué no hablo de cripto", pendiente de confirmar.
-4. **Volumen de contenido**: el plan habla de "plan de 78 posts". El wiki tiene
-   documentados 17 (bloques 01-03). Los otros ~61 no están en el wiki.
-5. **FinanzasUni**: no aparece en el plan. El wiki lo tenía en pausa
-   ([[finanzasuni]]). Su web (`web/`) sigue publicada y actualizando noticias a
-   diario — **consume recursos (GitHub Actions) sin papel en el sistema actual**.
-6. **Entidades desconocidas para el wiki**: DCAL, FOLIO, APEX, ETN, el sistema Notion
-   de estudio y la plantilla IRPF — no hay registro de ninguna en el wiki.
+1. **Identidad de marca → sigue siendo Arquitectura Financiera.** El renombrado a
+   `@soydiegomoreno` decidido el 2026-08-09 **no se ejecutó y se abandona**. Ver nota
+   en [[../marca/diego-moreno]].
+2. **Newsletter → no se llegó a lanzar** en ninguna plataforma. El plan dice "Substack,
+   newsletter activa", pero no es así: está por lanzar. Plataforma por decidir (Beehiiv
+   tiene nombre/logo/descripción configurados de FinanzasUni; el plan prevé Substack).
+3. **Cripto → se mantiene.** Diego decide seguir con el Bloque 04 porque cree que la
+   gente debería conocerlo. Esto **matiza la línea roja** "nunca cripto" del plan:
+   interpretación de trabajo — **educar sobre cripto sí; recomendar, vender o hacer
+   afiliación de productos cripto, nunca**. Coherente con "educación sí,
+   recomendaciones personalizadas no".
+4. **Los ~61 posts que faltan para llegar a 78 → no existen**, quedaron pendientes de
+   elaborar. El wiki documenta 17 (bloques 01-03) y el Bloque 04 por diseñar.
+5. **FinanzasUni → apagado**, no se lanza de momento. Se desactivó la ejecución
+   automática del workflow (diaria y en cada push); queda solo el arranque manual. El
+   código de `web/` se conserva. Ver [[finanzasuni]].
+6. **DCAL, FOLIO, APEX y ETN → fuera de alcance** por decisión de Diego. No documentar.
+   El sistema Notion de estudio y la plantilla IRPF siguen siendo activos del plan,
+   aunque el wiki aún no tiene su contenido.
 
 Ver también [[../marca/diego-moreno]], [[pilares-contenido]], [[finanzasuni]].

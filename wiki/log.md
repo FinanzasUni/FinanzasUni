@@ -357,3 +357,15 @@ Empezar"), Substack vs Beehiiv, linea roja "nunca cripto" vs Bloque 04 planifica
 78 posts vs 17 documentados, FinanzasUni ausente pero con la web viva, y entidades
 desconocidas (DCAL, FOLIO, APEX, ETN, Notion de estudio, plantilla IRPF).
 -> [[estrategia/sistema-ingresos]], [[marca/diego-moreno]], [[estrategia/pilares-contenido]]
+
+## [2026-10-07] decision | Resueltas las 6 contradicciones del sistema de ingresos
+Diego aclara: (1) la cuenta sigue siendo Arquitectura Financiera, el renombrado a
+@soydiegomoreno se abandona sin haberse ejecutado; (2) la newsletter no se llego a
+lanzar, plataforma por decidir; (3) el Bloque 04 de cripto se mantiene — se matiza la
+linea roja del plan: educar sobre cripto si, recomendar/vender/afiliar nunca; (4) los
+~61 posts que faltan para 78 no existen, quedan por elaborar; (5) FinanzasUni se
+apaga: workflow sin ejecucion automatica (solo manual), codigo conservado, falta
+desactivar GitHub Pages a mano; (6) DCAL, FOLIO, APEX y ETN fuera de alcance.
+Corregidos los perfiles de Instagram en branding/ (el vigente vuelve a ser
+perfil-instagram.txt).
+-> [[estrategia/sistema-ingresos]], [[marca/arquitectura-financiera]], [[estrategia/finanzasuni]]

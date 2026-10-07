@@ -49,7 +49,16 @@ Diego, con quien todavía está cerrando los detalles del proyecto conjunto.
 Ver desarrollo completo (puntos a cerrar con el socio, candidatos a invitar, temas por
 sector) en [[feec-finanzasuni]].
 
-## ⚠️ Proyecto en pausa (2026-08-09)
+## ⏹️ Apagado (2026-10-07)
+
+Diego decide apagar FinanzasUni: no se lanza de momento. Se desactivó la ejecución
+automática del workflow `.github/workflows/actualizar-web.yml` (ya no corre a diario
+ni en cada push; queda solo el arranque manual). El código de `web/` y la cuenta de
+Beehiiv se conservan. Para retirar la web de internet del todo, falta desactivar
+GitHub Pages en Settings → Pages del repositorio (no se puede hacer desde aquí sin
+la CLI de GitHub). No forma parte del [[sistema-ingresos]].
+
+## Proyecto en pausa (2026-08-09, histórico)
 
 Diego habló con su amigo sobre lanzar FinanzasUni juntos, pero **no llegaron a cerrar
 nada en firme** (ni roles, ni reparto, ni modelo de decisión). Mientras tanto, Diego

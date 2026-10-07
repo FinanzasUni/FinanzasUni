@@ -1,12 +1,9 @@
 name: Actualizar noticias y publicar la web
 
+# FinanzasUni apagado el 2026-10-07: sin ejecución diaria ni en cada push.
+# Para reactivarlo, recuperar el bloque schedule/push del historial de git.
 on:
-  schedule:
-    # 06:00 UTC todos los días (~08:00 hora española en verano, ~07:00 en invierno)
-    - cron: '0 6 * * *'
-  push:
-    branches: [master, main]
-  workflow_dispatch: {} # permite lanzarlo a mano desde la pestaña Actions de GitHub
+  workflow_dispatch: {}
 
 permissions:
   contents: write
