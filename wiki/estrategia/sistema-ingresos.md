@@ -69,8 +69,8 @@ programada la aportación automática a indexados.
    `@soydiegomoreno` decidido el 2026-08-09 **no se ejecutó y se abandona**. Ver nota
    en [[../marca/diego-moreno]].
 2. **Newsletter → no se llegó a lanzar** en ninguna plataforma. El plan dice "Substack,
-   newsletter activa", pero no es así: está por lanzar. Plataforma por decidir (Beehiiv
-   tiene nombre/logo/descripción configurados de FinanzasUni; el plan prevé Substack).
+   newsletter activa", pero no es así: está por lanzar. **Plataforma decidida: Substack**
+   (2026-10-07) — ver [[../tecnologia/newsletter-substack]].
 3. **Cripto → se mantiene.** Diego decide seguir con el Bloque 04 porque cree que la
    gente debería conocerlo. Esto **matiza la línea roja** "nunca cripto" del plan:
    interpretación de trabajo — **educar sobre cripto sí; recomendar, vender o hacer

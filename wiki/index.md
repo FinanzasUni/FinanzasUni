@@ -60,6 +60,7 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 ## Tecnología
 
 - [[tecnologia/agente-ia|Agente IA]] — endpoints, stack, roadmap
+- [[tecnologia/newsletter-substack|Newsletter en Substack]] — configuración, textos (descripción, "acerca de", bienvenida) y conexión con el Notion de estudio
 - [[tecnologia/web-finanzasuni|Web de FinanzasUni]] — prototipo real en `web/`, estructura y pendientes
 
 ## Fuentes

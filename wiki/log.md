@@ -369,3 +369,11 @@ desactivar GitHub Pages a mano; (6) DCAL, FOLIO, APEX y ETN fuera de alcance.
 Corregidos los perfiles de Instagram en branding/ (el vigente vuelve a ser
 perfil-instagram.txt).
 -> [[estrategia/sistema-ingresos]], [[marca/arquitectura-financiera]], [[estrategia/finanzasuni]]
+
+## [2026-10-07] decision | Newsletter en Substack
+Diego elige Substack para la newsletter (lo que preveia el sistema de ingresos).
+Beehiiv queda sin uso. Preparada la configuracion completa y los textos (descripcion,
+pagina "acerca de", email de bienvenida con pregunta para captar problemas reales) y
+como incrustar el formulario en el Notion de estudio. Pendiente: que Diego cree la
+cuenta y confirme la URL.
+-> [[tecnologia/newsletter-substack]], [[estrategia/sistema-ingresos]]
