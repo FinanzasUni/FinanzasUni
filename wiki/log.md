@@ -345,3 +345,15 @@ y guion generico de la primera entrevista del formato "Conversaciones" (estructu
 elegir invitado real para la primera entrevista y decidir foto de perfil nueva.
 → [[marca/diego-moreno]], [[contenido/post-presentacion-diego-moreno]],
 [[contenido/guion-primera-entrevista]]
+
+## [2026-10-07] ingesta | Sistema de ingresos semipasivos v1.0
+Tras dos meses sin actualizar el wiki, Diego comparte su plan maestro actual: marca
+personal + productos digitales (plantilla IRPF, pack primer piso, Notion de estudio,
+guia de la renta) + talleres pagados, objetivo 1.000 EUR/mes en 12-18 meses, 3-5
+h/semana, fases con puerta, backlog puntuado. Guardado como fuente inmutable en la
+raiz y resumido en [[estrategia/sistema-ingresos]]. Seis contradicciones con el wiki
+anterior marcadas sin resolver: identidad de marca (Diego Moreno vs AF/"Finanzas para
+Empezar"), Substack vs Beehiiv, linea roja "nunca cripto" vs Bloque 04 planificado,
+78 posts vs 17 documentados, FinanzasUni ausente pero con la web viva, y entidades
+desconocidas (DCAL, FOLIO, APEX, ETN, Notion de estudio, plantilla IRPF).
+-> [[estrategia/sistema-ingresos]], [[marca/diego-moreno]], [[estrategia/pilares-contenido]]

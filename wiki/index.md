@@ -12,7 +12,8 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 
 ## Estrategia
 
-- [[estrategia/plan-2026|Plan 2026-2027]] — 3 fases, objetivos SMART
+- [[estrategia/sistema-ingresos|Sistema de ingresos semipasivos v1.0]] ⭐ **documento rector actual (2026-10-07)**: fases con puerta, productos con precio, contenido, KPIs — con 6 contradicciones abiertas frente al wiki anterior
+- [[estrategia/plan-2026|Plan 2026-2027]] — plan original de mayo, superado en la práctica por el sistema de ingresos
 - [[estrategia/kpis|KPIs]] — métricas de Instagram, newsletter, monetización
 - [[estrategia/pilares-contenido|Pilares de contenido]] — 5 bloques temáticos y su estado
 - [[estrategia/principios|Principios]] — 4 principios que guían decisiones

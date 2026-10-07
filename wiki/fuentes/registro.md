@@ -12,6 +12,7 @@ original.
 
 | Fuente | Ubicación | Qué aporta | Páginas del wiki que la usan |
 |--------|-----------|------------|-------------------------------|
+| Sistema de ingresos semipasivos v1.0 (07/10/2026) | `sistema-ingresos-marca-personal.md` | Plan maestro actual: fases con puerta, catálogo de productos con precios, sistema de contenido, automatización, backlog puntuado. **Sustituye en la práctica al plan estratégico de mayo** como documento rector | [[../estrategia/sistema-ingresos]] |
 | Plan estratégico 2026 | `Estrategia-Arquitectura-Financiera-2026.docx` | Fases, objetivos SMART, KPIs, principios, pilares | [[../estrategia/plan-2026]], [[../estrategia/kpis]], [[../estrategia/pilares-contenido]], [[../estrategia/principios]] |
 | Perfil de Instagram | `branding/perfil-instagram.txt` | Bio, checklist de lanzamiento, caption del Post 0 | [[../marca/arquitectura-financiera]], [[../contenido/bloque-01-cimientos]] |
 | Primeros 5 posts (Bloque 01) | `files/arquitectura-financiera-5posts.html` | Copy completo, hooks, hashtags de posts 01-05 | [[../contenido/bloque-01-cimientos]] y páginas de conceptos asociadas |
