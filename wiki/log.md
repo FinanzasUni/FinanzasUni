@@ -429,3 +429,11 @@ Business Suite desde el calendario, los guiones y las imagenes. Prompts ajustado
 perfil (5 hashtags, Substack, sin inventar datos). Errores visibles en la interfaz.
 Probado sin clave real: falta la primera prueba con la clave de Diego.
 -> [[tecnologia/agente-ia]]
+
+## [2026-10-15] decision | Agentes propios, sin agente gestionado en platform.claude.com
+Diego decide trabajar con sus propios agentes (el agente local de
+arquitectura-financiera-agent/ y los de Claude Code). La opcion de un agente gestionado
+en la plataforma de Anthropic queda descartada por ahora. Diego retomara la
+configuracion (clave de Anthropic en .env, primera prueba del pack semanal) mas
+adelante.
+-> [[tecnologia/agente-ia]]
