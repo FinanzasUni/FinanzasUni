@@ -35,6 +35,7 @@ enero (exámenes: solo mantenimiento, según el plan).
 3. Correcciones ya aplicadas en los captions de abajo: hashtag `#patrimoniodesdecer` →
    `#patrimoniodesdecero` (06), `#tradererepublic` → `#traderepublic` (08), y quitado
    "hasta un 4 % TAE ahora mismo" del Post 10 (cifra caducada; la slide no la lleva).
+   Hashtags reducidos a 5 por post (límite de Instagram, ver `brand-profile.md`).
 
 ## Captions listos para copiar
 
@@ -67,7 +68,7 @@ En una cuenta separada de la que usas a diario. Idealmente una cuenta remunerada
 
 Guarda este post. Es la primera regla del dinero. 👇
 
-#fondodeemergencia #arquitecturafinanciera #finanzaspersonales #ahorro #educacionfinanciera #dinero #finanzasjovenes #libertadfinanciera #finanzasespana #patrimoniodesdecero
+#fondodeemergencia #arquitecturafinanciera #finanzaspersonales #finanzasjovenes #ahorro
 ```
 
 ### Post 07 — Págate a ti primero (26 oct)
@@ -98,7 +99,7 @@ Con 1.200€ netos → transfiérete 240€ el mismo día que cobras. El resto, 
 
 Guarda este post y ponlo en práctica esta semana. 👇
 
-#pagateatiprimero #arquitecturafinanciera #ahorro #finanzaspersonales #habitos #dinero #educacionfinanciera #finanzasjovenes #libertadfinanciera #finanzasespana
+#pagateatiprimero #arquitecturafinanciera #ahorro #finanzasjovenes #habitos
 ```
 
 ### Post 08 — Cuentas remuneradas (2 nov) — ⚠️ actualizar TAE antes
@@ -124,7 +125,7 @@ Antes de abrir cualquiera, hazte estas 4 preguntas:
 
 Guarda este post y compara las opciones. Tu fondo de emergencia debería estar generando algo mientras espera. 👇
 
-#cuentasremuneradas #arquitecturafinanciera #ahorro #finanzaspersonales #traderepublic #myinvestor #dinero #educacionfinanciera #finanzasespana #intereses
+#cuentasremuneradas #arquitecturafinanciera #ahorro #finanzaspersonales #finanzasespana
 ```
 
 ### Post 09 — Dinero muerto (9 nov)
@@ -159,7 +160,7 @@ Cómo organizarlo:
 ¿Cuál es tu objetivo de ahorro ahora mismo? 👇
 Cuéntamelo en comentarios. Escribirlo es el primer paso.
 
-#objetivosfinancieros #arquitecturafinanciera #ahorro #inflacion #finanzaspersonales #dinero #educacionfinanciera #finanzasjovenes #libertadfinanciera #finanzasespana
+#objetivosfinancieros #arquitecturafinanciera #inflacion #ahorro #finanzasjovenes
 ```
 
 ### Post 10 — De 0 € a 3 meses (16 nov)
@@ -190,7 +191,7 @@ PASO 3: Automatiza y olvida
 ¿Cuál es tu número de seguridad?
 Calcula tus 3 meses de gastos y cuéntamelo en comentarios. 👇
 
-#fondodeemergencia #arquitecturafinanciera #plandeahorro #ahorro #finanzaspersonales #dinero #educacionfinanciera #finanzasjovenes #libertadfinanciera #finanzasespana
+#plandeahorro #fondodeemergencia #arquitecturafinanciera #ahorro #finanzasjovenes
 ```
 
 ## Registro de publicación

@@ -7,6 +7,11 @@ fuentes: [Estrategia-Arquitectura-Financiera-2026.docx, arquitectura-financiera-
 
 # Audiencia
 
+> ⚠️ **Actualización (2026-10-15)**: el perfil de marca (`brand-profile.md`, raíz del
+> repo) afina la audiencia en dos segmentos y fija como **prioritario este trimestre al
+> universitario (18-23)**, por delante del joven con primer sueldo (22-28), que es quien
+> más compra. Lo de abajo (18-35 en general) es la definición original de julio.
+
 **Quién**: jóvenes españoles de 18 a 35 años.
 
 **Contexto**: el nicho de finanzas en español está infraservido frente al mundo anglosajón.

@@ -5,6 +5,7 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 
 ## Marca
 
+- `brand-profile.md` (raíz del repo) ⭐ **perfil de marca consolidado (2026-10-15)**: identidad, posicionamiento, 2 segmentos (universitario prioritario), voz "amigo que sabe", guardrails legales, política de IA. Lo leen todas las skills de redes sociales
 - [[marca/arquitectura-financiera|Arquitectura Financiera]] ⭐ **marca vigente** — identidad, fundador, propuesta de valor; sub-marca de productos "Finanzas para Empezar"
 - [[marca/diego-moreno|Diego Moreno — marca personal]] — ❌ abandonada sin ejecutar (2026-10-07); se conserva como histórico
 - [[marca/audiencia|Audiencia]] — jóvenes españoles 18-35, dolor y contexto

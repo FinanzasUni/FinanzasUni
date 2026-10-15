@@ -389,3 +389,15 @@ deuda buena/mala, por que no hago trading) con tiempos, texto en pantalla y capt
 el ultimo hace de puente al Bloque 03. Recordatorio: el enlace de la bio apunta a
 FinanzasUni, ya apagado.
 -> [[contenido/calendario-oct-nov-2026]], [[contenido/serie-reels-01]]
+
+## [2026-10-15] marca | Perfil de marca consolidado (brand-profile.md)
+Creado `brand-profile.md` en la raiz a partir del wiki (voz, audiencia, sistema de
+ingresos, posts publicados) mas cuatro decisiones de Diego: publico prioritario este
+trimestre = universitarios (18-23), por delante del primer sueldo (que es quien mas
+compra; el puente entre ambos es "prepararte para lo que viene"); tono "amigo que
+sabe"; textos con IA sin etiquetar, nunca avatar ni voz sintetica; ensena porcentajes
+propios, nunca cantidades. Recogidos los guardrails legales (CNMV, sin promesas de
+rentabilidad, cripto solo educativo, cifras fiscales verificadas en la AEAT). Hashtags
+del calendario recortados a 5 por post. Pendiente: porcentajes reales de Diego,
+seguidores actuales y confirmar los posts de referencia.
+-> brand-profile.md, [[marca/audiencia]], [[contenido/calendario-oct-nov-2026]]
