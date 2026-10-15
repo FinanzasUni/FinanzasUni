@@ -10,6 +10,25 @@ fuentes: [arquitectura-financiera-agent/CLAUDE.md]
 Código en `arquitectura-financiera-agent/`. Node.js + Express + Anthropic SDK
 (`claude-sonnet-4-20250514`), frontend vanilla con streaming SSE.
 
+## ⚠️ Actualización (2026-10-15): el código tiene más de lo documentado
+
+Revisando `server.js` (en el repo desde el primer commit): además de los 7 endpoints de
+generación, ya incluye **conexión con la Instagram Graph API** y un historial local:
+
+| Endpoint | Función |
+|----------|---------|
+| `GET /api/ig/perfil` | Datos del perfil (seguidores, posts, bio) |
+| `GET /api/ig/media` | Últimos 12 posts con likes y nº de comentarios |
+| `GET /api/ig/comentarios/:mediaId` | Comentarios de un post |
+| `POST /api/ig/responder` | Publica una respuesta a un comentario |
+| `POST /api/historial/guardar`, `GET /api/historial` | Historial de contenido generado (`datos.json`) |
+
+Estado real: **no está configurado** (no hay `.env`: ni clave de Anthropic ni token de
+Instagram), así que la parte de Instagram nunca se ha usado. Además, el prompt de marca
+está desfasado respecto a `brand-profile.md` (handle `@arquitecturafinanciera`, audiencia
+18-35 genérica) y usa un modelo antiguo (`claude-sonnet-4-20250514`). No tiene todavía:
+programación/publicación de posts, mensajes directos ni métricas de rendimiento.
+
 ## Endpoints ya funcionando
 
 | Endpoint | Función |

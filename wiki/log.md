@@ -412,3 +412,11 @@ con el perfil: la unica contradiccion era el numero de hashtags (10 -> maximo 5)
 Idea de contenido detectada: "He dejado de invertir (por ahora)" como historia de
 aprender en publico.
 -> brand-profile.md, [[marca/voz-y-tono]]
+
+## [2026-10-15] revision | El agente IA ya tiene conexion con Instagram (sin configurar)
+Al estudiar si construir un agente que gestione la cuenta, se descubre que
+arquitectura-financiera-agent/server.js ya incluye endpoints de la Instagram Graph API
+(perfil, posts, comentarios, responder) y un historial local, no documentados en el
+wiki. Nunca se ha configurado (sin .env). Prompt de marca desfasado respecto a
+brand-profile.md y modelo antiguo. Corregida la pagina del agente.
+-> [[tecnologia/agente-ia]]
