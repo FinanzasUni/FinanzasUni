@@ -90,3 +90,36 @@ en `files/arquitectura-financiera-bloque02.html` pero pendiente de generar slide
 finales, y un agente de IA propio (Node + Anthropic SDK) para producir contenido. El plan
 estratégico completo (fases, objetivos SMART, KPIs) está en la wiki bajo `wiki/estrategia/`.
 Antes de sugerir contenido nuevo, comprueba en `wiki/contenido/` qué bloque toca ahora.
+
+
+## Actualización [2026-10-15] - marca ampliada, plan de ingresos y herramientas
+
+> Esta sección amplía lo anterior; no lo sustituye. Si algo de arriba choca con esto, manda esto.
+
+### Alcance de la marca
+- La marca nace de Arquitectura Financiera y se amplía más allá de las finanzas: crecimiento
+  personal, "calidad humana", reflexiones de Diego y entrevistas a gente de su entorno que aporte valor.
+- Prioridad: ayudar y "despertar" a la gente por encima de ganar dinero a corto plazo.
+  Valores y fe presentes, pero nunca como titular.
+- Canal principal Instagram; YouTube para vídeos largos; newsletter en Substack.
+- Todo lo relacionado con la empresa familiar de construcción queda FUERA de la marca.
+- Tiempo real disponible: 3-5 h/semana. Nada de planes que no quepan ahí.
+
+### Documentos clave nuevos (léelos antes de planificar)
+- `brand-profile.md` - fuente única de verdad de identidad, voz, audiencia y límites.
+  Las habilidades de redes sociales lo leen antes de escribir. Si contradice
+  `wiki/marca/voz-y-tono.md`, señálalo y propón cómo unificarlos.
+- `sistema-ingresos-marca-personal.md` - plan de ingresos: decisiones, hoja de ruta por fases,
+  catálogo de productos con precios y umbrales de validación, KPIs y plan de 6 meses.
+
+### Herramientas disponibles en Claude Code
+- Agente `director-marca`: coordina el trabajo de la marca (planificación semanal y mensual,
+  producción en lote, revisión, métricas, avance del plan de ingresos).
+- Habilidades globales de marca personal: brand-profile, voice-builder, content-pillars,
+  content-calendar, batch-content-plan, hook-writer, caption-writer, carousel-writer,
+  reels-script, story-writer, instagram-growth, instagram-seo, profile-optimization,
+  analytics-and-reporting, content-audit, creator-monetization, lead-magnets-and-funnels,
+  email-and-newsletter, youtube-long-form, brand-creator, entre otras.
+- Al usarlas, respeta las convenciones de esta carpeta: los posts siguen en `posts/post-NN-slug/`
+  y su estado se documenta en `wiki/contenido/`; los aprendizajes reutilizables van a `wiki/`
+  y cada cambio relevante se registra en `wiki/log.md`.

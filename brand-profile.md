@@ -4,9 +4,15 @@
 
 ## Identity
 - **What it is (one sentence):** La cuenta de Diego, un estudiante de 21 años que explica
-  a otros jóvenes españoles cómo funciona el dinero —ahorro, inversión, impuestos— con
-  números reales y sin venderles nada.
-- **Category:** Educación financiera para jóvenes en España (Instagram + newsletter).
+  a otros jóvenes españoles cómo funciona el dinero —ahorro, inversión, impuestos— y lo
+  que va aprendiendo sobre crecer como persona, con números reales y sin venderles nada.
+- **Category:** Educación financiera y crecimiento personal para jóvenes en España
+  (Instagram + YouTube + newsletter).
+- **Temas:** las finanzas son el núcleo y la puerta de entrada. Alrededor: crecimiento
+  personal y "calidad humana", reflexiones de Diego, y entrevistas a gente de su entorno
+  que aporte valor. Prioridad: ayudar y "despertar" a la gente por encima de ganar dinero
+  a corto plazo. Valores y fe presentes, nunca como titular. La empresa familiar de
+  construcción queda fuera de la marca.
 - **Founded / location:** 2026, España. Contexto fiscal y de producto español siempre.
 
 ## Positioning
@@ -87,9 +93,15 @@
 - **Pronunciation guide:** sin términos problemáticos. "EFPA": "éfpa".
 
 ## Proof
-- **Numbers:** Diego enseña **porcentajes, nunca cantidades** (ej.: "ahorro el X % de lo
-  que entra", "tengo X meses de colchón"). *(Por rellenar: sus porcentajes reales y los
-  seguidores actuales.)* Contenido publicado: Bloque 01 completo (6 posts).
+- **Numbers:** Diego enseña **porcentajes, nunca cantidades**. Datos reales (oct 2026):
+  - Ahorra entre el **20 y el 30 %** de lo que ingresa cada mes.
+  - Tiene **4 meses de colchón** de emergencia.
+  - **Ha dejado de invertir temporalmente para ampliar el colchón** — decisión real y
+    contable, buen material de "aprender en público" (contada como decisión suya, no
+    como consejo).
+  - Seguidores: **4** (oct 2026). Se parte prácticamente de cero: el éxito de los
+    próximos meses se mide en guardados, envíos y suscriptores, no en seguidores.
+  - Contenido publicado: Bloque 01 completo (6 posts).
 - **Named customers / logos:** ninguno todavía.
 - **Outcomes / case results:** ninguno todavía. Primeros testimonios: guardar en la carpeta
   de "pruebas" cada mensaje de alguien a quien un post le haya cambiado una decisión.
@@ -142,16 +154,18 @@
 - **Competitor rules:** no se nombra a otros creadores. Las entidades financieras se
   nombran solo para comparar condiciones objetivas.
 - **Sensitivity:** vivienda, paro, deudas: con empatía, sin culpar a quien no llega.
+  Fe y valores: entran por la historia (algo que pasó, alguien que lo dijo), nunca como
+  sermón ni como cierre moralizante; no se critican otras creencias.
 - **Nota hashtags:** Instagram limita los hashtags por post (2026); usar 3-5 relevantes.
   Los captions del calendario ya están recortados a 5.
 
 ## Show, don't tell — example posts
-- **Loves:** *(por confirmar con Diego)* Propuesta desde lo ya publicado:
+- **Loves:** (confirmado por Diego 2026-10-15)
   - Post 03 "Ingresos vs gastos" — dos personas, mismo sueldo, 42.000 € de diferencia:
     hace visible un hábito con un número.
   - Post 05 "Gastos hormiga" — "consciencia, no sacrificio": enseña sin juzgar.
   - Post 01 "Nadie te enseñó a manejar el dinero" — el porqué de la cuenta en una frase.
-- **Hates:** *(por confirmar)* El finfluencer de "así gané 10.000 € en un mes" con capturas
+- **Hates:** El finfluencer de "así gané 10.000 € en un mes" con capturas
   de cartera y coche de fondo: promete, presume y no enseña nada.
 
 ## Notes

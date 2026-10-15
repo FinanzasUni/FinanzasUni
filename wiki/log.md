@@ -401,3 +401,14 @@ rentabilidad, cripto solo educativo, cifras fiscales verificadas en la AEAT). Ha
 del calendario recortados a 5 por post. Pendiente: porcentajes reales de Diego,
 seguidores actuales y confirmar los posts de referencia.
 -> brand-profile.md, [[marca/audiencia]], [[contenido/calendario-oct-nov-2026]]
+
+## [2026-10-15] marca | Perfil de marca completado con datos reales y alcance ampliado
+Diego aporta sus datos: ahorra el 20-30 % de sus ingresos, tiene 4 meses de colchon y
+ha pausado la inversion para ampliarlo; la cuenta tiene 4 seguidores; confirma los
+posts publicados como referencia. Se incorpora al perfil el alcance ampliado que Diego
+anadio en CLAUDE.md (crecimiento personal, reflexiones, entrevistas, valores y fe
+presentes sin ser titular, empresa familiar fuera). Unificado wiki/marca/voz-y-tono.md
+con el perfil: la unica contradiccion era el numero de hashtags (10 -> maximo 5).
+Idea de contenido detectada: "He dejado de invertir (por ahora)" como historia de
+aprender en publico.
+-> brand-profile.md, [[marca/voz-y-tono]]
