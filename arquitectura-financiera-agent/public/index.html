@@ -356,6 +356,11 @@ body{
       <span class="nav-badge">IA</span>
     </button>
     <div class="nav-section">Planificación</div>
+    <button class="nav-btn" onclick="showPanel('pack')">
+      <span class="nav-icon">📦</span>
+      <span>Pack de la semana</span>
+      <span class="nav-badge">IA</span>
+    </button>
     <button class="nav-btn" onclick="showPanel('calendario')">
       <span class="nav-icon">📅</span>
       <span>Calendario</span>
@@ -383,8 +388,8 @@ body{
     </button>
   </nav>
   <div class="sidebar-footer">
-    @arquitecturafinanciera<br>
-    Claude claude-sonnet-4-20250514
+    @arquitectura_financieralife<br>
+    Claude Opus 5.5
   </div>
 </aside>
 
@@ -725,6 +730,29 @@ body{
       </div>
     </div>
 
+    <!-- ══════════ PACK DE LA SEMANA ══════════ -->
+    <div class="tool-panel" id="panel-pack">
+      <div class="panel-title">Pack de la <em>semana</em></div>
+      <p class="panel-desc">Lee el calendario y los guiones del wiki y te prepara todo para cargarlo en Meta Business Suite: imágenes en orden, texto alternativo de cada slide, caption, música, historia de apoyo y el checklist del reel.</p>
+      <div class="form-group">
+        <label class="form-label">Semana del calendario</label>
+        <input type="number" class="form-input" id="pack-semana" placeholder="Ej: 1" min="1">
+      </div>
+      <button class="btn btn-primary" onclick="generarPack()">
+        📦 Preparar el pack
+      </button>
+      <div class="output-wrap" id="pack-output-wrap" style="display:none;">
+        <div class="output-header">
+          <span class="output-label">Pack de publicación</span>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-ghost" onclick="copiarOutput('pack-output')">📋 Copiar todo</button>
+            <button class="btn btn-sm btn-ghost" onclick="limpiarOutput('pack-output','pack-output-wrap')">🗑️</button>
+          </div>
+        </div>
+        <div class="output-body" id="pack-output"><span class="output-empty">El pack aparecerá aquí...</span></div>
+      </div>
+    </div>
+
     <!-- ══════════ CALENDARIO ══════════ -->
     <div class="tool-panel" id="panel-calendario">
       <div class="panel-title">Calendario de <em>publicación</em></div>
@@ -757,7 +785,7 @@ body{
     <!-- ══════════ IG STATS ══════════ -->
     <div class="tool-panel" id="panel-ig-stats">
       <div class="panel-title">Estadísticas <em>Instagram</em></div>
-      <p class="panel-desc">Métricas en tiempo real de @arquitecturafinanciera via Instagram Graph API.</p>
+      <p class="panel-desc">Métricas en tiempo real de @arquitectura_financieralife via Instagram Graph API.</p>
 
       <div id="ig-loading" class="loading" style="display:none;"><span class="loading-dots">Conectando con Instagram</span></div>
 
@@ -780,7 +808,7 @@ body{
         <div class="ig-profile-card">
           <div id="ig-avatar-wrap" class="ig-avatar-placeholder">📷</div>
           <div class="ig-profile-meta">
-            <div class="ig-username-big" id="ig-username">@arquitecturafinanciera</div>
+            <div class="ig-username-big" id="ig-username">@arquitectura_financieralife</div>
             <div class="ig-bio-text" id="ig-bio"></div>
             <div class="ig-counts">
               <div><div class="sc-val" id="ig-followers">—</div><div class="sc-label">Seguidores</div></div>
@@ -804,7 +832,7 @@ body{
     <!-- ══════════ MIS POSTS ══════════ -->
     <div class="tool-panel" id="panel-mis-posts">
       <div class="panel-title">Mis <em>posts</em></div>
-      <p class="panel-desc">Los últimos 12 posts publicados en @arquitecturafinanciera con sus métricas. Haz clic en uno para ver sus comentarios.</p>
+      <p class="panel-desc">Los últimos 12 posts publicados en @arquitectura_financieralife con sus métricas. Haz clic en uno para ver sus comentarios.</p>
       <div id="posts-grid" class="post-grid">
         <div class="loading"><span class="loading-dots">Cargando posts</span></div>
       </div>
@@ -859,6 +887,7 @@ const panelTitles = {
   'hashtags':'Generador de Hashtags',
   'analizar':'Analizar Borrador',
   'newsletter':'Newsletter Semanal',
+  'pack':'Pack de la Semana',
   'calendario':'Calendario de Publicación',
   'ig-stats':'Estadísticas Instagram',
   'mis-posts':'Mis Posts',
@@ -891,7 +920,11 @@ async function streamToElement(endpoint, body, outputId, wrapId){
       body: JSON.stringify(body)
     });
 
-    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    if(!res.ok){
+      let msg = `HTTP ${res.status}`;
+      try{ msg = (await res.json()).error || msg; }catch(e){}
+      throw new Error(msg);
+    }
 
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
@@ -908,6 +941,7 @@ async function streamToElement(endpoint, body, outputId, wrapId){
           try{
             const data = JSON.parse(line.slice(6));
             if(data.text){ output.textContent += data.text; output.scrollTop=output.scrollHeight; }
+            if(data.error){ output.textContent += `\n\n⚠️ ${data.error}`; showToast('Error del agente','error'); }
             if(data.done){ output.classList.remove('streaming'); }
           }catch(e){}
         }
@@ -915,7 +949,7 @@ async function streamToElement(endpoint, body, outputId, wrapId){
     }
   } catch(err){
     output.classList.remove('streaming');
-    output.textContent = `Error: ${err.message}\n\nAsegúrate de que el servidor está corriendo y tu API key de Anthropic está configurada en el archivo .env`;
+    output.textContent = `Error: ${err.message}\n\nAsegúrate de que el servidor está en marcha y de que tu clave de Anthropic está en el archivo .env`;
     showToast('Error al conectar con el agente','error');
   }
 }
@@ -963,6 +997,12 @@ function analizarPost(){
   const contenido = document.getElementById('analizar-contenido').value.trim();
   if(!contenido){ showToast('Pega el borrador primero','error'); return; }
   streamToElement('/api/analizar-post',{contenido},'analizar-output','analizar-output-wrap');
+}
+
+function generarPack(){
+  const semana = document.getElementById('pack-semana').value.trim();
+  if(!semana){ showToast('Indica la semana del calendario','error'); return; }
+  streamToElement('/api/pack-semana',{semana},'pack-output','pack-output-wrap');
 }
 
 function generarNewsletter(){
@@ -1047,7 +1087,7 @@ async function cargarPerfilIG(){
     loading.style.display='none';
     if(!data.conectado){ noConn.style.display='block'; return; }
 
-    document.getElementById('ig-username').textContent='@'+(data.username||'arquitecturafinanciera');
+    document.getElementById('ig-username').textContent='@'+(data.username||'arquitectura_financieralife');
     document.getElementById('ig-bio').textContent=data.biography||'';
     document.getElementById('ig-followers').textContent=formatNum(data.followers_count);
     document.getElementById('ig-following').textContent=formatNum(data.follows_count);
@@ -1152,7 +1192,7 @@ async function generarRespuestaIG(commentId, texto){
   try{
     const res=await fetch('/api/responder-comentario',{
       method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({comentario:texto,contextoPost:'post educativo sobre finanzas personales de @arquitecturafinanciera'})
+      body:JSON.stringify({comentario:texto,contextoPost:'post educativo sobre finanzas personales de @arquitectura_financieralife'})
     });
     const reader=res.body.getReader(); const decoder=new TextDecoder(); let buf='';
     while(true){

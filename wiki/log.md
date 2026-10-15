@@ -420,3 +420,12 @@ arquitectura-financiera-agent/server.js ya incluye endpoints de la Instagram Gra
 wiki. Nunca se ha configurado (sin .env). Prompt de marca desfasado respecto a
 brand-profile.md y modelo antiguo. Corregida la pagina del agente.
 -> [[tecnologia/agente-ia]]
+
+## [2026-10-15] tecnico | Agente IA: fase 1 terminada
+El agente lee brand-profile.md en cada peticion (sin marca escrita en el codigo), usa
+claude-opus-5-5 con esfuerzo medium (configurable), SDK actualizado a 0.134 y fallback
+del servidor activada. Nuevo panel "Pack de la semana" que prepara la carga en Meta
+Business Suite desde el calendario, los guiones y las imagenes. Prompts ajustados al
+perfil (5 hashtags, Substack, sin inventar datos). Errores visibles en la interfaz.
+Probado sin clave real: falta la primera prueba con la clave de Diego.
+-> [[tecnologia/agente-ia]]

@@ -10,7 +10,25 @@ fuentes: [arquitectura-financiera-agent/CLAUDE.md]
 Código en `arquitectura-financiera-agent/`. Node.js + Express + Anthropic SDK
 (`claude-sonnet-4-20250514`), frontend vanilla con streaming SSE.
 
-## ⚠️ Actualización (2026-10-15): el código tiene más de lo documentado
+## ✅ Fase 1 terminada (2026-10-15)
+
+- **Lee `brand-profile.md` en cada petición** como prompt de sistema: ya no tiene la marca
+  escrita en el código (adiós al handle equivocado y a la audiencia genérica).
+- **Modelo actual**: `claude-opus-5-5` con esfuerzo `medium` por defecto, configurable en
+  `.env` (`CLAUDE_MODEL`, `CLAUDE_EFFORT`). SDK actualizado de 0.39 a 0.134. Fallback del
+  servidor activada para cuando el modelo rechaza una petición.
+- **Nuevo panel "Pack de la semana"** (`/api/pack-semana`): lee el calendario más
+  reciente de `wiki/contenido/`, el guion del reel y las imágenes del carrusel, y prepara
+  todo para Meta Business Suite (orden de archivos, texto alternativo de cada slide mirando
+  las imágenes, caption, música, historia y checklist del reel, más avisos de pendientes).
+- Prompts ajustados al perfil: 5 hashtags, newsletter en Substack, sin inventar datos ni
+  herramientas de Diego, el análisis de borradores revisa voz y límites legales.
+- Errores en español y visibles en la interfaz (antes fallaban en silencio).
+- Probado: arranca, lee bien el calendario de las 5 semanas y llega a la API de
+  Anthropic. **No probado con una clave real** (no hay clave en el ordenador): la primera
+  generación real la hará Diego al poner su clave en `.env`.
+
+## Actualización (2026-10-15): el código tenía más de lo documentado
 
 Revisando `server.js` (en el repo desde el primer commit): además de los 7 endpoints de
 generación, ya incluye **conexión con la Instagram Graph API** y un historial local:
