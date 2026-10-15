@@ -377,3 +377,15 @@ pagina "acerca de", email de bienvenida con pregunta para captar problemas reale
 como incrustar el formulario en el Notion de estudio. Pendiente: que Diego cree la
 cuenta y confirme la URL.
 -> [[tecnologia/newsletter-substack]], [[estrategia/sistema-ingresos]]
+
+## [2026-10-15] contenido | Calendario oct-nov y serie de reels 01
+Diego retoma la publicacion en Instagram. Montado el calendario de 5 semanas (19 oct
+- 19 nov): lunes carrusel del Bloque 02 (posts 06-10, imagenes ya hechas), jueves
+reel. Captions del Bloque 02 extraidos de la fuente y corregidos (2 hashtags mal
+escritos, cifra de TAE caducada en el Post 10). Detectado que la slide 3 del Post 08
+dice "Comparativa 2025" con TAE de mayo: hay que verificar y regenerar antes de
+publicar. Escritos 5 guiones de reel (decir que no, el dia que cobro, inflacion,
+deuda buena/mala, por que no hago trading) con tiempos, texto en pantalla y caption;
+el ultimo hace de puente al Bloque 03. Recordatorio: el enlace de la bio apunta a
+FinanzasUni, ya apagado.
+-> [[contenido/calendario-oct-nov-2026]], [[contenido/serie-reels-01]]

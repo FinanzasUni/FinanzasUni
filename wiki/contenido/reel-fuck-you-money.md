@@ -24,5 +24,7 @@ no" en vez de "poder comprar más", evitando el enfoque materialista habitual de
 Bloque 02, [[bloque-02-ahorro-real]]) no como "red de seguridad ante imprevistos" sino
 como "tu no guardado en una cuenta" — mismo concepto financiero, ángulo emocional nuevo.
 
-**Pendiente**: decidir si se graban overlays de texto en HTML (como `slides/`, adaptado
-a formato vertical) o cara a cámara sin overlays. Sin fecha de publicación todavía.
+**Programado (2026-10-15)**: Reel 1 de la [[serie-reels-01]], publicación el jueves
+22 oct 2026 junto al Post 06. Guion resumido y caption en esa página. Formato decidido:
+cara a cámara con subtítulos y texto en pantalla añadido en edición (CapCut), sin
+overlays en HTML.

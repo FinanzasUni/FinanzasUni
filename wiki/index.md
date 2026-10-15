@@ -52,6 +52,8 @@ información antes de responder cualquier consulta (ver flujo en `CLAUDE.md`).
 - [[contenido/bloque-01-cimientos|Bloque 01 — Cimientos]] — posts 00-03 publicados, 04-05 listos para publicar
 - [[contenido/bloque-02-ahorro-real|Bloque 02 — Ahorro Real]] — 10 posts completos, listos para publicar
 - [[contenido/bloque-03-inversion-indexada|Bloque 03 — Inversión Indexada]] ✅ estructura y 7 conceptos completos, falta copy/slides
+- [[contenido/calendario-oct-nov-2026|Calendario 19 oct – 19 nov 2026]] ⭐ qué se publica cada lunes y jueves, captions del Bloque 02 listos para copiar, correcciones pendientes
+- [[contenido/serie-reels-01|Serie de reels 01 — "Lo que nadie te explicó del dinero"]] — 5 guiones de reel con tiempos, texto en pantalla y caption
 - [[contenido/formato-carrusel|Formato estándar de carrusel]]
 - [[contenido/post-presentacion-diego-moreno|Post de presentación — Diego Moreno]] — semana 1 de la marca ampliada, listo para publicar
 - [[contenido/guion-primera-entrevista|Guion de la primera entrevista]] — plantilla del formato "Conversaciones", falta elegir invitado
